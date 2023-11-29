@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DokterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', function () {
+    return view('login');
+});
+
+
+/*  Dokter */
+Route::get('/dokters', [DokterController::class, 'index']);
+Route::get('/dokters/create', [DokterController::class, 'create']);
+Route::post('/dokters/store', [DokterController::class, 'store'])->name('dokter.store');;
+Route::get('/dokters/edit/{id}', [DokterController::class, 'edit']);
+Route::put('/dokters/update/{id}', [DokterController::class, 'update']);
+/* Akhir */
