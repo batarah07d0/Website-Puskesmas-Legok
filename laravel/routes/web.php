@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProgramKegiatanController;
 use App\Http\Controllers\StrukturOrganisasiController;
@@ -25,6 +26,14 @@ Route::get('/login', function () {
     return view('login');
 });
 
+/* Pasien */
+Route::get('/pasien', [PasienController::class, 'index']);
+Route::delete('/pasien/{id}', [PasienController::class, 'delete']);
+Route::delete('/pasien/{id}/forceDelete', [PasienController::class, 'forceDelete']);
+Route::post('/pasien/store', [PasienController::class, 'store']);
+Route::put('/pasien/{id}/update', [PasienController::class, 'update']);
+Route::post('/pasien/{id}/restore', [PasienController::class, 'restore']);
+/* Akhir */
 
 /*  Dokter */
 Route::get('/dokters', [DokterController::class, 'index']);
