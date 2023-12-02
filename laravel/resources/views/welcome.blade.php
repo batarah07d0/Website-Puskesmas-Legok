@@ -1,61 +1,109 @@
-<!doctype html>
-<html>
+    <!doctype html>
+    <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        @vite('resources/css/app.css')
+    </head>
 
-<body>
+    <body>
+        <div class="h-[32rem]">
+            <div class="container max-w-full h-full bg-cover" style="background-image: url('/img/Group_10.png');">
+                <nav class="bg-opacity-50">
+                    <div class="mx-auto max-w-7xl -px-2 sm:px-6 lg:px-8 pt-10">
+                        <div class="relative flex h-16 items-center justify-between">
 
-    <div class="h-[32rem]">
-        <div class="container max-w-full h-full bg-cover" style="background-image: url('/img/Group_10.png');">
-            <nav class="bg-opacity-50">
-                <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                    <div class="relative flex h-16 items-center justify-between">
-
-                        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-24 ">
-                            <div class="flex flex-shrink-0 items-center">
-                                <img class="h-8 w-auto" src="../../img/LogoHeaderPuskesmas.png" alt="Your Company">
-                            </div>
-                            <form>
-                                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                                <div class="relative ">
-                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                        </svg>
-                                    </div>
-                                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
-
+                            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-14 ">
+                                <div class="flex flex-shrink-0 items-center mb-4">
+                                    <img class="h-24 pb-4 w-auto" src="../../img/logo.png" alt="Your Company">
+                                    <img class="h-10 pt-2 w-auto" src="../../img/name.png" alt="Your Company">
                                 </div>
-                            </form>
-                            <div class="hidden sm:ml-6 sm:block">
-                                <div class="flex space-x-4">
-                                    <a href="#" class="text-black  px-3 py-2 text-sm font-medium border-b-2 border-black hover:border-transparent focus:border-transparent " aria-current="page">Beranda</a>
-                                    <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Pelayanan</a>
-                                    <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Tentang Kami</a>
-                                    <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Program & Kegiatan</a>
+                                <form>
+                                    <div class="pt-8">
+                                        <input type="search" class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-green-600 bg-green-600 bg-opacity-20 bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none border-green-700 placeholder-opacity-50 text-black dark:placeholder:text-green-700 dark:focus:border-primary" id="exampleSearch" placeholder="Search" />
+
+                                    </div>
+                                </form>
+                                <div class="hidden sm:ml-6 sm:block pt-8">
+                                    <div class="flex space-x-4">
+                                        <a href="#" class="text-black  px-3 py-2 text-sm font-medium border-b-2 border-black hover:border-transparent focus:border-transparent " aria-current="page">Beranda</a>
+                                        <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Pelayanan</a>
+                                        <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Tentang Kami</a>
+                                        <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Program & Kegiatan</a>
+                                    </div>
+                                </div>
+                                <!-- <div>
+                                    <button class="bg-green-600 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded-full">
+                                            Login
+                                    </button>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="pt-14 text-4xl font-bold flex ml-32 font-montserrat text-green-700">
+                            <h1>Dapatkan Layanan Kesehatan <br /> yang Tepat dan Cepat</h1>
+                        </div>
+                        <div class="pt-14 pb-12 text-lg flex ml-32 font-montserrat text-green-700">
+                            <h2>Membantu anda untuk mendapatkan berbagai layanan <br /> kesehatan dimulai dari rumah dengan tepat dan <br /> cepat tanpa antrian </h2>
+                        </div>
+
+                        <div class="ml-32 text-green-700">
+                            <h2>Ambil nomor antrian online</h2>
+                        </div>
+
+                        <div class="z-10 relative h-28 pt-2rounded-lg my-auto border shadow-lg bg-white rounded-lg mx-40 gap-4 mt-2">
+                            <div class="flex gap-4">
+                                <div class="pt-8 ml-4 pl-[40px] w-70">
+                                    <select id="countries" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
+                                            focus:border-green-500 block w-full p-2.5 bg-green-700 bg-opacity-20 dark:border-green-600 dark:placeholder-green-400 text-green-700
+                                            dark:focus:ring-green-500 dark:focus:border-green-500">
+                                        <option selected>Pilih Jenis Layanan Kesehatan</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="FR">France</option>
+                                        <option value="DE">Germany</option>
+                                    </select>
+                                </div>
+
+                                <div class="pt-8 ml-8 w-60">
+                                    <select id="countries" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
+                                            focus:border-green-500 block w-full p-2.5 bg-green-700 bg-opacity-20 dark:border-green-600 dark:placeholder-green-400 text-green-700
+                                            dark:focus:ring-green-500 dark:focus:border-green-500">
+                                        <option selected>Pilih Jam Layanan</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="FR">France</option>
+                                        <option value="DE">Germany</option>
+                                    </select>
+                                </div>
+                                <div class="pt-8 ml-8">
+                                    <button class="w-56 bg-green-600 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded-lg mr-10">
+                                        Ambil Antrian
+                                    </button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="h-full">
+            <div class="container max-w-full h-full">
+                <div class="h-96 pt-32 bg-red-700">
+                    <div class="bg-white rounded-lg my-auto h-10 w-64 ml-72 shadow">
+                        <div class="ml-14 pt-1 text-lg font-bold">
+                            <h2>Jadwal Pelayanan</h2>
+                        </div>
+                    </div>
+
+                    <div class="text-white ml-72 pt-2">
+                        <h2>Senin <br /> Selasa <br />Rabu <br />Kamis <br />Jumat <br />Sabtu <br />Minggu <br /></h2>
+                    </div>
+
                 </div>
+            </div>
+        </div>
+    </body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
-</html>
+    </html>
