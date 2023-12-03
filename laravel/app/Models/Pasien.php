@@ -11,6 +11,7 @@ class Pasien extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $dates = ['deleted_at'];
     protected $fillable = [
         'nik', 'nama_lengkap', 'no_bpjs', 'tempat_lahir', 'tanggal_lahir',
         'kepala_keluarga', 'agama', 'kecamatan', 'desa', 'alamat',
