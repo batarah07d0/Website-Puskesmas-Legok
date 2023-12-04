@@ -4,51 +4,62 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProgramKegiatan;
+use Illuminate\Support\Facades\Storage;
 
 class ProgramKegiatanController extends Controller
 {
     public function index()
     {
-        $programKegiatan = ProgramKegiatan::all();
-        return view('program_kegiatan.index', compact('programKegiatan'));
+        $programkegiatan = ProgramKegiatan::all();
+        return view('programkegiatan.index', compact('programkegiatan'));
     }
 
     public function create()
     {
-        return view('program_kegiatan.create');
+        return view('programkegiatan.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama_event' => 'required',
             'deskripsi' => 'required',
-            'foto' => 'image|mimes:jpeg,png,jpg',
+            'foto' => 'required|image|mimes:jpeg,png,jpg',
             'tanggal_mulai' => 'required|date',
             'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
         ]);
 
+        $fileName = null;
+
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
-            $fileName = md5(time() . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('imgevent'), $fileName);
-            $request->merge(['foto' => 'uploads/' . $fileName]);
+            $extension = $file->getClientOriginalExtension();
+            $fileName = hash('md5', time() . $file->getClientOriginalName()) . '.' . $extension;
+
+            // Simpan di storage/app/public/imgpk
+            $file->storeAs('public/imgpk', $fileName);
         }
 
-        ProgramKegiatan::create($request->all());
+        ProgramKegiatan::create([
+            'nama_event' => $request->nama_event,
+            'deskripsi' => $request->deskripsi,
+            'foto' => $fileName,
+            'tanggal_mulai' => $request->tanggal_mulai,
+            'tanggal_selesai' => $request->tanggal_selesai,
+        ]);
 
-        return redirect('/program-kegiatan')->with('success', 'Program Kegiatan berhasil ditambahkan.');
+        return redirect('/programkegiatan')->with('success', 'Program Kegiatan berhasil ditambahkan.');
     }
     public function show($id)
     {
-        $programKegiatan = ProgramKegiatan::findOrFail($id);
-        return view('program_kegiatan.show', compact('programKegiatan'));
+        $programkegiatan = ProgramKegiatan::findOrFail($id);
+        return view('programkegiatan.show', compact('programkegiatan'));
     }
 
     public function edit($id)
     {
-        $programKegiatan = ProgramKegiatan::findOrFail($id);
-        return view('program_kegiatan.edit', compact('programKegiatan'));
+        $programkegiatan = ProgramKegiatan::findOrFail($id);
+        return view('programkegiatan.edit', compact('programkegiatan'));
     }
 
     public function update(Request $request, $id)
@@ -56,21 +67,28 @@ class ProgramKegiatanController extends Controller
         $request->validate([
             'nama_event' => 'required',
             'deskripsi' => 'required',
+            // 'foto' => 'image|mimes:jpeg,png,jpg',
             'tanggal_mulai' => 'required|date',
             'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
         ]);
 
-        $programKegiatan = ProgramKegiatan::findOrFail($id);
-        $programKegiatan->update($request->all());
+        $programkegiatan = ProgramKegiatan::find($id);
+        $programkegiatan->update([
+            'nama_event' => $request->nama_event,
+            'deskripsi' => $request->deskripsi,
+            'tanggal_mulai' => $request->tanggal_mulai,
+            'tanggal_selesai' => $request->tanggal_selesai,
+        ]);
 
-        return redirect()->route('program-kegiatan.index')->with('success', 'Data Program Kegiatan berhasil diperbarui.');
+
+
+        return redirect()->route('programkegiatan')->with('success', 'Data Program Kegiatan berhasil diperbarui.');
     }
-
     public function destroy($id)
     {
-        $programKegiatan = ProgramKegiatan::findOrFail($id);
-        $programKegiatan->delete();
+        $programkegiatan = ProgramKegiatan::findOrFail($id);
+        $programkegiatan->delete();
 
-        return redirect()->route('program-kegiatan.index')->with('success', 'Data Program Kegiatan berhasil dihapus.');
+        return redirect('/programkegiatan')->with('success', 'Data Program Kegiatan berhasil dihapus.');
     }
 }

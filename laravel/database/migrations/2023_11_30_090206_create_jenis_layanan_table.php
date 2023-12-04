@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('jenis_layanan', function (Blueprint $table) {
             $table->id();
-            $table->datetime('waktu_pelayan');
+            $table->time('waktu_pelayan');
             $table->enum('kategori', [
                 'Gawat Darurat',
                 'Rawat Jalan',

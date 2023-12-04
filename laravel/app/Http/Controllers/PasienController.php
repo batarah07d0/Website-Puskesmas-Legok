@@ -9,13 +9,12 @@ class PasienController extends Controller
 {
     public function index()
     {
-        $pasiens = Pasien::all();
-        return view('pasien.index', compact('pasiens'));
+        $pasien = Pasien::all();
+        return view('pasien.index', compact('pasien'));
     }
-    public function readDeleted()
+    public function create()
     {
-        $pasiens = Pasien::withTrashed();
-        return view('pasien.deleted', compact('pasiens'));
+        return view('pasien.create');
     }
     public function store(Request $request)
     {
@@ -28,9 +27,9 @@ class PasienController extends Controller
                 'tanggal_lahir' => 'required|date_format:Y-m-d',
                 'kepala_keluarga' => 'required',
                 'agama' => 'required',
-                'alamat' => 'required',
-                'desa' => 'required',
                 'kecamatan' => 'required',
+                'desa' => 'required',
+                'alamat' => 'required',
             ]
         );
         Pasien::create(
@@ -42,12 +41,17 @@ class PasienController extends Controller
                 'tanggal_lahir' => $request->tanggal_lahir,
                 'kepala_keluarga' => $request->kepala_keluarga,
                 'agama' => $request->agama,
-                'alamat' => $request->alamat,
+                'kecamatan' => $request->kecamatan,
                 'desa' => $request->desa,
-                'kecamatan' => $request->kecamatan
+                'alamat' => $request->alamat,
             ]
         );
-        return redirect('pasien')->with('success', 'Pasien berhasil ditambahkan');
+        return redirect('/pasien')->with('success', 'Pasien berhasil ditambahkan');
+    }
+    public function show(string $id)
+    {
+        $pasien = Pasien::findOrFail($id);
+        return view('pasien.show', compact('pasien'));
     }
     public function edit($id)
     {
@@ -56,39 +60,46 @@ class PasienController extends Controller
     }
     public function update(Request $request, $id)
     {
-        // $request->validate(
-        //     [
-        //         'nik' => 'required',
-        //         'nama_lengkap' => 'required',
-        //         'no_bpjs' => 'required',
-        //         'tempat_lahir' => 'required',
-        //         'tanggal_lahir' => 'required|date_format:Y-m-d',
-        //         'kepala_keluarga' => 'required',
-        //         'agama' => 'required',
-        //         'alamat' => 'required',
-        //         'desa' => 'required',
-        //         'kecamatan' => 'required',
-        //     ]
-        // );
+        $request->validate(
+            [
+                'nik' => 'required',
+                'nama_lengkap' => 'required',
+                'no_bpjs' => 'required',
+                'tanggal_lahir' => 'required|date_format:Y-m-d',
+                'tempat_lahir' => 'required',
+                'kepala_keluarga' => 'required',
+                'agama' => 'required',
+                'kecamatan' => 'required',
+                'desa' => 'required',
+                'alamat' => 'required',
+            ]
+        );
         $pasien = Pasien::find($id);
         $pasien->update([
-            'nama_lengkap' => $request->nama_lengkap
+            'nik' => $request->nik,
+            'nama_lengkap' => $request->nama_lengkap,
+            'no_bpjs' => $request->no_bpjs,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'kepala_keluarga' => $request->kepala_keluarga,
+            'agama' => $request->agama,
+            'kecamatan' => $request->kecamatan,
+            'desa' => $request->desa,
+            'alamat' => $request->alamat,
         ]);
-        return redirect('/pasien');
+        return redirect()->route('pasien')->with('success', 'Data pasien berhasil diperbarui.');
     }
-    public function delete($id)
+
+    public function destroy($id)
     {
-        Pasien::find($id)->delete();
-        return redirect('/pasien');
-    }
-    public function forceDelete($id)
-    {
-        Pasien::onlyTrashed()->where('id', $id)->forceDelete();
-        return redirect('/pasien');
+        $pasien = Pasien::find($id);
+        $pasien->delete();
+
+        return redirect()->route('pasien')->with('success', 'Data pasien berhasil dihapus.');
     }
     public function restore($id)
     {
         Pasien::withTrashed()->where('id', $id)->restore();
-        return redirect('/pasien');
+        return redirect()->route('pasien')->with('success', 'Data pasien berhasil dikembalikan.');
     }
 }

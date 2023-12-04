@@ -12,5 +12,7 @@ class ProgramKegiatan extends Model
 
     protected $table = 'program_kegiatan';
 
-    protected $fillable = ['nama_event', 'deskripsi', 'tanggal_mulai', 'tanggal_selesai'];
+    protected $fillable = [
+        'nama_event', 'deskripsi', 'foto', 'tanggal_mulai', 'tanggal_selesai',
+    ];
 }

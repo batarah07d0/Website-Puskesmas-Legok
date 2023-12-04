@@ -8,6 +8,15 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProgramKegiatanController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\JenisLayananController;
+use App\Models\Dokter;
+use App\Models\Fasilitas;
+use App\Models\JenisLayanan;
+use App\Models\Prestasi;
+use App\Models\ProgramKegiatan;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,51 +35,14 @@ Route::get('/login', function () {
     return view('login');
 });
 
-/* Pasien */
-Route::get('/pasien', [PasienController::class, 'index']);
-Route::delete('/pasien/{id}', [PasienController::class, 'delete']);
-Route::delete('/pasien/{id}/forceDelete', [PasienController::class, 'forceDelete']);
-Route::post('/pasien/store', [PasienController::class, 'store']);
-Route::put('/pasien/{id}/update', [PasienController::class, 'update']);
-Route::post('/pasien/{id}/restore', [PasienController::class, 'restore']);
-/* Akhir */
-
-/*  Dokter */
-Route::get('/dokters', [DokterController::class, 'index']);
-Route::get('/dokters/create', [DokterController::class, 'create']);
-Route::post('/dokters', [DokterController::class, 'store']);
-Route::get('/dokters/{id}/edit', [DokterController::class, 'edit']);
-Route::put('/dokters/{id}', [DokterController::class, 'update']);
-Route::get('/dokters/{id}/edit-jadwal', [DokterController::class, 'editJadwalPraktek']);
-Route::put('/dokters/{id}/update-jadwal', [DokterController::class, 'updateJadwalPraktek']);
-Route::delete('/dokters/{id}', [DokterController::class, 'destroy']);
-/* Akhir */
-
-/* Staff */
-Route::get('/staff', [StaffController::class, 'index'])->name('staff.index');
-Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
-Route::post('/staff/store', [StaffController::class, 'store'])->name('staff.store');
-Route::get('/staff/{id}/edit', [StaffController::class, 'edit'])->name('staff.edit');
-Route::put('/staff/{id}/update', [StaffController::class, 'update'])->name('staff.update');
-Route::delete('/staff/{id}/destroy', [StaffController::class, 'destroy'])->name('staff.destroy');
-/* Akhir */
 
 
 /* Fasilitas */
 Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
 /* Akhir */
 
-/* Prestasi */
-Route::get('/prestasi', [PrestasiController::class, 'index']);
-Route::get('/prestasi/create', [PrestasiController::class, 'create']);
-Route::post('/prestasi/store', [PrestasiController::class, 'store']);
-/* Akhir */
 
-/* Program Kegiatan */
-Route::get('/program-kegiatan', [ProgramKegiatanController::class, 'index']);
-Route::get('/program-kegiatan/create', [ProgramKegiatanController::class, 'create']);
-Route::post('/program-kegiatan/store', [ProgramKegiatanController::class, 'store']);
-/*  Akhir */
+
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
@@ -79,4 +51,111 @@ Route::post('/struktur-organisasi', [StrukturOrganisasiController::class, 'store
 Route::get('/struktur-organisasi/{id}/edit', [StrukturOrganisasiController::class, 'edit']);
 Route::put('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'update']);
 Route::delete('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'destroy']);
+/* Akhir */
+
+
+/* Admin */
+Route::controller(AuthController::class)->group(function () {
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerSave')->name('register.save');
+
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'loginAction')->name('login.action');
+
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    /* Staff */
+    Route::controller(StaffController::class)->prefix('staff')->group(function () {
+        Route::get('', 'index')->name('staff');
+        Route::get('create', 'create')->name('staff.create');
+        Route::post('store', 'store')->name('staff.store');
+        Route::get('show/{id}', 'show')->name('staff.show');
+        Route::get('edit/{id}', 'edit')->name('staff.edit');
+        Route::put('edit/{id}', 'update')->name('staff.update');
+        Route::delete('destroy/{id}', 'destroy')->name('staff.destroy');
+    });
+    /* Akhir */
+
+    /* Prestasi */
+    Route::controller(PrestasiController::class)->prefix('prestasi')->group(function () {
+        Route::get('', 'index')->name('prestasi');
+        Route::get('create', 'create')->name('prestasi.create');
+        Route::post('store', 'store')->name('prestasi.store');
+        Route::get('show/{id}', 'show')->name('prestasi.show');
+        Route::get('edit/{id}', 'edit')->name('prestasi.edit');
+        Route::put('edit/{id}', 'update')->name('prestasi.update');
+        Route::delete('destroy/{id}', 'destroy')->name('prestasi.destroy');
+    });
+    /* Akhir */
+
+    /* Dokter  */
+    Route::controller(DokterController::class)->prefix('dokter')->group(function () {
+        Route::get('', 'index')->name('dokter');
+        Route::get('create', 'create')->name('dokter.create');
+        Route::post('store', 'store')->name('dokter.store');
+        Route::get('show/{id}', 'show')->name('dokter.show');
+        Route::get('edit/{id}', 'edit')->name('dokter.edit');
+        Route::put('edit/{id}', 'update')->name('dokter.update');
+        Route::delete('destroy/{id}', 'destroy')->name('dokter.destroy');
+    });
+    /* Akhir */
+
+    /* Pasien  */
+    Route::controller(PasienController::class)->prefix('pasien')->group(function () {
+        Route::get('', 'index')->name('pasien');
+        Route::get('create', 'create')->name('pasien.create');
+        Route::post('store', 'store')->name('pasien.store');
+        Route::get('show/{id}', 'show')->name('pasien.show');
+        Route::get('edit/{id}', 'edit')->name('pasien.edit');
+        Route::put('edit/{id}', 'update')->name('pasien.update');
+        Route::delete('destroy/{id}', 'destroy')->name('pasien.destroy');
+    });
+    /* Akhir */
+
+    /* Jenis Layanan  */
+    Route::controller(JenisLayananController::class)->prefix('jenislayanan')->group(function () {
+        Route::get('', 'index')->name('jenislayanan');
+        Route::get('create', 'create')->name('jenislayanan.create');
+        Route::post('store', 'store')->name('jenislayanan.store');
+        Route::get('show/{id}', 'show')->name('jenislayanan.show');
+        Route::get('edit/{id}', 'edit')->name('jenislayanan.edit');
+        Route::put('edit/{id}', 'update')->name('jenislayanan.update');
+        Route::delete('destroy/{id}', 'destroy')->name('jenislayanan.destroy');
+    });
+    /* Akhir */
+    /* Program Kegiatan  */
+    Route::controller(ProgramKegiatanController::class)->prefix('programkegiatan')->group(function () {
+        Route::get('', 'index')->name('programkegiatan');
+        Route::get('create', 'create')->name('programkegiatan.create');
+        Route::post('store', 'store')->name('programkegiatan.store');
+        Route::get('show/{id}', 'show')->name('programkegiatan.show');
+        Route::get('edit/{id}', 'edit')->name('programkegiatan.edit');
+        Route::put('edit/{id}', 'update')->name('programkegiatan.update');
+        Route::delete('destroy/{id}', 'destroy')->name('programkegiatan.destroy');
+    });
+    /* Akhir */
+    /* Fasilitas  */
+    Route::controller(FasilitasController::class)->prefix('fasilitas')->group(function () {
+        Route::get('', 'index')->name('fasilitas');
+        Route::get('create', 'create')->name('fasilitas.create');
+        Route::post('store', 'store')->name('fasilitas.store');
+        Route::get('show/{id}', 'show')->name('fasilitas.show');
+        Route::get('edit/{id}', 'edit')->name('fasilitas.edit');
+        Route::put('edit/{id}', 'update')->name('fasilitas.update');
+        Route::delete('destroy/{id}', 'destroy')->name('fasilitas.destroy');
+    });
+    /* Akhir */
+
+
+
+    Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
+});
+
+
 /* Akhir */
