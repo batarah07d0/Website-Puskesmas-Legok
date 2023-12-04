@@ -27,7 +27,7 @@
                                     </div>
                                 </form>
                                 <div class="hidden sm:ml-6 sm:block pt-8">
-                                    <div class="flex space-x-4">
+                                    <div class="flex space-x-4 font-montserrat">
                                         <a href="#" class="text-black  px-3 py-2 text-sm font-medium border-b-2 border-black hover:border-transparent focus:border-transparent " aria-current="page">Beranda</a>
                                         <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Pelayanan</a>
                                         <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Tentang Kami</a>
@@ -48,7 +48,7 @@
                             <h2>Membantu anda untuk mendapatkan berbagai layanan <br /> kesehatan dimulai dari rumah dengan tepat dan <br /> cepat tanpa antrian </h2>
                         </div>
 
-                        <div class="z-10 relative h-28 pt-2rounded-lg my-auto border shadow-lg bg-white rounded-lg mx-40 gap-4 mt-8">
+                        <div class="z-10 relative h-28 pt-2rounded-lg my-auto border shadow-lg bg-white rounded-lg mx-40 gap-4 mt-8 font-montserrat">
                             <div class="ml-14 pt-2 text-green-700 font-bold">
                                 <h2>Ambil Nomor Antrian Online</h2>
                             </div>
@@ -56,8 +56,12 @@
                                 <div class="pt-2 ml-4 pl-[40px] w-70">
                                     <select id="countries" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
                                             focus:border-green-500 block w-full p-2.5 bg-green-700 bg-opacity-20 dark:border-green-600 dark:placeholder-green-400 text-green-700
-                                            dark:focus:ring-green-500 dark:focus:border-green-500">
+                                            dark:focus:ring-green-500 dark:focus:border-green-500 font-montserrat">
                                         <option selected>Pilih Jenis Layanan Kesehatan</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="FR">France</option>
+                                        <option value="DE">Germany</option>
                                         <option value="US">United States</option>
                                         <option value="CA">Canada</option>
                                         <option value="FR">France</option>
@@ -68,15 +72,15 @@
                                 <div class="pt-2 ml-8 w-60">
                                     <select id="countries" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
                                             focus:border-green-500 block w-full p-2.5 bg-green-700 bg-opacity-20 dark:border-green-600 dark:placeholder-green-400 text-green-700
-                                            dark:focus:ring-green-500 dark:focus:border-green-500">
+                                            dark:focus:ring-green-500 dark:focus:border-green-500 font-montserrat">
                                         <option selected>Pilih Jam Layanan</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
+                                        <option value="#">08:00</option>
+                                        <option value="#">09:00</option>
+                                        <option value="#">10:00</option>
+                                        <option value="#">11:00</option>
                                     </select>
                                 </div>
-                                <div class="pt-2 ml-8">
+                                <div class="pt-2 ml-8 font-montserrat">
                                     <button class="w-56 bg-green-600 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded-lg mr-10">
                                         Ambil Antrian
                                     </button>
@@ -91,7 +95,7 @@
         <div class="h-[32rem]">
             <div class="container max-w-full h-full bg-custom-color3 relative">
                 <div class="flex flex-row justify-center items-center pt-32 gap-80">
-                    <div class="flex flex-col text-green-700">
+                    <div class="flex flex-col text-green-700 font-montserrat">
                         <div class="flex justify-center text-lg bg-white rounded shadow-lg">
                             Jadwal Pelayanan
                         </div>
@@ -143,7 +147,7 @@
                                 07:30 - 23:00
                             </div>
                         </div>
-                        <div class="flex flex-row gap-7 justify-start">
+                        <div class="flex flex-row gap-9 justify-start">
                             <div>
                                 Minggu
                             </div>
@@ -167,7 +171,7 @@
         <div class="h-[32rem]">
             <div class="container max-w-full h-full bg-green-200 bg-opacity-70 px-8 py-4">
                 <div class="flex justify-center">
-                    <div class="bg-white rounded-xl mt-5 p-5 px-12 shadow-lg text-4xl text-center text-green-700 font-bold">
+                    <div class=" font-montserrat bg-white rounded-xl mt-5 p-5 px-12 shadow-lg text-4xl text-center text-green-700 font-bold">
                         <h1>Our Program</h1>
                     </div>
                 </div>
@@ -183,7 +187,7 @@
         <div class="h-[32rem]">
             <div class="container max-w-full h-full bg-custom-color3 bg-opacity-70 px-8 py-4">
                 <div class="flex justify-center">
-                    <div class="bg-white rounded-xl mt-5 p-5 px-12 shadow-lg text-4xl text-center text-green-700 font-bold">
+                    <div class="font-montserrat bg-white rounded-xl mt-5 p-5 px-12 shadow-lg text-4xl text-center text-green-700 font-bold">
                         <h1>Our Post</h1>
                     </div>
                 </div>
@@ -197,7 +201,7 @@
         </div>
 
         <div class="h-[32rem]">
-            <div class="container max-w-full h-full bg-custom-color3 bg-opacity-70 px-8 py-4">
+            <div class="container max-w-full h-full bg-custom-color3 bg-opacity-70 px-8 py-4 font-montserrat">
                 <div class="flex justify-center">
                     <div class="bg-white rounded-xl mt-5 p-5 px-12 shadow-lg text-4xl text-center text-green-700 font-bold">
                         <h1>Frequently Asked Question (FAQ)</h1>
@@ -209,14 +213,19 @@
                         <ul class="flex flex-col">
                             <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
                                 <h2 @click="handleClick()" class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer">
-                                    <span>When will my order arrive?</span>
+                                    <span>Jam berapa pelayanan di Puskesmas Legok</span>
                                     <svg :class="handleRotate()" class="fill-current text-green-700 h-6 w-6 transform transition-transform duration-500" viewBox="0 0 20 20">
                                         <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
                                     </svg>
                                 </h2>
                                 <div x-ref="tab" :style="handleToggle()" class="border-l-2 border-green-600 overflow-hidden max-h-0 duration-500 transition-all">
                                     <p class="p-3 text-gray-900">
-                                        Shipping time is set by our delivery partners, according to the delivery method chosen by you. Additional details can be found in the order confirmation
+                                        Jam pelayanan UPT Puskesmas Sumberasih <br />
+                                        Rawat jalan <br />
+                                        Senin - Kamis: 07:30-13:00 <br />
+                                        Jum'at: 07:30-10:30 <br />
+                                        Sabtu: 07:30-11:00 <br />
+                                        Hari Libur/Besar: Libur
                                     </p>
                                 </div>
                             </li>
