@@ -48,13 +48,12 @@
                             <h2>Membantu anda untuk mendapatkan berbagai layanan <br /> kesehatan dimulai dari rumah dengan tepat dan <br /> cepat tanpa antrian </h2>
                         </div>
 
-                        <div class="ml-32 text-green-700">
-                            <h2>Ambil nomor antrian online</h2>
-                        </div>
-
-                        <div class="z-10 relative h-28 pt-2rounded-lg my-auto border shadow-lg bg-white rounded-lg mx-40 gap-4 mt-2">
+                        <div class="z-10 relative h-28 pt-2rounded-lg my-auto border shadow-lg bg-white rounded-lg mx-40 gap-4 mt-8">
+                            <div class="ml-14 pt-2 text-green-700 font-bold">
+                                <h2>Ambil Nomor Antrian Online</h2>
+                            </div>
                             <div class="flex gap-4">
-                                <div class="pt-8 ml-4 pl-[40px] w-70">
+                                <div class="pt-2 ml-4 pl-[40px] w-70">
                                     <select id="countries" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
                                             focus:border-green-500 block w-full p-2.5 bg-green-700 bg-opacity-20 dark:border-green-600 dark:placeholder-green-400 text-green-700
                                             dark:focus:ring-green-500 dark:focus:border-green-500">
@@ -66,7 +65,7 @@
                                     </select>
                                 </div>
 
-                                <div class="pt-8 ml-8 w-60">
+                                <div class="pt-2 ml-8 w-60">
                                     <select id="countries" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
                                             focus:border-green-500 block w-full p-2.5 bg-green-700 bg-opacity-20 dark:border-green-600 dark:placeholder-green-400 text-green-700
                                             dark:focus:ring-green-500 dark:focus:border-green-500">
@@ -77,7 +76,7 @@
                                         <option value="DE">Germany</option>
                                     </select>
                                 </div>
-                                <div class="pt-8 ml-8">
+                                <div class="pt-2 ml-8">
                                     <button class="w-56 bg-green-600 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded-lg mr-10">
                                         Ambil Antrian
                                     </button>
