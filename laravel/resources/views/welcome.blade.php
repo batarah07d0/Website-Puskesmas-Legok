@@ -54,23 +54,19 @@
                             </div>
                             <div class="flex gap-4">
                                 <div class="pt-2 ml-4 pl-[40px] w-70">
-                                    <select id="countries" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
+                                    <select id="layanan" class="bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
                                             focus:border-green-500 block w-full p-2.5 bg-green-700 bg-opacity-20 dark:border-green-600 dark:placeholder-green-400 text-green-700
                                             dark:focus:ring-green-500 dark:focus:border-green-500 font-montserrat">
                                         <option selected>Pilih Jenis Layanan Kesehatan</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
+                                        <option value="#">Poli Gigi</option>
+                                        <option value="#">Poli Umum</option>
+                                        <option value="#">Poli Lansia dan Ibu Hamil</option>
+                                        <option value="#">Poli Kesehatan Ibu dan Anak</option>
                                     </select>
                                 </div>
 
                                 <div class="pt-2 ml-8 w-60">
-                                    <select id="countries" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
+                                    <select id="jam" class=" bg-gray-50 border border-green-600 text-green-700 text-sm rounded-lg focus:ring-green-500
                                             focus:border-green-500 block w-full p-2.5 bg-green-700 bg-opacity-20 dark:border-green-600 dark:placeholder-green-400 text-green-700
                                             dark:focus:ring-green-500 dark:focus:border-green-500 font-montserrat">
                                         <option selected>Pilih Jam Layanan</option>
@@ -201,7 +197,7 @@
         </div>
 
         <div class="h-[32rem]">
-            <div class="container max-w-full h-full bg-custom-color3 bg-opacity-70 px-8 py-4 font-montserrat">
+            <div class="container max-w-full h-full bg-custom-color3 bg-opacity-70 px-8 py-4 font-montserrat overflow-hidden">
                 <div class="flex justify-center">
                     <div class="bg-white rounded-xl mt-5 p-5 px-12 shadow-lg text-4xl text-center text-green-700 font-bold">
                         <h1>Frequently Asked Question (FAQ)</h1>
@@ -231,14 +227,31 @@
                             </li>
                             <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
                                 <h2 @click="handleClick()" class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer">
-                                    <span>How do I track my order?</span>
+                                    <span>Apa saja pelayanan yang ada di Puskesmas Legok?</span>
                                     <svg :class="handleRotate()" class="fill-current text-green-700 h-6 w-6 transform transition-transform duration-500" viewBox="0 0 20 20">
                                         <path d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"></path>
                                     </svg>
                                 </h2>
-                                <div class="border-l-2 border-green-600 overflow-hidden max-h-0 duration-500 transition-all" x-ref="tab" :style="handleToggle()">
+                                <div class="border-l-2 border-green-600 overflow-hidden max-h-0 h-24 duration-500 transition-all overflow-y-auto" x-ref="tab" :style="handleToggle()">
                                     <p class="p-3 text-gray-900">
-                                        Once shipped, you’ll get a confirmation email that includes a tracking number and additional information regarding tracking your order.
+                                        Pelayanan Puskesmas Legok <br>
+                                        - Pelayanan Gawat Darurat (Senin - Sabtu) <br>
+                                        - Pelayanan Kesehatan Gigi dan Mulut (Senin - Sabtu) <br>
+                                        - Pelayanan Kesehatan Ibu (Senin - Sabtu) <br>
+                                        - Pelayanan Kesehatan Anak (Senin - Sabtu) <br>
+                                        - Pelayanan Imunisasi (Selasa & Kamis) <br>
+                                        - Pelayanan Persalinan (Setiap Hari 24 Jam) <br>
+                                        - Pelayanan KB (Senin - Sabtu) <br>
+                                        - Pelayanan Saffron (Rabu) <br>
+                                        - Pelayanan IVA (Sabtu) <br>
+                                        - Pelayanan Gizi (Selasa & Kamis) <br>
+                                        - Pelayanan TB Paru (Rabu) <br>
+                                        - Pelayanan Kusta (Kamis) <br>
+                                        - Pelayanan Sanitasi (Rabu & Kamis) <br>
+                                        - Pelayanan Kesehatan Remaja (Rabu) <br>
+                                        - Pelayanan Kesehatan Lansia (Senin - Sabtu) <br>
+                                        - Pelayanan Laboratorium (Senin - Sabtu) <br>
+                                        - Pelayanan Kefarmasian (Senin - Sabtu) <br>
                                     </p>
                                 </div>
                             </li>
