@@ -88,19 +88,86 @@
             </div>
         </div>
 
-        <div class="h-full">
-            <div class="container max-w-full h-full">
-                <div class="h-96 pt-32 bg-red-700">
-                    <div class="bg-white rounded-lg my-auto h-10 w-64 ml-72 shadow">
-                        <div class="ml-14 pt-1 text-lg font-bold">
-                            <h2>Jadwal Pelayanan</h2>
+        <div class="h-[32rem]">
+            <div class="container max-w-full h-full bg-custom-color3 relative">
+                <div class="flex flex-row justify-center items-center pt-32 gap-80">
+                    <div class="flex flex-col text-green-700">
+                        <div class="flex justify-center text-lg bg-white rounded shadow-lg">
+                            Jadwal Pelayanan
+                        </div>
+                        <div class="flex flex-row gap-10 justify-between pt-2">
+                            <div class="">
+                                Senin
+                            </div>
+                            <div>
+                                07:30 - 01:00
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-10 justify-between">
+                            <div>
+                                Selasa
+                            </div>
+                            <div>
+                                07:30 - 01:00
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-10 justify-between">
+                            <div>
+                                Rabu
+                            </div>
+                            <div>
+                                07:30 - 01:00
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-10 justify-between">
+                            <div>
+                                Kamis
+                            </div>
+                            <div>
+                                07:30 - 01:00
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-10 justify-between">
+                            <div>
+                                Jumat
+                            </div>
+                            <div>
+                                07:30 - 23:00
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-10 justify-between">
+                            <div>
+                                Sabtu
+                            </div>
+                            <div>
+                                07:30 - 23:00
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-7 justify-start">
+                            <div>
+                                Minggu
+                            </div>
+                            <div>
+                                Libur
+                            </div>
                         </div>
                     </div>
-
-                    <div class="text-white ml-72 pt-2">
-                        <h2>Senin <br /> Selasa <br />Rabu <br />Kamis <br />Jumat <br />Sabtu <br />Minggu <br /></h2>
+                    <div class="flex flex-row justify-center items-center">
+                        <div class="">
+                            <img src="../../img/logoPuskesmasLegok.png" class="w-48" alt="Puskesmas Legok">
+                        </div>
+                        <div class="">
+                            <img src="../../img/logoBanten.png" class="w-28" alt="Logo Satya">
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="h-[32rem]">
+            <div class="container max-w-full h-full bg-green-200 bg-opacity-70 px-8 py-4">
+                <div class="bg-gray-100 p-4 shadow-m text-4xl text-center ">
+                    <h1>Our Program</h1>
                 </div>
             </div>
         </div>
