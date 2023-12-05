@@ -97,16 +97,16 @@
             <div class="flex flex-row gap-8 justify-center pt-24 overflow-x-auto pb-5">
                 @foreach($photos as $p)
                 <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
-                    <img src="{{ asset('storage/' . $p->foto) }}" alt="Program Kegiatan Photo">
+                    <img src="{{ asset('storage/imgpk/' . $p->foto) }}" alt="Program Kegiatan Photo">
                 </div>
                 <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
-                    <img src="{{ asset('storage/' . $p->foto) }}" alt="Program Kegiatan Photo">
+                    <img src="{{ asset('storage/imgpk/' . $p->foto) }}" alt="Program Kegiatan Photo">
                 </div>
                 <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
-                    <img src="{{ asset('storage/' . $p->foto) }}" alt="Program Kegiatan Photo">
+                    <img src="{{ asset('storage/imgpk/' . $p->foto) }}" alt="Program Kegiatan Photo">
                 </div>
                 <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
-                    <img src="{{ asset('storage/' . $p->foto) }}" alt="Program Kegiatan Photo">
+                    <img src="{{ asset('storage/imgpk/' . $p->foto) }}" alt="Program Kegiatan Photo">
                 </div>
                 @endforeach
             </div>
