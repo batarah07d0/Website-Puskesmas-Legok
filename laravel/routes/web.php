@@ -11,6 +11,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JenisLayananController;
+use App\Http\Controllers\HomeController;
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
@@ -31,11 +32,9 @@ use App\Models\ProgramKegiatan;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', function () {
-    return view('login');
-});
+
 Route::get('/program-kegiatan', function () {
-    return view('program-kegiatan');
+    return view('progkegdepan.index');
 });
 
 
