@@ -16,6 +16,9 @@ use App\Http\Controllers\DokterController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/tentangkami', function () {
+    return view('aboutus');
+});
 Route::get('/login', function () {
     return view('login');
 });
