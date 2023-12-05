@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col mb-3">
             <label class="form-label">Foto</label>
-            <img src="{{ asset('imgstaff/' . $staff->foto) }}" alt="Foto" style="width: 25rem; height: auto; display: block; margin-bottom: 10px;">
+            <img src="{{ Storage::url('imgstaff/' . $staff->foto) }}" alt="Foto" style="width: 25rem; height: auto; display: block; margin-bottom: 10px;">
             <input type="file" name="foto" value="{{ $staff->foto }}">
         </div>
 
