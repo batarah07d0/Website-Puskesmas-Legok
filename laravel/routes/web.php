@@ -43,8 +43,11 @@ Route::get('/program-kegiatan', function () {
 Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
 /* Akhir */
 
-
-
+/* About Us */
+Route::get('/tentangkami', function () {
+    return view('aboutus');
+});
+/* Akhir */
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
@@ -153,8 +156,6 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('fasilitas.destroy');
     });
     /* Akhir */
-
-
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 });
