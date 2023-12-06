@@ -58,7 +58,6 @@ Route::put('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'u
 Route::delete('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'destroy']);
 /* Akhir */
 
-
 /* Admin */
 Route::controller(AuthController::class)->group(function () {
     Route::get('register', 'register')->name('register');
@@ -134,6 +133,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('jenislayanan.destroy');
     });
     /* Akhir */
+
     /* Program Kegiatan  */
     Route::controller(ProgramKegiatanController::class)->prefix('programkegiatan')->group(function () {
         Route::get('', 'index')->name('programkegiatan');
@@ -145,6 +145,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('programkegiatan.destroy');
     });
     /* Akhir */
+
     /* Fasilitas  */
     Route::controller(FasilitasController::class)->prefix('fasilitas')->group(function () {
         Route::get('', 'index')->name('fasilitas');
