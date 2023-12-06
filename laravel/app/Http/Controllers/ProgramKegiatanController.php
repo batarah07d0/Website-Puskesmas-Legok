@@ -24,28 +24,26 @@ class ProgramKegiatanController extends Controller
         $request->validate([
             'nama_event' => 'required',
             'deskripsi' => 'required',
-            'foto' => 'required|image|mimes:jpeg,png,jpg',
             'tanggal_mulai' => 'required|date',
             'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
+            'foto' => 'required|image|mimes:jpeg,png,jpg',
         ]);
 
-        $fileName = null;
 
-        if ($request->hasFile('foto')) {
-            $file = $request->file('foto');
-            $extension = $file->getClientOriginalExtension();
-            $fileName = hash('md5', time() . $file->getClientOriginalName()) . '.' . $extension;
+        $file = $request->file('foto');
+        $extension = $file->getClientOriginalExtension();
+        $fileName = hash('md5', time() . $file->getClientOriginalName()) . '.' . $extension;
 
-            // Simpan di storage/app/public/imgpk
-            $file->storeAs('public/imgpk', $fileName);
-        }
+        // Simpan di storage/app/public/imgpk
+        $file->storeAs('public/imgpk', $fileName);
+
 
         ProgramKegiatan::create([
             'nama_event' => $request->nama_event,
             'deskripsi' => $request->deskripsi,
-            'foto' => $fileName,
             'tanggal_mulai' => $request->tanggal_mulai,
             'tanggal_selesai' => $request->tanggal_selesai,
+            'foto' => $fileName,
         ]);
 
         return redirect('/programkegiatan')->with('success', 'Program Kegiatan berhasil ditambahkan.');
@@ -67,18 +65,45 @@ class ProgramKegiatanController extends Controller
         $request->validate([
             'nama_event' => 'required',
             'deskripsi' => 'required',
-            // 'foto' => 'image|mimes:jpeg,png,jpg',
             'tanggal_mulai' => 'required|date',
             'tanggal_selesai' => 'required|date|after_or_equal:tanggal_mulai',
+            'foto' => 'image|mimes:jpeg,png,jpg',
         ]);
 
+
+
         $programkegiatan = ProgramKegiatan::find($id);
-        $programkegiatan->update([
-            'nama_event' => $request->nama_event,
-            'deskripsi' => $request->deskripsi,
-            'tanggal_mulai' => $request->tanggal_mulai,
-            'tanggal_selesai' => $request->tanggal_selesai,
-        ]);
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = hash('md5', time() . $file->getClientOriginalName()) . '.' . $extension;
+
+            // Simpan di storage/app/public/imgpk
+            $file->storeAs('public/imgpk', $fileName);
+
+            // Hapus foto lama jika ada
+            if ($programkegiatan->foto) {
+                Storage::delete('public/imgpk/' . $programkegiatan->foto);
+            }
+
+            $programkegiatan->update([
+                'nama_event' => $request->nama_event,
+                'deskripsi' => $request->deskripsi,
+                'tanggal_mulai' => $request->tanggal_mulai,
+                'tanggal_selesai' => $request->tanggal_selesai,
+                'foto' => $fileName,
+            ]);
+        } else {
+            // Jika tidak ada file foto baru
+            $programkegiatan->update([
+                'nama_event' => $request->nama_event,
+                'deskripsi' => $request->deskripsi,
+                'tanggal_mulai' => $request->tanggal_mulai,
+                'tanggal_selesai' => $request->tanggal_selesai,
+            ]);
+        }
+
 
 
 

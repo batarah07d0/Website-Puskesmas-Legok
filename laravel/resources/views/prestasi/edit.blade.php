@@ -11,8 +11,7 @@
     <div class="row">
         <div class="col mb-3">
             <label class="form-label">Foto</label>
-            <img src="{{ asset('imgprestasi/' . $prestasi->foto) }}" alt="Foto" style="width: 25rem; height: auto; display: block; margin-bottom: 10px;">
-            <input type="file" name="foto" placeholder="Foto" value="{{ $prestasi->foto }}">
+            <img src="{{ Storage::url('imgprestasi/' . $prestasi->foto) }}" alt="Foto" style="width: 25rem; height: auto; display: block; margin-bottom: 10px;"> <input type="file" name="foto" placeholder="Foto" value="{{ $prestasi->foto }}">
         </div>
         <div class="col mb-3">
             <label class="form-label">Deskripsi</label>
