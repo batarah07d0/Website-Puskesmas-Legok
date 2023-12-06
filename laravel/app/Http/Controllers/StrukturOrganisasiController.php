@@ -9,7 +9,7 @@ class StrukturOrganisasiController extends Controller
 {
     public function index()
     {
-        $strukturOrganisasis = StrukturOrganisasi::all();
+        $strukturOrganisasi = StrukturOrganisasi::all();
         return view('struktur_organisasi.index', compact('strukturOrganisasi'));
     }
 
