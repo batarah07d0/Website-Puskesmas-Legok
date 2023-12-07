@@ -38,6 +38,21 @@ Route::get('/program-kegiatan', function () {
     return view('program-kegiatan');
 });
 
+Route::get('/detaildokter', function () {
+    return view('detaildokter');
+});
+
+Route::get('/daftaronline', function () {
+    return view('daftaronline');
+});
+
+Route::get('/jadwaldokter', function () {
+    return view('jadwaldokter');
+});
+
+Route::get('/persetujuanumum', function () {
+    return view('persetujuanumum');
+});
 
 
 /* Fasilitas */
