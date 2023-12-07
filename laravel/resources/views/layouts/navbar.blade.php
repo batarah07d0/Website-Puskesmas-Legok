@@ -16,7 +16,7 @@
                     {{ auth()->user()->name }}
                     <br>
                 </span>
-                <img class="img-profile rounded-circle" src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg">
+                <img class="img-profile rounded-circle" src="{{ asset('img/logo.png') }}">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

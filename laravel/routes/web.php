@@ -33,17 +33,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/program-kegiatan', function () {
-    return view('progkegdepan.index');
-});
+// Route::controller(HomeController::class)->group(
+//     function () {
+//         Route::get('/program-kegiatan', 'index');
+//     }
+// );
 
-
-
-/* Fasilitas */
-Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
-/* Akhir */
-
-
+Route::get('/program-kegiatan', [HomeController::class, 'index']);
+// Route::get('/program-kegiatan', function () {
+//     return view('progkegdepan.index');
+// });
 
 
 /* Struktur Organisasi */
@@ -67,7 +66,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('logout', 'logout')->middleware('auth')->name('logout');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'check.mobile.device'])->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -153,10 +152,6 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('fasilitas.destroy');
     });
     /* Akhir */
-
-
-
-    Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 });
 
 
