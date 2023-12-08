@@ -40,9 +40,7 @@ Route::get('/', function () {
 // );
 
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
-// Route::get('/program-kegiatan', function () {
-//     return view('progkegdepan.index');
-// });
+
 
 
 /* Struktur Organisasi */
