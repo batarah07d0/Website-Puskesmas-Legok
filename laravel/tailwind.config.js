@@ -12,6 +12,7 @@ module.exports = {
                 "custom-color": "#5D9F68",
                 "custom-color2": "#5D9F68",
                 "custom-color3": "#F5FFF4",
+                "background-green" : "#EBFEEA",
             },
             height: {
                 128: "32rem",

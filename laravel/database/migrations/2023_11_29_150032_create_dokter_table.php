@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('dokter', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('foto', 2048);
+            $table->string('foto');
             $table->string('pendidikan');
             $table->string('spesialisasi');
             $table->datetime('jadwal_praktek');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

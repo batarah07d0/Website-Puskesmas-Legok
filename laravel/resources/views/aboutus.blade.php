@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css','resources/js/app.js'])
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script> --}}
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     <title>Tentang Kami</title>
     <style>
         body {
@@ -20,60 +20,79 @@
 </head>
 
 <body>
-    <div class="h-[32rem]">
+    <div class="h-[24rem] lg:h-[32rem]">
         <div class="container max-w-full h-full bg-cover" style="background-image: url('/img/Group_10.png');">
             <nav class="bg-opacity-50">
-                <div class="mx-auto max-w-7xl -px-2 sm:px-6 lg:px-8 pt-10">
-                    <div class="relative flex h-16 items-center justify-between">
-
-                        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-14 ">
-                            <div class="flex flex-shrink-0 items-center mb-4">
-                                <img class="h-24 pb-4 w-auto" src="../../img/logo.png" alt="Your Company">
-                                <img class="h-10 pt-2 w-auto" src="../../img/name.png" alt="Your Company">
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="img/logo.png" class="w-16 md:w-24" alt="Logo Puskesmas Legok" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                            <img src="img/name.png" class="w-24 md:w-36">
+                        </span>
+                    </a>
+                    <div class="flex md:order-2">
+                        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span class="sr-only">Search</span>
+                        </button>
+                        <div class="relative hidden md:block ">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class=" text-gray-500 dark:text-gray-400 p-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                                <span class="sr-only">Search icon</span>
                             </div>
-                            <form>
-                                <div class="pt-8">
-                                    <input type="search" class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-green-600 bg-green-600 bg-opacity-20 bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none border-green-700 placeholder-opacity-50 text-black dark:placeholder:text-green-700 dark:focus:border-primary" id="exampleSearch" placeholder="Search" />
-
-                                </div>
-                            </form>
-                            <div class="hidden sm:ml-6 sm:block pt-8">
-                                <div class="flex space-x-4">
-                                    <a href="#" class="text-black  px-3 py-2 text-sm font-medium border-b-2 border-black hover:border-transparent focus:border-transparent " aria-current="page">Beranda</a>
-                                    <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Pelayanan</a>
-                                    <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Tentang Kami</a>
-                                    <a href="#" class="text-black  hover:font-bold px-3 py-2 text-sm font-medium">Program & Kegiatan</a>
-                                </div>
-                            </div>
-                            <!-- <div>
-                                <button class="bg-green-600 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded-full">
-                                        Login
-                                </button>
-                            </div> -->
+                            <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
                         </div>
+                        <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
                     </div>
-                    <div class="container pt-14 h-fit overflow-hidden">
-                        <div class="columns">
-                            <div class=" flex font-montserrat text-green-700 justify-around">
-                                <div class="flex flex-col w-2/5">
-                                    <h1 class="font-bold pb-5 text-xl xl:text-4xl">Tentang Kami</h1>
-                                    <h2 class="text-xs sm:text-base lg:text-lg">Sebagai fasilitas pelayanan kesehatan yang didirikan oleh pemerintah, Puskesmas Legok menyediakan layanan kesehatan primer mulai dari perawatan hingga program pencegahan penyakit. Dengan pelayanan profesional dan komprehensif, kami berkomitmen untuk memberikan kontribusi nyata dalam peningkatan kualitas hidup masyarakat setempat.</h2>
-                                </div>
-                                <div class="flex-col w-2/5 flex flex-row justify-center">
-                                    <div class="flex flex-row justify-center items-center">
-                                        <div class="">
-                                            <img src="../../img/Logowithtext.png" class="w-24 lg:w-48" alt="Puskesmas Legok">
-                                        </div>
-                                        <div class="">
-                                            <img src="../../img/satya.png" class="w-14 lg:w-28" alt="Logo Satya">
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="bg-gray-100 lg:bg-opacity-0 bg-opacity-70 items-center justify-between hidden w-full md:flex md:w-auto md:order-1 z-50 rounded-md px-5" id="navbar-search">
+                        <div class="relative mt-3 md:hidden mx-5">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
                             </div>
+                            <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
                         </div>
+                        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium bg-color rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparant dark:bg-transparant md:dark:bg-transparant dark:border-black">
+                            <li>
+                                <a href="/" class="font-poppins block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-slate-600 md:p-0 md:dark:hover:text-slate-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Beranda</a>
+                            </li>
+                            <li>
+                                <a href="#" class="font-poppins block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-slate-600 md:p-0 md:dark:hover:text-slate-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                    Pelayanan</a>
+                            </li>
+                            <li>
+                                <a href="/tentangkami" class="font-poppins block py-2 px-3 text-white bg-green-700 rounded md:bg-transparent md:text-black font-bold md:p-0 md:dark:text-black font-bold">
+                                    Tentang Kami</a>
+                            </li>
+                            <li>
+                                <a href="#" class="font-poppins block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-slate-600 md:p-0 md:dark:hover:text-slate-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                    Program & Kegiatan</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
+
+            <div class="container pt-14 max-w-full overflow-hidden">
+                <div class="columns">
+                    <div class="flex font-montserrat text-green-700 justify-left text-center px-4 lg:text-left lg:pl-64 sm:text-left sm:pl-20">
+                        <div class="flex flex-col w-full sm:w-2/5">
+                            <h1 class="font-bold pb-5 text-xl xl:text-4xl">Tentang Kami</h1>
+                            <h2 class="text-xs sm:text-base lg:text-lg">Sebagai fasilitas pelayanan kesehatan yang didirikan oleh pemerintah, Puskesmas Legok menyediakan layanan kesehatan primer mulai dari perawatan hingga program pencegahan penyakit. Dengan pelayanan profesional dan komprehensif, kami berkomitmen untuk memberikan kontribusi nyata dalam peningkatan kualitas hidup masyarakat setempat.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     {{-- <div class="container z-10 absolute block -translate-y-2/4">
@@ -107,7 +126,7 @@
                 </div>
             </div>
             <div class="flex w-full max-h-full items-center px-10 gap-5 flex-col xl:justify-center xl:flex-row xl:gap-10">
-                
+
                 <div class="bg-white max-h-full shadow-lg rounded-lg shadow" style="background-color:#EBFEEA">
                     <div class="flex flex-col justify-between">
                         <div class="flex flex-row pt-5 px-5">
@@ -406,128 +425,11 @@
                             </span>
                         </button>
                     </div>
-                </div> 
+                </div>
             </div>
 
             <div class="pb-32"></div>
         </div>
-    </div>
-
-    <div class="container max-w-full bg-blue-500">
-        <nav class="flex flex-col items-center sm:flex-row justify-between">
-            <div>
-                lol
-            </div>
-            <div class="relative w-full px-5 pb-8 mt-8  sm:w-full sm:px-20">
-                <div class="mx-auto px-5">
-                    <div class="mx-auto mt-8 grid max-w-full divide-y divide-neutral-200">
-                        <div class="py-5">
-                            <details class="group">
-                                <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                                    <span> How does the billing work?</span>
-                                    <span class="transition group-open:rotate-180">
-                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                            <path d="M6 9l6 6 6-6"></path>
-                                        </svg>
-                                    </span>
-                                </summary>
-                                <p class="group-open:animate-fadeIn mt-3 text-neutral-600">Springerdata offers a variety of
-                                    billing options, including monthly and annual subscription plans, as well as pay-as-you-go
-                                    pricing for certain services. Payment is typically made through a credit card or other
-                                    secure online payment method.
-                                </p>
-                            </details>
-                        </div>
-                        <div class="py-5">
-                            <details class="group">
-                                <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                                    <span> Can I get a refund for my subscription?</span>
-                                    <span class="transition group-open:rotate-180">
-                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                            <path d="M6 9l6 6 6-6"></path>
-                                        </svg>
-                                    </span>
-                                </summary>
-                                <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a 30-day money-back
-                                    guarantee for most of its subscription plans. If you are not satisfied with your
-                                    subscription within the first 30 days, you can request a full refund. Refunds for
-                                    subscriptions that have been active for longer than 30 days may be considered on a
-                                    case-by-case basis.
-                                </p>
-                            </details>
-                        </div>
-                        <div class="py-5">
-                            <details class="group">
-                                <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                                    <span> How do I cancel my subscription?</span>
-                                    <span class="transition group-open:rotate-180">
-                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                            <path d="M6 9l6 6 6-6"></path>
-                                        </svg>
-                                    </span>
-                                </summary>
-                                <p class="group-open:animate-fadeIn mt-3 text-neutral-600">To cancel your subscription, you can
-                                    log in to your account and navigate to the subscription management page. From there, you
-                                    should be able to cancel your subscription and stop future billing.
-                                </p>
-                            </details>
-                        </div>
-                        <div class="py-5">
-                            <details class="group">
-                                <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                                    <span> Is there a free trial?</span>
-                                    <span class="transition group-open:rotate-180">
-                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                            <path d="M6 9l6 6 6-6"></path>
-                                        </svg>
-                                    </span>
-                                </summary>
-                                <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We offer a free trial of our software
-                                    for a limited time. During the trial period, you will have access to a limited set of
-                                    features and functionality, but you will not be charged.
-                                </p>
-                            </details>
-                        </div>
-                        <div class="py-5">
-                            <details class="group">
-                                <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                                    <span> How do I contact support?</span>
-                                    <span class="transition group-open:rotate-180">
-                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                            <path d="M6 9l6 6 6-6"></path>
-                                        </svg>
-                                    </span>
-                                </summary>
-                                <p class="group-open:animate-fadeIn mt-3 text-neutral-600">If you need help with our platform or
-                                    have any other questions, you can contact the company's support team by submitting a support
-                                    request through the website or by emailing support@ourwebsite.com.
-                                </p>
-                            </details>
-                        </div>
-                        <div class="py-5">
-                            <details class="group">
-                                <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                                    <span> Do you offer any discounts or promotions?</span>
-                                    <span class="transition group-open:rotate-180">
-                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                            <path d="M6 9l6 6 6-6"></path>
-                                        </svg>
-                                    </span>
-                                </summary>
-                                <p class="group-open:animate-fadeIn mt-3 text-neutral-600">We may offer discounts or promotions
-                                    from time to time. To stay up-to-date on the latest deals and special offers, you can sign
-                                    up for the company's newsletter or follow it on social media.
-                                </p>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                lol
-            </div>
-        </nav>
-
     </div>
 </body>
 
