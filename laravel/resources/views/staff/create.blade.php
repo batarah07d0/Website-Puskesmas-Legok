@@ -9,14 +9,17 @@
     @csrf
     <div class="row mb-3">
         <div class="col">
+            <label class="form-label">Nama</label>
             <input type="text" name="nama" class="form-control" placeholder="Nama">
         </div>
         <div class="col">
+            <label class="form-label">Jabatan</label>
             <input type="text" name="jabatan" class="form-control" placeholder="Jabatan">
         </div>
     </div>
     <div class="row mb-3">
         <div class="col">
+            <label class="form-label">Foto</label>
             <input type="file" name="foto">
         </div>
 

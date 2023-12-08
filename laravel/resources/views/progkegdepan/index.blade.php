@@ -95,10 +95,11 @@
                 </div>
             </div>
 
-            <div class="flex flex-row gap-8 justify-center pt-24  pb-5 overflow-x-auto">
+            <div class="flex flex-row gap-8 justify-center pt-24  pb-5 overflow-auto">
+
                 @foreach($photos as $p)
-                <div class="flex w-[200px] h-[220px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg ">
-                <img class="object-cover w-full h-full" src="{{ Storage::url('imgpk/' . $p->foto) }}" alt="Foto">                
+                <div class="flex-shrink-0 w-[200px] h-[250px]  bg-white rounded-lg justify-center items-center shadow-lg">
+                    <img class="object-cover w-full h-full" src="{{ Storage::url('imgpk/' . $p->foto) }}" alt="Foto">
                 </div>
                 @endforeach
             </div>
@@ -114,10 +115,11 @@
                 </div>
             </div>
             <div class="flex flex-row gap-8 justify-center pt-24 overflow-x-auto pb-5">
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">01</div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">01</div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">01</div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">01</div>
+                @foreach($post as $pos)
+                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
+                    <img class="object-cover w-full h-full" src="{{ Storage::url('imgpost/' . $pos->foto) }}" alt="Foto">
+                </div>
+                @endforeach
             </div>
         </div>
     </div>

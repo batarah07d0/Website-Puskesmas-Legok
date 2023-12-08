@@ -12,6 +12,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JenisLayananController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Home2Controller;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostFEController;
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
@@ -29,19 +32,18 @@ use App\Models\ProgramKegiatan;
 |
 */
 
+/* Frontend Page */
+
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::controller(HomeController::class)->group(
-//     function () {
-//         Route::get('/program-kegiatan', 'index');
-//     }
-// );
-
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
+// Route::get('/program-kegiatan', function () {
+//     return view('progkegdepan.index');
+// });
 
 
+/* Akhir Frontend Page */
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
@@ -52,15 +54,12 @@ Route::put('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'u
 Route::delete('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'destroy']);
 /* Akhir */
 
-
 /* Admin */
 Route::controller(AuthController::class)->group(function () {
     Route::get('register', 'register')->name('register');
     Route::post('register', 'registerSave')->name('register.save');
-
     Route::get('login', 'login')->name('login');
     Route::post('login', 'loginAction')->name('login.action');
-
     Route::get('logout', 'logout')->middleware('auth')->name('logout');
 });
 
@@ -128,6 +127,7 @@ Route::middleware(['auth', 'check.mobile.device'])->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('jenislayanan.destroy');
     });
     /* Akhir */
+
     /* Program Kegiatan  */
     Route::controller(ProgramKegiatanController::class)->prefix('programkegiatan')->group(function () {
         Route::get('', 'index')->name('programkegiatan');
@@ -139,6 +139,7 @@ Route::middleware(['auth', 'check.mobile.device'])->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('programkegiatan.destroy');
     });
     /* Akhir */
+
     /* Fasilitas  */
     Route::controller(FasilitasController::class)->prefix('fasilitas')->group(function () {
         Route::get('', 'index')->name('fasilitas');
@@ -150,7 +151,17 @@ Route::middleware(['auth', 'check.mobile.device'])->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('fasilitas.destroy');
     });
     /* Akhir */
+
+    /* Post  */
+    Route::controller(PostController::class)->prefix('post')->group(function () {
+        Route::get('', 'index')->name('post');
+        Route::get('create', 'create')->name('post.create');
+        Route::post('store', 'store')->name('post.store');
+        Route::get('show/{id}', 'show')->name('post.show');
+        Route::get('edit/{id}', 'edit')->name('post.edit');
+        Route::put('edit/{id}', 'update')->name('post.update');
+        Route::delete('destroy/{id}', 'destroy')->name('post.destroy');
+    });
+    /* Akhir */
 });
-
-
 /* Akhir */

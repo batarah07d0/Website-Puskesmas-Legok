@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class PostController extends Controller
 {
@@ -14,8 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        $post = Post::all();
+        return view('post.index', compact('post'));
     }
 
     /**
@@ -23,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('post.create');
     }
 
     /**
@@ -35,10 +37,18 @@ class PostController extends Controller
             'foto' => 'image|mimes:jpeg,png,jpg,gif',
         ]);
 
+        $file = $request->file('foto');
+        $extension = $file->getClientOriginalExtension();
+        $fileName = hash('md5', time() . $file->getClientOriginalName()) . '.' . $extension;
+
+        $file->storeAs('public/imgpost', $fileName);
+
+        Post::create([
+            'foto' => $fileName,
+        ]);
 
 
-
-        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
+        return redirect('/post')->with('success', 'Post berhasil ditambahkan.');
     }
 
     /**
@@ -46,7 +56,9 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+
+        $post = Post::findOrFail($id);
+        return view('post.show', compact('post'));
     }
 
     /**
@@ -54,7 +66,9 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        $post = Post::find($id);
+        return view('post.edit', compact('post'));
     }
 
     /**
@@ -62,7 +76,32 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $request->validate([
+            'foto' => 'image|mimes:jpeg,png,jpg',
+        ]);
+
+        $post = Post::find($id);
+
+        if ($request->hasFile('foto')) {
+            // Hapus gambar lama jika ada
+            if ($post->foto) {
+                Storage::delete('public/imgpost/' . $post->foto);
+            }
+
+            $file = $request->file('foto');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = hash('md5', time() . $file->getClientOriginalName()) . '.' . $extension;
+
+            // Simpan di storage/app/public/imgpost
+            $file->storeAs('public/imgpost', $fileName);
+
+            $post->update([
+                'foto' => $fileName,
+            ]);
+        }
+
+        return redirect()->route('post')->with('success', 'Data Post berhasil diperbarui.');
     }
 
     /**
@@ -70,6 +109,19 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = Post::find($id);
+
+        $gambarPath = $post->foto;
+
+        $post->delete();
+
+        if ($gambarPath) {
+            $gambarFullPath = 'public/imgpost/' . $gambarPath;
+
+            if (Storage::exists($gambarFullPath)) {
+                Storage::delete($gambarFullPath);
+            }
+        }
+        return redirect()->route('post')->with('success', 'Data Post berhasil dihapus.');
     }
 }

@@ -92,10 +92,10 @@
                         <h2 class="text-lg sm:text-xl md:text-2xl text-left mb-4">Ambil Nomor Antrian Online</h2>
                         <form action="" class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-2 md:gap-10">
                             <select class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
-                                <option selected>Cari Jenis Layanan Kesehatan</option>
-                                <option value="">Option 1</option>
-                                <option value="">Option 2</option>
-                                <option value="">Option 3</option>
+                                <option selected disabled>Cari Jenis Layanan Kesehatan</option>
+                                @foreach($enumValues as $value)
+                                <option value="{{ $value }}">{{ $value }}</option>
+                                @endforeach
                             </select>
                             <select class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
                                 <option selected>Pilih Jam Layanan</option>
@@ -286,6 +286,7 @@
 
             </div>
         </div>
+
     </body>
 
     </html>
