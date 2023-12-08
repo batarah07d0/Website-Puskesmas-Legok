@@ -29,13 +29,14 @@ use App\Models\ProgramKegiatan;
 |
 */
 
+Route::get('/program-kegiatan', [HomeController::class, 'index']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/program-kegiatan', function () {
-    return view('progkegdepan.index');
-});
+
 
 
 
