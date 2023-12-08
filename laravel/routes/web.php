@@ -38,11 +38,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
-// Route::get('/program-kegiatan', function () {
-//     return view('progkegdepan.index');
-// });
-
-
 /* Akhir Frontend Page */
 
 /* Struktur Organisasi */
