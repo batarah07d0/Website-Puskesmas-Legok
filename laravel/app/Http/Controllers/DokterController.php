@@ -106,7 +106,19 @@ class DokterController extends Controller
     public function destroy($id)
     {
         $dokter = Dokter::findOrFail($id);
+
+        $gambarPath = $dokter->foto;
+
         $dokter->delete();
+
+        if ($gambarPath) {
+            $gambarFullPath = 'public/imgdokter/' . $gambarPath;
+
+            if (Storage::exists($gambarFullPath)) {
+                Storage::delete($gambarFullPath);
+            }
+        }
+
 
         return redirect('/dokter')->with('success', 'Data dokter berhasil dihapus.');
     }

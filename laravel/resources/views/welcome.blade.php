@@ -42,7 +42,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="bg-gray-100 lg:bg-opacity-0 bg-opacity-70 items-center justify-between hidden w-full md:flex md:w-auto md:order-1 z-50 rounded-md px-5"  id="navbar-search">
+                        <div class="bg-gray-100 lg:bg-opacity-0 bg-opacity-70 items-center justify-between hidden w-full md:flex md:w-auto md:order-1 z-50 rounded-md px-5" id="navbar-search">
                             <div class="relative mt-3 md:hidden mx-5">
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                     <svg class="text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -86,29 +86,6 @@
         </div>
 
         <div class="h-[30rem] lg:h-[40rem]">
-<<<<<<< Updated upstream
-        <div class="container z-10 max-w-full absolute block -translate-y-2/4">
-            <div class="container flex max-w-full justify-center px-2 gap-2 md:px-5 md:gap-10 ">
-                <div class="w-3/4 mx-auto flex flex-col justify-center border shadow-lg bg-white rounded-2xl py-2 px-4 font-bold leading-relaxed tracking-light text-green-700 font-montserrat">
-                    <h2 class="text-lg sm:text-xl md:text-2xl text-left mb-4">Ambil Nomor Antrian Online</h2>
-                    <form action="" class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-2 md:gap-10">
-                        <select class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
-                            <option selected>Cari Jenis Layanan Kesehatan</option>
-                            <option value="">Option 1</option>
-                            <option value="">Option 2</option>
-                            <option value="">Option 3</option>
-                        </select>
-                        <select class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
-                            <option selected>Pilih Jam Layanan</option>
-                            <option value="">Option 1</option>
-                            <option value="">Option 2</option>
-                            <option value="">Option 3</option>
-                        </select>
-                        <div class="w-full mt-1 p-1 rounded-lg bg-green-700 text-center text-white">
-                            <button type="submit" class="w-full">Ambil Antrian</button>
-                        </div>
-                    </form>
-=======
             <div class="container z-10 max-w-full absolute block -translate-y-2/4">
                 <div class="container flex max-w-full justify-center px-2 gap-2 md:px-5 md:gap-10 ">
                     <div class="w-3/4 mx-auto flex flex-col justify-center border shadow-lg bg-white rounded-2xl py-2 px-4 font-bold leading-relaxed tracking-light text-green-700 font-montserrat">
@@ -121,20 +98,18 @@
                                 @endforeach
                             </select>
                             <select class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
-                                <option selected disabled>Pilih Jam Layanan</option>
-                                @foreach($enumValue as $values)
-                                <option value="{{ $values }}">{{ $values }}</option>
-                                @endforeach
+                                <option selected>Pilih Jam Layanan</option>
+                                <option value="">Option 1</option>
+                                <option value="">Option 2</option>
+                                <option value="">Option 3</option>
                             </select>
                             <div class="w-full mt-1 p-1 rounded-lg bg-green-700 text-center text-white">
                                 <button type="submit" class="w-full">Ambil Antrian</button>
                             </div>
                         </form>
                     </div>
->>>>>>> Stashed changes
                 </div>
             </div>
-        </div>
             <div class="container max-w-full h-full bg-custom-color3 relative">
                 <div class="flex flex-col lg:flex-row lg:justify-center items-center lg:pt-52 lg:gap-64 pt-40">
                     <div class="flex flex-col text-green-700 font-montserrat scale-110 lg:scale-150">
@@ -311,6 +286,7 @@
 
             </div>
         </div>
+
     </body>
 
     </html>

@@ -9,9 +9,11 @@
     @csrf
     <div class="row mb-3">
         <div class="col">
+            <label class="form-label">Foto</label>
             <input type="file" name="foto" placeholder="Foto">
         </div>
         <div class="col">
+            <label class="form-label">Deskripsi</label>
             <input type="text" name="deskripsi" class="form-control" placeholder="Deskripsi">
         </div>
     </div>

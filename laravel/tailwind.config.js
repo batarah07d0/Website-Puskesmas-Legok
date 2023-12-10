@@ -19,7 +19,10 @@ module.exports = {
                 182: "11.375",
             },
             fontFamily: {
-                montserrat: ["Montserrat", "sans-serif"],
+                'poppins': ['Poppins', 'sans-serif'],
+                'montserrat': ['Montserrat', 'sans-serif'],
+
+
             },
 
             width: {

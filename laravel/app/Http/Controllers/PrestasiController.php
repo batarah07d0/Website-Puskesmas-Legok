@@ -93,10 +93,18 @@ class PrestasiController extends Controller
     public function destroy($id)
     {
         $prestasi = Prestasi::find($id);
-        if (!$prestasi) {
-            return redirect()->route('prestasi')->with('error', 'Data prestasi tidak ditemukan.');
-        }
+
+        $gambarPath = $prestasi->foto;
+
         $prestasi->delete();
+
+        if ($gambarPath) {
+            $gambarFullPath = 'public/imgprestasi/' . $gambarPath;
+
+            if (Storage::exists($gambarFullPath)) {
+                Storage::delete($gambarFullPath);
+            }
+        }
 
         return redirect()->route('prestasi')->with('success', 'Data prestasi berhasil dihapus.');
     }

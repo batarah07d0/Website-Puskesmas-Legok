@@ -92,7 +92,18 @@ class FasilitasController extends Controller
     public function destroy($id)
     {
         $fasilitas = Fasilitas::find($id);
+
+        $gambarPath = $fasilitas->foto;
+
         $fasilitas->delete();
+
+        if ($gambarPath) {
+            $gambarFullPath = 'public/imgfasilitas/' . $gambarPath;
+
+            if (Storage::exists($gambarFullPath)) {
+                Storage::delete($gambarFullPath);
+            }
+        }
 
         return redirect()->route('fasilitas')->with('success', 'Data Fasilitas berhasil dihapus.');
     }
