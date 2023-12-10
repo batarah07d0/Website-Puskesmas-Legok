@@ -38,7 +38,25 @@ Route::get('/', function () {
 
 
 
+Route::get('/detaildokter', function () {
+    return view('detaildokter');
+});
 
+Route::get('/daftaronline', function () {
+    return view('daftaronline');
+});
+
+Route::get('/jadwaldokter', function () {
+    return view('jadwaldokter');
+});
+
+Route::get('/persetujuanumum', function () {
+    return view('persetujuanumum');
+});
+
+Route::get('/footer', function () {
+    return view('footer');
+});
 
 /* Fasilitas */
 Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
