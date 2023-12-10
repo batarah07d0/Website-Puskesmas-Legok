@@ -96,10 +96,17 @@ class StaffController extends Controller
     public function destroy($id)
     {
         $staff = Staff::find($id);
-        if (!$staff) {
-            return redirect()->route('staff')->with('error', 'Data staff tidak ditemukan.');
-        }
+        $gambarPath = $staff->foto;
         $staff->delete();
+        if ($gambarPath) {
+            $gambarFullPath = 'public/imgstaff/' . $gambarPath;
+
+            if (Storage::exists($gambarFullPath)) {
+                Storage::delete($gambarFullPath);
+            }
+        }
+
+
 
         return redirect()->route('staff')->with('success', 'Data staff berhasil dihapus.');
     }

@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <div class="h-[24rem] lg:h-[32rem]">
         <div class="container max-w-full h-full bg-cover" style="background-image: url('/img/Group_10.png');">
             <nav class="bg-opacity-50">
@@ -94,19 +95,11 @@
                 </div>
             </div>
 
-            <div class="flex flex-row gap-8 justify-center pt-24 overflow-x-auto pb-5">
+            <div class="flex flex-row gap-8 justify-center pt-24  pb-5 overflow-auto">
+
                 @foreach($photos as $p)
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
-                    <img src="{{ asset('storage/imgpk/' . $p->foto) }}" alt="Program Kegiatan Photo">
-                </div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
-                    <img src="{{ asset('storage/imgpk/' . $p->foto) }}" alt="Program Kegiatan Photo">
-                </div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
-                    <img src="{{ asset('storage/imgpk/' . $p->foto) }}" alt="Program Kegiatan Photo">
-                </div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
-                    <img src="{{ asset('storage/imgpk/' . $p->foto) }}" alt="Program Kegiatan Photo">
+                <div class="flex-shrink-0 w-[200px] h-[250px]  bg-white rounded-lg justify-center items-center shadow-lg">
+                    <img class="object-cover w-full h-full" src="{{ Storage::url('imgpk/' . $p->foto) }}" alt="Foto">
                 </div>
                 @endforeach
             </div>
@@ -122,13 +115,15 @@
                 </div>
             </div>
             <div class="flex flex-row gap-8 justify-center pt-24 overflow-x-auto pb-5">
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">01</div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">01</div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">01</div>
-                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">01</div>
+                @foreach($post as $pos)
+                <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
+                    <img class="object-cover w-full h-full" src="{{ Storage::url('imgpost/' . $pos->foto) }}" alt="Foto">
+                </div>
+                @endforeach
             </div>
         </div>
     </div>
 </body>
+
 
 </html>

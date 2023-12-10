@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JenisLayananController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Home2Controller;
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
@@ -35,11 +36,15 @@ Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', function () {
     return view('welcome');
 });
-
-
+Route::get('/program-kegiatan', [HomeController::class, 'index']);
+Route::get('/', [Home2Controller::class, 'index']);
 
 Route::get('/detaildokter', function () {
     return view('detaildokter');
+});
+
+Route::get('/pelayanan', function () {
+    return view('pelayanan');
 });
 
 Route::get('/daftaronline', function () {
@@ -53,6 +58,8 @@ Route::get('/jadwaldokter', function () {
 Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
 });
+
+/* Akhir Frontend Page */
 
 Route::get('/footer', function () {
     return view('footer');

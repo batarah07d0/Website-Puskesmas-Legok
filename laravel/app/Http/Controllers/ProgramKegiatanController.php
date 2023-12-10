@@ -112,7 +112,16 @@ class ProgramKegiatanController extends Controller
     public function destroy($id)
     {
         $programkegiatan = ProgramKegiatan::findOrFail($id);
+        $gambarPath = $programkegiatan->foto;
         $programkegiatan->delete();
+
+        if ($gambarPath) {
+            $gambarFullPath = 'public/imgpk/' . $gambarPath;
+
+            if (Storage::exists($gambarFullPath)) {
+                Storage::delete($gambarFullPath);
+            }
+        }
 
         return redirect('/programkegiatan')->with('success', 'Data Program Kegiatan berhasil dihapus.');
     }
