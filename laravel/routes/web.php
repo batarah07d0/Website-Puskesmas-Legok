@@ -57,6 +57,7 @@ Route::get('/persetujuanumum', function () {
 });
 
 /* Akhir Frontend Page */
+<<<<<<< Updated upstream
 
 Route::get('/footer', function () {
     return view('footer');
@@ -68,6 +69,8 @@ Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDe
 
 
 
+=======
+>>>>>>> Stashed changes
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);

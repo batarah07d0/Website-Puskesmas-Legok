@@ -11,6 +11,7 @@ class Home2Controller extends Controller
     {
 
         $enumValues = JenisLayanan::getEnumValues('jenis_layanan', 'kategori');
-        return view('welcome', compact('enumValues'));
+        $enumValue = JenisLayanan::getEnumValue('jenis_layanan', 'waktu_pelayanan');
+        return view('welcome', compact('enumValues', 'enumValue'));
     }
 }

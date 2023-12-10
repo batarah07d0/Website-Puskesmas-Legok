@@ -99,9 +99,9 @@
                             </select>
                             <select class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
                                 <option selected>Pilih Jam Layanan</option>
-                                <option value="">Option 1</option>
-                                <option value="">Option 2</option>
-                                <option value="">Option 3</option>
+                                @foreach($enumValue as $values)
+                                <option value="{{ $values }}">{{ $values }}</option>
+                                @endforeach
                             </select>
                             <div class="w-full mt-1 p-1 rounded-lg bg-green-700 text-center text-white">
                                 <button type="submit" class="w-full">Ambil Antrian</button>
