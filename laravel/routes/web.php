@@ -31,23 +31,6 @@ use App\Models\ProgramKegiatan;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< Updated upstream
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/program-kegiatan', function () {
-    return view('program-kegiatan');
-});
-
-
-
-/* Fasilitas */
-Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
-/* Akhir */
-
-
-
-=======
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', [Home2Controller::class, 'index']);
 
@@ -66,8 +49,19 @@ Route::get('/jadwaldokter', function () {
 Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
 });
+
 /* Akhir Frontend Page */
->>>>>>> Stashed changes
+
+Route::get('/footer', function () {
+    return view('footer');
+});
+
+/* Fasilitas */
+Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
+/* Akhir */
+
+
+
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
