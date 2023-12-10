@@ -98,7 +98,7 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-center mt-8">
+    <div class="flex justify-center mt-8 pb-8">
         <h3 class="font-montserrat text-slate-500">Copyright © 2023 Website Resmi UPTD Puskesmas Legok All Rights
             Reserved</h3>
     </div>
