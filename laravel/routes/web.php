@@ -31,6 +31,7 @@ use App\Models\ProgramKegiatan;
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< Updated upstream
 Route::get('/login', function () {
     return view('login');
 });
@@ -46,6 +47,27 @@ Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDe
 
 
 
+=======
+Route::get('/program-kegiatan', [HomeController::class, 'index']);
+Route::get('/', [Home2Controller::class, 'index']);
+
+Route::get('/detaildokter', function () {
+    return view('detaildokter');
+});
+
+Route::get('/daftaronline', function () {
+    return view('daftaronline');
+});
+
+Route::get('/jadwaldokter', function () {
+    return view('jadwaldokter');
+});
+
+Route::get('/persetujuanumum', function () {
+    return view('persetujuanumum');
+});
+/* Akhir Frontend Page */
+>>>>>>> Stashed changes
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
