@@ -11,6 +11,8 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JenisLayananController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Home2Controller;
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
@@ -31,7 +33,6 @@ use App\Models\ProgramKegiatan;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< Updated upstream
 Route::get('/login', function () {
     return view('login');
 });
@@ -46,8 +47,6 @@ Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDe
 /* Akhir */
 
 
-
-=======
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', [Home2Controller::class, 'index']);
 
@@ -67,7 +66,6 @@ Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
 });
 /* Akhir Frontend Page */
->>>>>>> Stashed changes
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
