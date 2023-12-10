@@ -11,6 +11,8 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JenisLayananController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Home2Controller;
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
