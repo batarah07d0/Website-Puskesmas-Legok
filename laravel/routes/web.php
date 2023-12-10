@@ -40,6 +40,10 @@ Route::get('/detaildokter', function () {
     return view('detaildokter');
 });
 
+Route::get('/pelayanan', function () {
+    return view('pelayanan');
+});
+
 Route::get('/daftaronline', function () {
     return view('daftaronline');
 });
