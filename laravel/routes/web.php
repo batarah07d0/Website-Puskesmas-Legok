@@ -54,6 +54,9 @@ Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
 });
 
+Route::get('/footer', function () {
+    return view('footer');
+});
 
 /* Fasilitas */
 Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
