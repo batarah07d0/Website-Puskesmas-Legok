@@ -36,6 +36,7 @@ use App\Models\ProgramKegiatan;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', [Home2Controller::class, 'index']);
 Route::get('/pelayanan', [Home3Controller::class, 'index']);
@@ -60,16 +61,17 @@ Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
 });
 
-/* Akhir Frontend Page */
-
 Route::get('/footer', function () {
     return view('footer');
 });
 
 
 
-
-
+/* About Us */
+Route::get('/tentangkami', function () {
+    return view('aboutus');
+});
+/* Akhir */
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
@@ -79,7 +81,6 @@ Route::get('/struktur-organisasi/{id}/edit', [StrukturOrganisasiController::clas
 Route::put('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'update']);
 Route::delete('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'destroy']);
 /* Akhir */
-
 
 /* Admin */
 Route::controller(AuthController::class)->group(function () {
@@ -156,6 +157,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('jenislayanan.destroy');
     });
     /* Akhir */
+
     /* Program Kegiatan  */
     Route::controller(ProgramKegiatanController::class)->prefix('programkegiatan')->group(function () {
         Route::get('', 'index')->name('programkegiatan');
@@ -167,6 +169,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('programkegiatan.destroy');
     });
     /* Akhir */
+
     /* Fasilitas  */
     Route::controller(FasilitasController::class)->prefix('fasilitas')->group(function () {
         Route::get('', 'index')->name('fasilitas');
@@ -189,8 +192,6 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('post.destroy');
     });
     /* Akhir */
-
-
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 });
