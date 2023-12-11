@@ -90,23 +90,26 @@
                 <div class="container flex max-w-full justify-center px-2 gap-2 md:px-5 md:gap-10 ">
                     <div class="w-3/4 mx-auto flex flex-col justify-center border shadow-lg bg-white rounded-2xl py-2 px-4 font-bold leading-relaxed tracking-light text-green-700 font-montserrat">
                         <h2 class="text-lg sm:text-xl md:text-2xl text-left mb-4">Ambil Nomor Antrian Online</h2>
-                        <form action="" class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-2 md:gap-10">
-                            <select class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
+
+                        <form action="/daftaronline" class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-2 md:gap-10">
+                            <select name="kategori" class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base">
                                 <option selected disabled>Cari Jenis Layanan Kesehatan</option>
                                 @foreach($enumValues as $value)
                                 <option value="{{ $value }}">{{ $value }}</option>
                                 @endforeach
                             </select>
-                            <select class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
+                            <select name="waktu_pelayanan" class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base" id="">
                                 <option selected>Pilih Jam Layanan</option>
                                 @foreach($enumValue as $values)
                                 <option value="{{ $values }}">{{ $values }}</option>
                                 @endforeach
                             </select>
                             <div class="w-full mt-1 p-1 rounded-lg bg-green-700 text-center text-white">
-                                <button type="submit" class="w-full">Ambil Antrian</button>
+                                <button data-modal-target="default-modal" data-modal-toggle="default-modal" type="submit" class="w-full">Ambil Antrian</button>
                             </div>
                         </form>
+
+
                     </div>
                 </div>
             </div>
@@ -286,6 +289,7 @@
 
             </div>
         </div>
+
 
     </body>
 

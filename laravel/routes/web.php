@@ -13,6 +13,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JenisLayananController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Home2Controller;
+use App\Http\Controllers\Home3Controller;
+use App\Http\Controllers\PostController;
+
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
@@ -35,18 +38,19 @@ Route::get('/', function () {
 });
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', [Home2Controller::class, 'index']);
+Route::get('/pelayanan', [Home3Controller::class, 'index']);
 
 Route::get('/detaildokter', function () {
     return view('detaildokter');
 });
 
-Route::get('/pelayanan', function () {
-    return view('pelayanan');
-});
+
 
 Route::get('/daftaronline', function () {
     return view('daftaronline');
 });
+
+
 
 Route::get('/jadwaldokter', function () {
     return view('jadwaldokter');
@@ -57,20 +61,15 @@ Route::get('/persetujuanumum', function () {
 });
 
 /* Akhir Frontend Page */
-<<<<<<< Updated upstream
 
 Route::get('/footer', function () {
     return view('footer');
 });
 
-/* Fasilitas */
-Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
-/* Akhir */
 
 
 
-=======
->>>>>>> Stashed changes
+
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
@@ -177,6 +176,17 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('fasilitas.edit');
         Route::put('edit/{id}', 'update')->name('fasilitas.update');
         Route::delete('destroy/{id}', 'destroy')->name('fasilitas.destroy');
+    });
+    /* Akhir */
+    /* Post  */
+    Route::controller(PostController::class)->prefix('post')->group(function () {
+        Route::get('', 'index')->name('post');
+        Route::get('create', 'create')->name('post.create');
+        Route::post('store', 'store')->name('post.store');
+        Route::get('show/{id}', 'show')->name('post.show');
+        Route::get('edit/{id}', 'edit')->name('post.edit');
+        Route::put('edit/{id}', 'update')->name('post.update');
+        Route::delete('destroy/{id}', 'destroy')->name('post.destroy');
     });
     /* Akhir */
 
