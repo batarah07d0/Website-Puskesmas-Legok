@@ -30,12 +30,10 @@ use App\Models\ProgramKegiatan;
 |
 */
 
-Route::get('/program-kegiatan', [HomeController::class, 'index']);
-
-
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', [Home2Controller::class, 'index']);
 
@@ -58,8 +56,6 @@ Route::get('/jadwaldokter', function () {
 Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
 });
-
-/* Akhir Frontend Page */
 
 Route::get('/footer', function () {
     return view('footer');
