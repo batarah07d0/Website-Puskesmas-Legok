@@ -14,6 +14,7 @@ use App\Http\Controllers\JenisLayananController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Home2Controller;
 use App\Http\Controllers\Home3Controller;
+use App\Http\Controllers\Home4Controller;
 use App\Http\Controllers\PostController;
 
 use App\Models\Dokter;
@@ -40,6 +41,8 @@ Route::get('/', function () {
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', [Home2Controller::class, 'index']);
 Route::get('/pelayanan', [Home3Controller::class, 'index']);
+Route::get('/tentangkami', [Home4Controller::class, 'index']);
+
 
 Route::get('/detaildokter', function () {
     return view('detaildokter');
@@ -66,12 +69,6 @@ Route::get('/footer', function () {
 });
 
 
-
-/* About Us */
-Route::get('/tentangkami', function () {
-    return view('aboutus');
-});
-/* Akhir */
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);

@@ -97,7 +97,7 @@
 
             <div class="flex flex-row gap-8 justify-center pt-24  pb-5 overflow-auto">
 
-                @foreach($photos as $p)
+                @foreach($photos->take(4) as $p)
                 <div class="flex-shrink-0 w-[200px] h-[250px]  bg-white rounded-lg justify-center items-center shadow-lg">
                     <img class="object-cover w-full h-full" src="{{ Storage::url('imgpk/' . $p->foto) }}" alt="Foto">
                 </div>
@@ -115,7 +115,7 @@
                 </div>
             </div>
             <div class="flex flex-row gap-8 justify-center pt-24 overflow-x-auto pb-5">
-                @foreach($post as $pos)
+                @foreach($post->take(4) as $pos)
                 <div class="flex w-[200px] h-[250px] shrink-0 bg-white rounded-lg justify-center items-center shadow-lg">
                     <img class="object-cover w-full h-full" src="{{ Storage::url('imgpost/' . $pos->foto) }}" alt="Foto">
                 </div>
