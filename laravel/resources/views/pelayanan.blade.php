@@ -10,8 +10,7 @@
                 berpengalaman, bertujuan untuk memberikan perawatan holistik yang mencakup aspek pencegahan, pengobatan,
                 dan pemulihan. Fasilitas kami yang dilengkapi dengan teknologi terkini tidak hanya menciptakan
                 lingkungan yang aman, tetapi juga nyaman bagi setiap pasien yang mempercayakan kesehatan mereka kepada
-                kami. Melalui pendekatan yang personal dan komprehensif, kami berkomitmen untuk membantu Anda mencapai
-                kondisi kesehatan optimal yang Anda harapkan.</p>
+                kami. Melalui pendekatan yang personal dan komprehensif.</p>
         </div>
     </div>
 </div>

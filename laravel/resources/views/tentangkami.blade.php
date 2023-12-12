@@ -208,35 +208,15 @@
             <!-- Carousel wrapper -->
             <div class="grid grid-cols-4 px-5 pt-5 lg:pt-5 gap-4" id="strukturOrganisasi">
                 <div class="max-w-[270px] max-h-[405px] pb-12 bg-green-200 rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
+                    @foreach($list as $l)
+                    <img class="w-full h-full" src="{{ Storage::url('imgstaff/' . $l->foto) }}" alt="Foto">
+                    @endforeach
                     <div class="text-center p-2 px-5">
+                        @foreach($namas as $nama)
                         <p class="text-xs lg:text-xl font-medium truncate">
-                            Drs. Dikezz Lawler banget
+                            {{ $nama->nama }}
                         </p>
-                    </div>
-                </div>
-                <div class="max-w-[270px] max-h-[405px] pb-12 bg-green-200 rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                    <div class="text-center p-2 px-5">
-                        <p class="text-xs lg:text-xl font-medium truncate">
-                            Drs. Dikezz Lawler banget
-                        </p>
-                    </div>
-                </div>
-                <div class="max-w-[270px] max-h-[405px] pb-12 bg-green-200 rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                    <div class="text-center p-2 px-5">
-                        <p class="text-xs lg:text-xl font-medium truncate">
-                            Drs. Dikezz Lawler banget
-                        </p>
-                    </div>
-                </div>
-                <div class="max-w-[270px] max-h-[405px] pb-12 bg-green-200 rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                    <div class="text-center p-2 px-5">
-                        <p class="text-xs lg:text-xl font-medium truncate">
-                            Drs. Dikezz Lawler banget
-                        </p>
+                        @endforeach
                     </div>
                 </div>
                 <!-- Add more grid items as needed -->
@@ -262,11 +242,15 @@
                         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                             <div class="flex">
                                 <div class="flex flex-col absolute h-full bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-lg overflow-hidden shadow-lg" style="background-color:#C4F2BD">
-                                    <img class="w-[347.26px] h-[384.17px]" src="../../img/orangniaga.jpeg" alt="Dokter Niaga">
+                                    @foreach($fotop as $fp)
+                                    <img class="object-cover w-[347.26px] h-[384.17px]" src="{{ Storage::url('imgprestasi/' . $fp->foto) }}" alt="Foto">
+                                    @endforeach
                                     <div>
+                                        @foreach($namap as $np)
                                         <p class="text-center text-2xl py-6">
-                                            Nama Prestasi
+                                            {{ $np->nama }}
                                         </p>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
