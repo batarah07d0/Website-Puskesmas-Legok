@@ -1,10 +1,12 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body>
     <div class="grid gap-2 grid-cols-1 sm:grid-cols-3 mt-24 mx-4 sm:mx-20 border-b-2 pb-16">
         <!-- Puskesmas Legok Section -->
@@ -66,9 +68,7 @@
         <div class="flex justify-center sm:mt-0 pt-4 sm:pt-0">
             <div class="mapouter">
                 <div class="gmap_canvas">
-                    <iframe
-                        src="https://maps.google.com/maps?q=puskesmas%20legok&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-                        frameborder="0" scrolling="no" class="w-full h-64 sm:h-96"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=puskesmas%20legok&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" class="w-full h-64 sm:h-96"></iframe>
                 </div>
             </div>
         </div>
@@ -78,4 +78,5 @@
             Reserved</h3>
     </div>
 </body>
+
 </html>

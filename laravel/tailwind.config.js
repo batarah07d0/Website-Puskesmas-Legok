@@ -12,19 +12,16 @@ module.exports = {
                 "custom-color": "#5D9F68",
                 "custom-color2": "#5D9F68",
                 "custom-color3": "#F5FFF4",
-                "background-green" : "#EBFEEA",
+                "background-green": "#EBFEEA",
             },
             height: {
                 128: "32rem",
                 182: "11.375",
             },
             fontFamily: {
-                'poppins': ['Poppins', 'sans-serif'],
-                'montserrat': ['Montserrat', 'sans-serif'],
-
-
+                poppins: ["Poppins", "sans-serif"],
+                montserrat: ["Montserrat", "sans-serif"],
             },
-
             width: {
                 477: "477px",
             },

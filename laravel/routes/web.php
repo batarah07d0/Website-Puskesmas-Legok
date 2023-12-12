@@ -13,6 +13,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JenisLayananController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Home2Controller;
+use App\Http\Controllers\Home3Controller;
+use App\Http\Controllers\Home4Controller;
+use App\Http\Controllers\PostController;
+
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
@@ -33,20 +37,24 @@ use App\Models\ProgramKegiatan;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', [Home2Controller::class, 'index']);
+Route::get('/pelayanan', [Home3Controller::class, 'index']);
+Route::get('/tentangkami', [Home4Controller::class, 'index']);
+
 
 Route::get('/detaildokter', function () {
     return view('detaildokter');
 });
 
-Route::get('/pelayanan', function () {
-    return view('pelayanan');
-});
+
 
 Route::get('/daftaronline', function () {
     return view('daftaronline');
 });
+
+
 
 Route::get('/jadwaldokter', function () {
     return view('jadwaldokter');
@@ -56,16 +64,9 @@ Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
 });
 
-/* Akhir Frontend Page */
-
 Route::get('/footer', function () {
     return view('footer');
 });
-
-/* Fasilitas */
-Route::get('/fasilitas/force-delete/{id}', [FasilitasController::class, 'forceDelete']);
-/* Akhir */
-
 
 
 
@@ -77,7 +78,6 @@ Route::get('/struktur-organisasi/{id}/edit', [StrukturOrganisasiController::clas
 Route::put('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'update']);
 Route::delete('/struktur-organisasi/{id}', [StrukturOrganisasiController::class, 'destroy']);
 /* Akhir */
-
 
 /* Admin */
 Route::controller(AuthController::class)->group(function () {
@@ -154,6 +154,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('jenislayanan.destroy');
     });
     /* Akhir */
+
     /* Program Kegiatan  */
     Route::controller(ProgramKegiatanController::class)->prefix('programkegiatan')->group(function () {
         Route::get('', 'index')->name('programkegiatan');
@@ -165,6 +166,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('programkegiatan.destroy');
     });
     /* Akhir */
+
     /* Fasilitas  */
     Route::controller(FasilitasController::class)->prefix('fasilitas')->group(function () {
         Route::get('', 'index')->name('fasilitas');
@@ -176,8 +178,17 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('fasilitas.destroy');
     });
     /* Akhir */
-
-
+    /* Post  */
+    Route::controller(PostController::class)->prefix('post')->group(function () {
+        Route::get('', 'index')->name('post');
+        Route::get('create', 'create')->name('post.create');
+        Route::post('store', 'store')->name('post.store');
+        Route::get('show/{id}', 'show')->name('post.show');
+        Route::get('edit/{id}', 'edit')->name('post.edit');
+        Route::put('edit/{id}', 'update')->name('post.update');
+        Route::delete('destroy/{id}', 'destroy')->name('post.destroy');
+    });
+    /* Akhir */
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 });
