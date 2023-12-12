@@ -131,20 +131,21 @@
 </body>
 {{-- Footer --}}
 <footer class="bg-white">
-    <div class="grid gap-2 grid-cols-2 mt-24 ml-20 mr-20 border-b-2 pb-16">
-        <div>
-            <div class="flex items-center">
-                <img src="img/logokecil.png" class="w-12">
+    <div class="grid gap-2 grid-cols-1 sm:grid-cols-3 mt-8 lg:mt-24 mx-1 sm:mx-20 divide-y lg:divide-x pb-1">
+        <!-- Puskesmas Legok Section -->
+        <div class="mb-2 lg:mb-4">
+            <div class="ml-6 flex items-center lg:justify-center justify-start">
+                <img src="img/logokecil.png" class="w-10 lg:w-12">
                 <span>
                     <img src="img/puskesmasLegokFooter.png" class="ml-2">
                 </span>
             </div>
-            <div class="mt-4 pr-96 mr-20">
-                <h3 class="font-montserrat text-lg text-slate-500 text-justify">
-                    Membantu anda mendapatkan berbagai layanan kesehatan
-                    dimulai dari rumah dengan tepat dan cepat.</h3>
+            <div class="mt-2 lg:mt-4 lg:px-4 sm:px-0">
+                <h3 class="font-montserrat text-base sm:text-lg text-slate-500 text-justify px-6 lg:px-8">
+                    Membantu anda mendapatkan berbagai layanan kesehatan dimulai dari rumah dengan tepat dan cepat.
+                </h3>
             </div>
-            <div class=" mt-6 flex justify-start">
+            <div class="invisible lg:visible hidden mx-6 mt-2 lg:mt-6 lg:flex lg:justify-center justify-start">
                 <a href="https://www.instagram.com/puskesmaslegok_tng/">
                     <img src="img/instagram.png">
                 </a>
@@ -155,76 +156,88 @@
                 </div>
             </div>
         </div>
-        <div class="grid grid-flow-col justify-stretch">
-            <div>
-                <div>
-                    <h2 class="pl-4 text-3xl font-montserrat font-semibold text-green-500">Contacts us</h2>
-                </div>
-                <div class="grid grid-rows-3 pl-4 gap-8 pt-12">
-                    <div class="flex items-center">
-                        <img src="img/Email.png">
-                        <span class="ml-2">
-                            <h3 class="font-montserrat text-slate-600">puskesmaslegok@gmail.com</h3>
-                        </span>
-                    </div>
-                    <div class="flex items-center">
-                        <img src="img/phone.png">
-                        <span class="ml-2">
-                            <h3 class="font-montserrat text-slate-600">(62) 8213136633</h3>
-                        </span>
-                    </div>
-                    <div class="flex items-center mr-12">
-                        <img src="img/location.png" class="place-content-start">
-                        <span class="ml-2">
-                            <h3 class="font-montserrat text-slate-600">Jalan Panti Asuhan, RT. 001/002 Kelurahan
-                                Babakan, Kec.
-                                Legok,
-                                Kab. Tangerang, Banten 15820</h3>
-                        </span>
-                    </div>
-                </div>
+        <!-- Contact Us Section -->
+        <div class="flex flex-col lg:items-center items-start mx-6 mb-2 lg:mb-4 lg:pt-4">
+            <div class="mt-2">
+                <h2 class="text-2xl sm:text-3xl font-montserrat font-semibold text-green-500 text-center sm:text-left">
+                    Contact Us</h2>
             </div>
-            <div class="flex justify-center">
-                <div class="mapouter">
-                    <div class="gmap_canvas"><iframe
-                            src="https://maps.google.com/maps?q=puskesmas%20legok&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-                            frameborder="0" scrolling="no" style="width: 380px; height: 270px;"></iframe>
-                        <style>
-                            .mapouter {
-                                position: relative;
-                                height: 270px;
-                                width: 380px;
-                                background: #fff;
-                            }
-
-                            .maprouter a {
-                                color: #fff !important;
-                                position: absolute !important;
-                                top: 0 !important;
-                                z-index: 0 !important;
-                            }
-                        </style><a href="https://blooketjoin.org/blooket-host/">blooket host</a>
-                        <style>
-                            .gmap_canvas {
-                                overflow: hidden;
-                                height: 270px;
-                                width: 380px
-                            }
-
-                            .gmap_canvas iframe {
-                                position: relative;
-                                z-index: 2
-                            }
-                        </style>
+            <div class="w-full items-center">
+                <div class="mt-2 flex items-center lg:justify-center justify-start">
+                    <img src="img/Email.png">
+                    <div class="ml-2">
+                        <h3 class="font-montserrat text-slate-600">puskesmaslegok@gmail.com</h3>
+                    </div>
+                </div>
+                <div class="mt-2 flex items-center lg:justify-center justify-start">
+                    <img src="img/phone.png">
+                    <span class="ml-2">
+                        <h3 class="font-montserrat text-slate-600">(62) 8213136633</h3>
+                    </span>
+                </div>
+                <div class="mt-2 flex items-center lg:justify-center justify-start">
+                    <img src="img/location.png" class="place-content-start pb-5 lg:pb-0">
+                    <span class="ml-2">
+                        <h3 class="font-montserrat text-slate-600 lg:text-center text-left">Jalan Panti Asuhan, RT.
+                            001/002 Kelurahan
+                            Babakan, Kec.
+                            Legok,
+                            Kab. Tangerang, Banten 15820</h3>
+                    </span>
+                </div>
+                <div class="mt-2 flex justify-start">
+                    <h3 class="font-montserrat text-slate-600 lg:text-center text-left">Media Social</h3>
+                    <a href="https://www.instagram.com/puskesmaslegok_tng/">
+                        <img src="img/instagram.png">
+                    </a>
+                    <div class="flex items-center ml-2">
+                        <a href="https://www.youtube.com/channel/UCre_crOrFCT9sqvdT5jSVMQ">
+                            <img src="img/YouTube.png">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="flex justify-center mt-8 pb-8">
-        <h3 class="font-montserrat text-slate-500">Copyright © 2023 Website Resmi UPTD Puskesmas Legok All Rights
-            Reserved</h3>
-    </div>
+        <!-- Map Section -->
+        <div class="flex justify-center pt-4">
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe
+                        src="https://maps.google.com/maps?q=puskesmas%20legok&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                        frameborder="0" scrolling="no" style="width: 380px; height: 270px;"></iframe>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            height: 270px;
+                            width: 380px;
+                            background: #fff;
+                        }
+
+                        .maprouter a {
+                            color: #fff !important;
+                            position: absolute !important;
+                            top: 0 !important;
+                            z-index: 0 !important;
+                        }
+                    </style><a href="https://blooketjoin.org/blooket-host/">blooket host</a>
+                    <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            height: 270px;
+                            width: 380px
+                        }
+
+                        .gmap_canvas iframe {
+                            position: relative;
+                            z-index: 2
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-2 lg:mt-8 pb-8">
+            <h3 class="font-montserrat text-xs text-slate-500">Copyright © 2023 Website Resmi UPTD Puskesmas Legok All
+                Rights Reserved</h3>
+        </div>
 </footer>
 {{-- End Footer --}}
 

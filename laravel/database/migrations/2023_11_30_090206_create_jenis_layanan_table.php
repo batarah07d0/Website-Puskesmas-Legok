@@ -13,27 +13,8 @@ return new class extends Migration
     {
         Schema::create('jenis_layanan', function (Blueprint $table) {
             $table->id();
-            $table->time('waktu_pelayan');
-            $table->enum('kategori', [
-                'Gawat Darurat',
-                'Rawat Jalan',
-                'Kesehatan Gigi dan Mulut',
-                'Kesehatan Ibu',
-                'Kesehatan Anak',
-                'Imunisasi',
-                'Persalinan',
-                'KB',
-                'Saffron',
-                'IVA',
-                'Gizi',
-                'TB Paru',
-                'Kusta',
-                'Sanitasi',
-                'Kesehatan Remaja',
-                'Kesehatan Lansia',
-                'Laboratorium',
-                'Kefarmasian',
-            ]);
+            $table->enum('kategori', ['Poli Gigi', 'Poli Umum', 'Poli Lansia dan Ibu Hamil', 'Poli Kesehatan Ibu dan Anak']);
+            $table->enum('waktu_pelayanan', ['08:00', '09:00', '10:00', '11:00']);
             $table->timestamps();
         });
     }
