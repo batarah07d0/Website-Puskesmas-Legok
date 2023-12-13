@@ -29,11 +29,11 @@
             {{-- Navbar --}}
             <nav class="bg-opacity-50">
                 <div
-                    class=" md:grid md:grid-cols-3 md:gap-0 lg:grid lg:grid-cols-2 lg:gap-0 lg:place-content-between max-w-full md:max-w-full flex flex-wrap justify-between md:justify-around p-4 lg:ml-56">
+                    class="md:grid md:grid-cols-3 md:pl-10 lg:pl-11 xl:pl-32 md:gap-0 xl:place-content-between max-w-full md:max-w-full flex flex-wrap justify-between md:justify-around p-4">
                     <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="img/logo.png" class="w-16 md:w-24" alt="Logo Puskesmas Legok" />
+                        <img src="img/logo.png" class="ml-2 w-9 md:w-12" alt="Logo Puskesmas Legok" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                            <img src="img/name.png" class="w-24 md:w-36">
+                            <img src="img/name.png" class="w-24 md:w-28">
                         </span>
                     </a>
                     <div class="flex md:order-2">
@@ -48,10 +48,10 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="z-40 absolute md:col-span-2 lg:col-span-1 inset-x-0 top-16 md:top-8 md:static lg:static bg-opacity-90 md:bg-opacity-0 lg:bg-opacity-0 bg-white items-center lg:mx-32 hidden mx-auto max-w-md md:pl-11 lg:max-w-xl md:flex md:max-w-2xl rounded-md"
+                    <div class="z-40 absolute md:col-span-2 inset-x-0 top-16 md:top-8 md:static bg-opacity-90 md:bg-opacity-0 bg-white items-center md:mr-8 lg:mr-10 xl:mr-[7.5rem] hidden mx-auto md:max-w-xl max-w-md lg:max-w-2xl md:flex rounded-md"
                         id="navbar-search">
                         <ul
-                            class="flex flex-col p-4 md:p-0 font-medium bg-color rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:max-w-xl md:mt-0 md:border-0 md:bg-transparant dark:bg-transparant md:dark:bg-transparant dark:border-black">
+                            class="flex flex-col p-4 md:p-0 font-medium bg-color rounded-lg md:space-x-8 lg:max-w-2xl md:flex-row md:mt-0 md:border-0 md:bg-transparant dark:bg-transparant md:dark:bg-transparant dark:border-black">
                             <li>
                                 <a href="/"
                                     class="font-poppins block py-2 px-3 {{ Request::is('/') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">Beranda</a>

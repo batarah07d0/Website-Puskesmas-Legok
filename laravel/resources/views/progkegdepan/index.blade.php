@@ -1,4 +1,4 @@
-@extends('layouts.main', ['title' => 'Beranda'])
+@extends('layouts.main', ['title' => 'Program & Kegiatan'])
 @section('heroSection')
     <div class="columns">
         <div
