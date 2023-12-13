@@ -11,7 +11,7 @@ module.exports = {
             backgroundColor: {
                 "custom-color": "#5D9F68",
                 "custom-color2": "#5D9F68",
-                "custom-color3": "#F5FFF4",
+                "custom-color3": "#ebfeea",
                 "background-green": "#EBFEEA",
             },
             height: {

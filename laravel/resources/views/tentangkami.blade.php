@@ -2,9 +2,10 @@
 @section('heroSection')
 <div class="columns">
     <div class="flex font-montserrat text-green-700 justify-left text-center px-4 lg:text-left lg:pl-64 sm:text-left sm:pl-20">
-        <div class="flex flex-col w-full sm:w-2/5">
-            <h1 class="font-bold pb-5 text-xl xl:text-4xl">Tentang Kami</h1>
-            <h2 class="text-xs sm:text-base lg:text-lg">Sebagai fasilitas pelayanan kesehatan yang
+        <div class="flex flex-col w-full sm:w-4/5">
+            <h1 class="font-bold md:pb-1 lg:pb-5 text-xl sm:text-2xl md:text-3xl mt-4 md:mt-0 xl:text-4xl">Tentang Kami
+            </h1>
+            <h2 class="text-xs sm:text-base text-justify lg:text-lg">Sebagai fasilitas pelayanan kesehatan yang
                 didirikan oleh pemerintah, Puskesmas Legok menyediakan layanan kesehatan primer mulai
                 dari perawatan hingga program pencegahan penyakit. Dengan pelayanan profesional dan
                 komprehensif, kami berkomitmen untuk memberikan kontribusi nyata dalam peningkatan
@@ -17,16 +18,16 @@
 {{-- Button --}}
 <div class="z-10 block -translate-y-2/4 px-5">
     <div class="flex flex-row gap-2 lg:gap-20 justify-center">
-        <a href="#profil" class="text-center border shadow-lg bg-white rounded-3xl lg:rounded-full py-2 px-3 lg:px-10 font-semibold lg:font-bold text-green-700 font-montserrat text-xs lg:text-xl">
+        <a href="#profil" class="text-center border shadow-lg bg-white rounded-md py-2 px-3 lg:px-10 font-semibold lg:font-bold text-green-700 font-montserrat text-xs md:text-lg lg:text-xl">
             Profil Puskesmas
         </a>
-        <a href="#strukturOrganisasi" class="text-center border shadow-lg bg-white rounded-3xl lg:rounded-full py-2 px-3 lg:px-10 font-semibold lg:font-bold text-green-700 font-montserrat text-xs lg:text-xl">
+        <a href="#strukturOrganisasi" class="text-center border shadow-lg bg-white rounded-md py-2 px-3 lg:px-10 font-semibold lg:font-bold text-green-700 font-montserrat text-xs md:text-lg lg:text-xl">
             Struktur Organisasi
         </a>
-        <a href="#staff" class="text-center border shadow-lg bg-white rounded-3xl lg:rounded-full py-2 px-3 lg:px-10 font-semibold lg:font-bold text-green-700 font-montserrat text-xs lg:text-xl">
+        <a href="#staff" class="text-center border shadow-lg bg-white rounded-md py-2 px-3 lg:px-10 font-semibold lg:font-bold text-green-700 font-montserrat text-xs md:text-lg lg:text-xl">
             Staff Puskesmas
         </a>
-        <a href="#prestasi" class="text-center border shadow-lg bg-white rounded-3xl lg:rounded-full py-2 px-3 lg:px-10 font-semibold lg:font-bold text-green-700 font-montserrat text-xs lg:text-xl">
+        <a href="#prestasi" class="text-center border shadow-lg bg-white rounded-md py-2 px-3 lg:px-10 font-semibold lg:font-bold text-green-700 font-montserrat text-xs md:text-lg lg:text-xl">
             Daftar Prestasi
         </a>
     </div>
@@ -40,9 +41,9 @@
                 Profil
             </div>
         </div>
-        <div class="flex max-w-full max-h-full items-center gap-5 flex-col xl:justify-center xl:flex-row xl:gap-10">
+        <div class="flex items-center lg:max-w-full lg:max-h-full lg:justify-center lg:flex-row lg:gap-10 md:mx-10">
             {{-- Visi & Misi --}}
-            <div class="flex flex-col w-fit mx-10">
+            <div class="flex flex-col lg:w-fit lg:mx-10">
                 <div>
                     <h1 class="font-montserrat font-bold text-lg lg:text-2xl text-center pb-2">VISI & MISI</h1>
                 </div>
@@ -92,33 +93,33 @@
                             </div>
                             <div class="flex flex-col font-poppins font-bold px-8 lg:px-10 py-4 lg:py-7 gap-1">
                                 <div class="flex flex-row pb-1">
-                                    <div class="roundedtexts flex items-center justify-center bg-[#5D9F68] bg-opacity-60 rounded-full text-xl lg:text-2xl w-[35px] h-[35px] lg:w-[45px] lg:h-[45px]">
+                                    <div class="roundedtexts flex items-center justify-center bg-[#93c399] bg-opacity-60 rounded-full text-xl lg:text-2xl w-[35px] h-[35px] lg:w-[45px] lg:h-[45px]">
                                         L</div>
                                     <div class="flex items-center text-sm lg:text-lg pl-[2px]">AYANI DENGAN HATI</div>
                                 </div>
                                 <div class="flex flex-row pb-1">
-                                    <div class="roundedtexts flex items-center justify-center bg-[#5D9F68]
+                                    <div class="roundedtexts flex items-center justify-center bg-[#93c399]
                                             bg-opacity-60 rounded-full text-xl lg:text-2xl w-[35px] h-[35px] lg:w-[45px]
                                             lg:h-[45px]">
                                         E</div>
                                     <div class="flex items-center text-sm lg:text-lg pl-[2px]">MPATI</div>
                                 </div>
                                 <div class="flex flex-row pb-1">
-                                    <div class="roundedtexts flex items-center justify-center bg-[#5D9F68]
+                                    <div class="roundedtexts flex items-center justify-center bg-[#93c399]
                                             bg-opacity-60 rounded-full text-xl lg:text-2xl w-[35px] h-[35px] lg:w-[45px]
                                             lg:h-[45px]">
                                         G</div>
                                     <div class="flex items-center text-sm lg:text-lg pl-[2px]">ERAK CEPAT</div>
                                 </div>
                                 <div class="flex flex-row pb-1">
-                                    <div class="roundedtexts flex items-center justify-center bg-[#5D9F68]
+                                    <div class="roundedtexts flex items-center justify-center bg-[#93c399]
                                             bg-opacity-60 rounded-full text-xl lg:text-2xl w-[35px] h-[35px] lg:w-[45px]
                                             lg:h-[45px]">
                                         O</div>
                                     <div class="flex items-center text-sm lg:text-lg pl-[2px]">PTIMIS</div>
                                 </div>
                                 <div class="flex flex-row pb-1">
-                                    <div class="roundedtexts flex items-center justify-center bg-[#5D9F68]
+                                    <div class="roundedtexts flex items-center justify-center bg-[#93c399]
                                             bg-opacity-60 rounded-full text-xl lg:text-2xl w-[35px] h-[35px] lg:w-[45px]
                                             lg:h-[45px]">
                                         K</div>
@@ -172,7 +173,16 @@
         {{-- End Profile Section --}}
         {{-- Struktur Organisasi & Staff --}}
         <div class="grid grid-cols-3 px-5 pt-5 lg:pt-20 gap-4" id="strukturOrganisasi">
-            <div class="max-w-[270px] max-h-[405px] pb-12 bg-green-200 rounded-lg overflow-hidden shadow-lg">
+            <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
+                <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
+                <div class="text-center p-2 px-5">
+                    @foreach($namas as $nama)
+                    <p class="text-xs lg:text-xl font-medium truncate">
+                        Drs. Dikezz Lawler banget
+                    </p>
+                </div>
+            </div>
+            <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
                 <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
                 <div class="text-center p-2 px-5">
                     <p class="text-xs lg:text-xl font-medium truncate">
@@ -180,26 +190,19 @@
                     </p>
                 </div>
             </div>
-            <div class="max-w-[270px] max-h-[405px] pb-12 bg-green-200 rounded-lg overflow-hidden shadow-lg">
+            <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
                 <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
                 <div class="text-center p-2 px-5">
                     <p class="text-xs lg:text-xl font-medium truncate">
                         Drs. Dikezz Lawler banget
                     </p>
-                </div>
-            </div>
-            <div class="max-w-[270px] max-h-[405px] pb-12 bg-green-200 rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                <div class="text-center p-2 px-5">
-                    <p class="text-xs lg:text-xl font-medium truncate">
-                        Drs. Dikezz Lawler banget
-                    </p>
+                    @endforeach
                 </div>
             </div>
             <!-- Add more grid items as needed -->
         </div>
         {{-- Staff Section --}}
-        <div id="strukturOrganisasi" class="flex flex-col w-full items-center h-full pb-5 bg-emerald-100">
+        <div id="strukturOrganisasi" class="flex flex-col w-full items-center h-full pb-5 bg-custom-color3">
             <div class="border bg-white drop-shadow-lg lg:drop-shadow-2xl rounded-[22px] py-2 px-10 sm:px-20 xl:px-40 mt-5">
                 <div class="text-green-700 font-bold text-center text-xl md:text-3xl xl:text-4xl">
                     STAFF PUSKESMAS
@@ -207,16 +210,36 @@
             </div>
             <!-- Carousel wrapper -->
             <div class="grid grid-cols-4 px-5 pt-5 lg:pt-5 gap-4" id="strukturOrganisasi">
-                <div class="max-w-[270px] max-h-[405px] pb-12 bg-green-200 rounded-lg overflow-hidden shadow-lg">
-                    @foreach($list as $l)
-                    <img class="w-full h-full" src="{{ Storage::url('imgstaff/' . $l->foto) }}" alt="Foto">
-                    @endforeach
+                <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
+                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
                     <div class="text-center p-2 px-5">
-                        @foreach($namas as $nama)
                         <p class="text-xs lg:text-xl font-medium truncate">
-                            {{ $nama->nama }}
+                            Drs. Dikezz Lawler banget
                         </p>
-                        @endforeach
+                    </div>
+                </div>
+                <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
+                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
+                    <div class="text-center p-2 px-5">
+                        <p class="text-xs lg:text-xl font-medium truncate">
+                            Drs. Dikezz Lawler banget
+                        </p>
+                    </div>
+                </div>
+                <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
+                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
+                    <div class="text-center p-2 px-5">
+                        <p class="text-xs lg:text-xl font-medium truncate">
+                            Drs. Dikezz Lawler banget
+                        </p>
+                    </div>
+                </div>
+                <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
+                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
+                    <div class="text-center p-2 px-5">
+                        <p class="text-xs lg:text-xl font-medium truncate">
+                            Drs. Dikezz Lawler banget
+                        </p>
                     </div>
                 </div>
                 <!-- Add more grid items as needed -->
@@ -242,15 +265,11 @@
                         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                             <div class="flex">
                                 <div class="flex flex-col absolute h-full bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-lg overflow-hidden shadow-lg" style="background-color:#C4F2BD">
-                                    @foreach($fotop as $fp)
-                                    <img class="object-cover w-[347.26px] h-[384.17px]" src="{{ Storage::url('imgprestasi/' . $fp->foto) }}" alt="Foto">
-                                    @endforeach
+                                    <img class="w-[347.26px] h-[384.17px]" src="../../img/orangniaga.jpeg" alt="Dokter Niaga">
                                     <div>
-                                        @foreach($namap as $np)
                                         <p class="text-center text-2xl py-6">
-                                            {{ $np->nama }}
+                                            Nama Prestasi
                                         </p>
-                                        @endforeach
                                     </div>
                                 </div>
                             </div>

@@ -1,24 +1,22 @@
 @extends('layouts.main', ['title' => 'Program & Kegiatan'])
 @section('heroSection')
 <div class="columns">
-    <div class="flex font-montserrat text-green-700 justify-left text-center px-4 lg:text-left lg:pl-64 sm:text-left sm:pl-20 ">
-        <div class="flex flex-col w-full sm:w-3/5">
-            <h1 class="font-bold pb-5 text-xl sm:text-2xl md:text-3xl xl:text-4xl">Pelayanan</h1>
-            <p class="text-xs sm:text-sm md:text-base lg:text-lg">Komitmen kami adalah untuk menyediakan layanan
+    <div class="flex font-montserrat mt-5 md:mt-0 text-green-700 justify-left text-justify px-4 lg:text-left lg:pl-64 sm:pl-20">
+        <div class="flex flex-col w-full md:w-4/5 sm:w-3/5">
+            <h1 class="font-bold pb-1 lg:pb-5 text-xl md:text-3xl xl:text-4xl">Pelayanan</h1>
+            <p class="text-xs md:text-base lg:text-lg">Komitmen kami adalah untuk menyediakan layanan
                 kesehatan terbaik bagi masyarakat dengan melibatkan tim profesional yang berdedikasi dan memanfaatkan
                 fasilitas modern yang kami miliki. Tim medis kami, yang terdiri dari para ahli kesehatan yang
-                berpengalaman, bertujuan untuk memberikan perawatan holistik yang mencakup aspek pencegahan, pengobatan,
-                dan pemulihan. Fasilitas kami yang dilengkapi dengan teknologi terkini tidak hanya menciptakan
-                lingkungan yang aman, tetapi juga nyaman bagi setiap pasien yang mempercayakan kesehatan mereka kepada
-                kami. Melalui pendekatan yang personal dan komprehensif.</p>
+                berpengalaman, bertujuan untuk memberikan perawatan yang mencakup aspek pencegahan, pengobatan,
+                dan pemulihan.</p>
         </div>
     </div>
 </div>
 @endsection
 @section('container')
 <div class="container max-w-full h-full bg-custom-color3 relative">
-    <div class="flex flex-col lg:flex-row lg:justify-center items-center lg:pt-32 lg:gap-64 pt-32 pb-32 lg:pb-32">
-        <div class="flex flex-col text-green-700 font-montserrat scale-110 lg:scale-150 bg-white shadow-lg px-8 py-4 rounded-lg">
+    <div class="flex flex-col md:flex-row md:justify-center items-center lg:pt-32 lg:gap-64 md:gap-16 py-20 md:py-32">
+        <div class="flex flex-col text-green-700 font-montserrat scale-125 lg:scale-150 bg-white shadow-lg px-8 py-4 rounded-lg">
             <div class="flex justify-center text-lg ">
                 Jam Operasional
             </div>
@@ -79,21 +77,20 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-row justify-center items-center invisible lg:visible h-0 lg:32">
+        <div class="lg:flex md:flex flex-row justify-center items-center invisible md:visible">
             <div class="">
-                <img src="../../img/logoPuskesmasLegok.png" class="w-48 lg:w-64" alt="Puskesmas Legok">
+                <img src="../../img/logoPuskesmasLegok.png" class="w-0 md:w-48 lg:w-64" alt="Puskesmas Legok">
             </div>
             <div class="">
-                <img src="../../img/logoBanten.png" class="w-28 lg:w-48" alt="Logo Satya">
+                <img src="../../img/logoBanten.png" class="w-0 md:w-28 lg:w-48" alt="Logo Satya">
             </div>
         </div>
     </div>
 </div>
-
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-4 pt-8 shadow-inner">
     <div class="flex flex-wrap -mx-4">
         <!-- Left Column -->
-        <div class="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
+        <div class="w-full md:w-2/4 px-4 lg:mb-0">
             <!-- Section Lantai 1 -->
             <div class="mb-8">
                 <h2 class="font-semibold text-xl mb-4">Lantai 1</h2>
@@ -111,7 +108,7 @@
             </div>
             <!-- Section Lantai 2 -->
             <div>
-                <h2 class="font-semibold text-xl mb-4">Lantai 2</h2>
+                <h2 class="font-semibold text-xl ">Lantai 2</h2>
                 <div class="bg-white shadow rounded-lg p-6">
                     <ul class="divide-y divide-gray-200">
                         <li class="py-2">Ruang Kepala Puskesmas</li>
@@ -125,7 +122,7 @@
             </div>
         </div>
         <!-- Right Column -->
-        <div class="w-full lg:w-1/3 px-4">
+        <div class="w-full md:w-2/4 px-4 my-auto">
             <!-- Section Lantai 2 (Continued) -->
             <div class="bg-white shadow rounded-lg p-6">
                 <h2 class="font-semibold text-xl mb-4">Lantai 2</h2>
@@ -149,7 +146,7 @@
     <!-- Scrollable Image Section -->
     <div class="mt-8">
         <div class="flex space-x-4 overflow-x-auto">
-            @foreach($photos as $p)
+            @foreach ($photos as $p)
             <img class="flex-none w-120 h-60 object-cover rounded-lg shadow-lg" src="{{ Storage::url('imgfasilitas/' . $p->foto) }} alt=" Image description">
             @endforeach
         </div>
@@ -183,5 +180,4 @@
         </div>
     </div>
 </div>
-
 @endsection
