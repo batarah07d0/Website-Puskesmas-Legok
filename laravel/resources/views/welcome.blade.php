@@ -14,33 +14,48 @@
 @endsection
 @section('container')
     <div class="h-[20rem] lg:h-[40rem] bg-custom-color3">
-        <div class="container z-40 max-w-full lg:max-w-full lg:absolute block pt-0 md:pt-5 lg:pt-0 -translate-y-2/4">
-            <div class="container flex max-w-full justify-center px-2 gap-2 md:px-5 md:gap-10 ">
+        <div
+            class="container flex justify-center z-40 max-w-full lg:max-w-full lg:absolute lg:block pt-0 md:pt-5 lg:pt-0 -translate-y-2/4">
+            <div class="container flex max-w-sm md:max-w-full justify-center px-2 gap-2 md:px-5 md:gap-10 ">
                 <div
-                    class="w-3/4 mx-auto flex flex-col justify-center border shadow-lg bg-white rounded-2xl py-2 px-4 font-bold leading-relaxed tracking-light text-green-700 font-montserrat">
-                    <h2 class="text-lg sm:text-xl md:text-2xl text-left mb-4 lg:mb-2">Ambil Nomor Antrian Online</h2>
+                    class="relative w-5/6 lg:w-3/4 mx-auto mt-16 md:m-0 flex flex-col justify-center border shadow-lg bg-white rounded-2xl py-2 px-4 font-bold leading-relaxed tracking-light text-green-700 font-montserrat">
+                    <h2 class="text-sm md:text-xl lg:text-2xl text-left mb-1 md:mb-2">Ambil Nomor Antrian Online</h2>
                     <form action="/daftaronline"
-                        class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-2 md:gap-10">
+                        class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-1 md:gap-10 mb-1">
                         <select name="kategori"
-                            class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base">
+                            class="scale-y-110 md:scale-y-105 w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-xs md:text-base">
                             <option selected disabled>Jenis Layanan Kesehatan</option>
                             @foreach ($enumValues as $value)
                                 <option value="{{ $value }}">{{ $value }}</option>
                             @endforeach
                         </select>
-                        <select name="waktu_pelayanan"
+                        <div class="relative w-full scale-y-90 md:scale-y-100" data-te-format24="true"
+                            id="timepicker-format" data-te-input-wrapper-init data-te-timepicker-init>
+                            <input type="text"
+                                class="peer block min-h-[auto] w-full rounded-lg border-solid bg-green-700 bg-opacity-20 px-2 py-1 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                data-te-toggle="timepicker" id="form14" oninput="toggleLabelVisibility()" />
+                            <label for="form14" id="labelJamPelayanan"
+                                class="text-sm md:text-base pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-green-700 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Jam
+                                Pelayanan</label>
+                        </div>
+                        {{-- <select name="waktu_pelayanan"
                             class="w-full rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 text-sm sm:text-base"
                             id="">
                             <option selected>Jam Layanan</option>
                             @foreach ($enumValue as $values)
                                 <option value="{{ $values }}">{{ $values }}</option>
                             @endforeach
-                        </select>
-                        <div class="w-full mt-1 p-1 rounded-lg bg-green-700 text-center text-white">
+                        </select> --}}
+                        <div class="w-full p-1  rounded-lg bg-green-600 hover:bg-green-700 text-center text-white">
                             <button data-modal-target="default-modal" data-modal-toggle="default-modal" type="submit"
-                                class="w-full">Ambil Antrian</button>
+                                class="w-full text-sm md:text-lg" id="submitBtn" disabled>Ambil Antrian</button>
                         </div>
                     </form>
+                    <p id="notification" class="text-xs md:text-sm text-red-700 hidden">Isi Jenis Layanan dan Jam
+                        Pelayanan
+                        terlebih
+                        dahulu dan pilih Jam Pelayanan sesuai dengan Jadwal Pelayanan Puskesmas.
+                    </p>
                 </div>
             </div>
         </div>
@@ -55,7 +70,8 @@
                     </div>
                     <div class="text-green-700 text-l flex gap-[15px] flex-row justify-between pt-2 px-2">
                         <div>Senin<br>Selasa<br>Rabu<br>Kamis<br>Jumat<br>Sabtu<br>Minggu</div>
-                        <div>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 11.00<br>08.00 -
+                        <div>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 11.00<br>08.00
+                            -
                             11.00<br>Libur</div>
                     </div>
                 </div>
@@ -73,7 +89,8 @@
         <div class="h-[26rem] lg:h-[34rem] bg-custom-color3">
             <div class="container max-w-full h-full px-12 pb-4 lg:py-4 font-montserrat">
                 <div class="flex justify-center">
-                    <h2 class="text-center lg:mb-0 text-2xl md:text-4xl text-green-700">Frequently Asked Question (FAQ)</h2>
+                    <h2 class="text-center lg:mb-0 text-2xl md:text-4xl text-green-700">Frequently Asked Question (FAQ)
+                    </h2>
                 </div>
                 <div class="md:pt-2 flex justify-center items-start lg:my-2">
                     <div class="w-full sm:w-10/12 md:w-2/2 lg:w-1/2 my-1">
@@ -163,6 +180,36 @@
             </div>
         @endsection
         <script>
+            function checkInputs() {
+                var kategori = document.querySelector('[name="kategori"]').value;
+                var jamPelayanan = document.querySelector('#form14').value;
+
+                var submitButton = document.getElementById("submitBtn");
+                var notification = document.getElementById("notification");
+
+                // Memeriksa apakah kedua input tidak kosong
+                if (kategori.trim() !== "" && jamPelayanan.trim() !== "") {
+                    // Mengaktifkan tombol
+                    submitButton.removeAttribute("disabled");
+                    // Menyembunyikan pemberitahuan
+                    notification.classList.add("hidden");
+                } else {
+                    // Menonaktifkan tombol
+                    submitButton.setAttribute("disabled", "true");
+                    // Menampilkan pemberitahuan
+                    notification.classList.remove("hidden");
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                // Memanggil fungsi checkInputs saat halaman dimuat
+                checkInputs();
+
+                // Menambahkan event listener untuk memanggil checkInputs saat ada input
+                document.querySelector('[name="kategori"]').addEventListener("input", checkInputs);
+                document.querySelector('#form14').addEventListener("input", checkInputs);
+            });
+
             document.addEventListener('alpine:init', () => {
                 Alpine.store('accordion', {
                     tab: 0
@@ -185,4 +232,26 @@
                     }
                 }));
             })
+
+            function toggleLabelVisibility() {
+                var input = document.getElementById('form14');
+                var label = document.getElementById('labelJamPelayanan');
+
+                if (input.value.trim() !== '') {
+                    label.style.transform = 'translateY(-1.5rem) scale(0.75)';
+                    label.style.opacity = '0';
+                } else {
+                    label.style.transform = 'translateY(0) scale(1)';
+                    label.style.opacity = '1';
+                }
+            }
+            document.getElementById('form14').addEventListener('blur', function() {
+                var input = this;
+                var label = document.getElementById('labelJamPelayanan');
+
+                if (input.value.trim() === '') {
+                    label.style.transform = 'translateY(0) scale(1)';
+                    label.style.opacity = '1';
+                }
+            });
         </script>
