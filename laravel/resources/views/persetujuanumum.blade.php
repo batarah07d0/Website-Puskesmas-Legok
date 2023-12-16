@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="mt-4 ml-7 pb-2 flex items-center flex justify-between mr-7">
+    <div class="mt-4 ml-7 pb-2 flex items-center justify-between mr-7">
         <h1 class="text-black text-2xl font-bold font-poppins flex justify-start md:text-3xl xl:text-5xl">
             Persetujuan Umum
         </h1>

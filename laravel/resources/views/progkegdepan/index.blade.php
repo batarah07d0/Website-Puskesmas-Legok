@@ -1,4 +1,4 @@
-@extends('layouts.main', ['title' => 'Beranda'])
+@extends('layouts.main', ['title' => 'Program & Kegiatan'])
 @section('heroSection')
 <div class="columns">
     <div class="flex font-montserrat text-green-700 justify-left text-center px-4 lg:text-left lg:pl-64 sm:text-left sm:pl-20">

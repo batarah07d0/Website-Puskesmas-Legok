@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     <style>
         /* Custom scrollbar styles */
@@ -28,11 +29,11 @@
         <div class="container max-w-full h-full bg-cover" style="background-image: url('/img/Group_10.png')">
             {{-- Navbar --}}
             <nav class="bg-opacity-50">
-                <div class=" md:grid md:grid-cols-3 md:gap-0 lg:grid lg:grid-cols-2 lg:gap-0 lg:place-content-between max-w-full md:max-w-full flex flex-wrap justify-between md:justify-around p-4 lg:ml-56">
+                <div class="md:grid md:grid-cols-3 md:pl-10 lg:pl-11 xl:pl-32 md:gap-0 xl:place-content-between max-w-full md:max-w-full flex flex-wrap justify-between md:justify-around p-4">
                     <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="img/logo.png" class="w-16 md:w-24" alt="Logo Puskesmas Legok" />
+                        <img src="img/logo.png" class="ml-2 w-9 md:w-12" alt="Logo Puskesmas Legok" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                            <img src="img/name.png" class="w-24 md:w-36">
+                            <img src="img/name.png" class="w-24 md:w-28">
                         </span>
                     </a>
                     <div class="flex md:order-2">
@@ -43,8 +44,8 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="z-40 absolute md:col-span-2 lg:col-span-1 inset-x-0 top-16 md:top-8 md:static lg:static bg-opacity-90 md:bg-opacity-0 lg:bg-opacity-0 bg-white items-center lg:mx-32 hidden mx-auto max-w-md md:pl-11 lg:max-w-xl md:flex md:max-w-2xl rounded-md" id="navbar-search">
-                        <ul class="flex flex-col p-4 md:p-0 font-medium bg-color rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:max-w-xl md:mt-0 md:border-0 md:bg-transparant dark:bg-transparant md:dark:bg-transparant dark:border-black">
+                    <div class="z-40 absolute md:col-span-2 inset-x-0 top-16 md:top-8 md:static bg-opacity-90 md:bg-opacity-0 bg-white items-center md:mr-8 lg:mr-10 xl:mr-[7.5rem] hidden mx-auto md:max-w-xl max-w-[26rem] lg:max-w-2xl md:flex rounded-md" id="navbar-search">
+                        <ul class="flex flex-col p-2 md:p-0 font-medium bg-color rounded-lg md:space-x-8 lg:max-w-2xl md:flex-row md:mt-0 md:border-0 md:bg-transparant dark:bg-transparant md:dark:bg-transparant dark:border-black">
                             <li>
                                 <a href="/" class="font-poppins block py-2 px-3 {{ Request::is('/') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">Beranda</a>
                             </li>
@@ -92,7 +93,7 @@
                     Membantu anda mendapatkan berbagai layanan kesehatan dimulai dari rumah dengan tepat dan cepat.
                 </h3>
             </div>
-            <div class="invisible lg:visible hidden mx-6 mt-2 lg:mt-6 lg:flex justify-start">
+            <div class="invisible hidden md:visible mx-6 mt-2 lg:mt-6 md:flex justify-start">
                 <a href="https://www.instagram.com/puskesmaslegok_tng/">
                     <img src="img/instagram.png">
                 </a>
@@ -132,7 +133,7 @@
                             Kab. Tangerang, Banten 15820</h3>
                     </span>
                 </div>
-                <div class="mt-2 flex justify-center lg:invisible">
+                <div class="mt-2 flex justify-center md:invisible md:hidden">
                     <a href="https://www.instagram.com/puskesmaslegok_tng/">
                         <img src="img/instagram.png" class="w-6">
                     </a>
@@ -146,9 +147,9 @@
         </div>
         <!-- Map Section -->
         <div class="flex justify-center lg:justify-end pt-3 pb-2 lg:pt-0 lg:pr-6">
-            <div class="mapouter relative w-[260px] h-[150px] md:w-[250px] md:h-[210px] lg:w-[380px] lg:h-[270px] bg-white">
-                <div class="gmap_canvas overflow-hidden w-[260px] h-[150px] md:w-[250px] md:h-[210px] lg:w-[380px] lg:h-[270px]">
-                    <iframe src="https://maps.google.com/maps?q=puskesmas%20legok&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" class="w-[260px] h-[150px] md:w-[250px] md:h-[210px] lg:w-[380px] lg:h-[270px]"></iframe>
+            <div class="mapouter relative w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px] bg-white">
+                <div class="gmap_canvas overflow-hidden w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px]">
+                    <iframe src="https://maps.google.com/maps?q=puskesmas%20legok&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" class="w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px]"></iframe>
                     <style>
                         .maprouter a {
                             color: #fff !important;
