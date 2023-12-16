@@ -201,7 +201,7 @@
             <div class="grid grid-cols-4 px-5 pt-5 lg:pt-5 gap-4" id="strukturOrganisasi">
                 @foreach($lists->take(4) as $index => $li)
                 @php
-                $nama = $namast[$index] ?? null;
+                $nama = $nama[$index] ?? null;
                 @endphp
                 @if ($nama)
                 <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
@@ -230,42 +230,34 @@
         </div>
         <div class="w-9/12 bg-white drop-shadow-lg rounded-3xl px-10 py-20">
             <div class="flex w-full max-h-full items-center gap-5 flex-col xl:justify-center xl:flex-row xl:gap-10">
-                <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+                <div id="animation-carousel" class="relative w-full" data-carousel="static">
                     <!-- Carousel wrapper -->
                     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        @foreach ($fotop->take(4) as $index => $fp)
+                        @php
+                        $namapp = $namap[$index] ?? null;
+                        @endphp
+                        @if ($namapp)
+                        <div class="{{ $index === 0 ? 'duration-200 ease-linear' : ' hidden duration-200 ease-linear' }}" data-carousel-item="{{ $index === 0 ? 'active' : '' }}">
                             <div class="flex">
-                                <div class="flex flex-col absolute h-full bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-lg overflow-hidden shadow-lg" style="background-color:#C4F2BD">
-                                    <img class="w-[347.26px] h-[384.17px]" src="../../img/orangniaga.jpeg" alt="Dokter Niaga">
+                                <div class="flex flex-col  absolute h-full bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-lg overflow-hidden shadow-lg" style="background-color:#C4F2BD">
+                                    <img class="w-[347.26px] h-[384.17px]" src="{{ Storage::url('imgprestasi/' . $fp->foto) }}" alt="">
                                     <div>
                                         <p class="text-center text-2xl py-6">
-                                            Nama Prestasi
+                                            {{ $namapp->deskripsi }}
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Item 2 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <div class="flex">
-                                <div class="flex flex-col absolute h-full bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-lg overflow-hidden shadow-lg" style="background-color:#C4F2BD">
-                                    <img class="w-[347.26px] h-[384.17px]" src="../../img/orangniaga.jpeg" alt="Dokter Niaga">
-                                    <div>
-                                        <p class="text-center text-2xl py-6">
-                                            Doctor Dikezz
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endif
+                        @endforeach
                     </div>
                     <!-- Slider indicators -->
-                    <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse -bottom-8 left-1/2">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                    <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                        @foreach ($fotop as $index => $foto)
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}" data-carousel-slide-to="{{ $index   }}"></button>
+                        @endforeach
                     </div>
                     <!-- Slider controls -->
                     <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -289,5 +281,6 @@
         </div>
     </div>
 </div>
+
 {{-- End Prestasi Section --}}
 @endsection
