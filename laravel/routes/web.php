@@ -44,21 +44,13 @@ Route::get('/', [Home2Controller::class, 'index']);
 Route::get('/pelayanan', [Home3Controller::class, 'index']);
 Route::get('/tentangkami', [Home4Controller::class, 'index']);
 
-
 Route::get('/detaildokter', function () {
     return view('detaildokter');
 });
 
 
-
 Route::get('/daftaronline', function () {
     return view('daftaronline');
-});
-
-
-
-Route::get('/jadwaldokter', function () {
-    return view('jadwaldokter');
 });
 
 Route::get('/persetujuanumum', function () {
@@ -68,8 +60,6 @@ Route::get('/persetujuanumum', function () {
 Route::get('/footer', function () {
     return view('footer');
 });
-
-
 
 /* Struktur Organisasi */
 Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
