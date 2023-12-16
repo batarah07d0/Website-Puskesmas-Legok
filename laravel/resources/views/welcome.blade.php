@@ -36,11 +36,7 @@
                 </form>
             </div>
         </div>
-        <div class="text-green-700 text-l flex gap-[15px] flex-row justify-between pt-2 px-2">
-            <div>Senin<br>Selasa<br>Rabu<br>Kamis<br>Jumat<br>Sabtu<br>Minggu</div>
-            <div>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 13.00<br>08.00 - 11.00<br>08.00 -
-                11.00<br>Libur</div>
-        </div>
+
     </div>
     <div class="container max-w-full h-full lg:bg-custom-color3 md:relative bg-custom-color3">
         <div class="flex flex-col md:flex-row md:justify-center items-center lg:pt-52 md:gap-14 lg:gap-64 pt-0">
