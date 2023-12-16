@@ -147,7 +147,7 @@
     <div class="mt-8">
         <div class="flex space-x-4 overflow-x-auto">
             @foreach ($photos as $p)
-            <img class="flex-none w-120 h-60 object-cover rounded-lg shadow-lg" src="{{ Storage::url('imgfasilitas/' . $p->foto) }} alt=" Image description">
+            <img class="flex-none w-120 h-60 object-cover rounded-lg shadow-lg" src="{{ Storage::url('imgfasilitas/' . $p->foto) }}" alt=" Image description">
             @endforeach
         </div>
     </div>

@@ -172,33 +172,22 @@
         </div>
         {{-- End Profile Section --}}
         {{-- Struktur Organisasi & Staff --}}
-        <div class="grid grid-cols-3 px-5 pt-5 lg:pt-20 gap-4" id="strukturOrganisasi">
+        <div class="flex px-5 pt-5 lg:pt-20 gap-4" id="strukturOrganisasi">
+            @foreach($list->take(3) as $index => $l)
+            @php
+            $nam = $namas[$index] ?? null;
+            @endphp
+            @if ($nam)
             <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
+                <img class="w-full h-full object-cover" src="{{ Storage::url('imgdokter/' . $l->foto) }}" alt="">
                 <div class="text-center p-2 px-5">
-                    @foreach($namas as $nama)
                     <p class="text-xs lg:text-xl font-medium truncate">
-                        Drs. Dikezz Lawler banget
+                        {{ $nam->name }}
                     </p>
                 </div>
             </div>
-            <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                <div class="text-center p-2 px-5">
-                    <p class="text-xs lg:text-xl font-medium truncate">
-                        Drs. Dikezz Lawler banget
-                    </p>
-                </div>
-            </div>
-            <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                <div class="text-center p-2 px-5">
-                    <p class="text-xs lg:text-xl font-medium truncate">
-                        Drs. Dikezz Lawler banget
-                    </p>
-                    @endforeach
-                </div>
-            </div>
+            @endif
+            @endforeach
             <!-- Add more grid items as needed -->
         </div>
         {{-- Staff Section --}}
@@ -210,38 +199,21 @@
             </div>
             <!-- Carousel wrapper -->
             <div class="grid grid-cols-4 px-5 pt-5 lg:pt-5 gap-4" id="strukturOrganisasi">
+                @foreach($lists->take(4) as $index => $li)
+                @php
+                $nama = $namast[$index] ?? null;
+                @endphp
+                @if ($nama)
                 <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
+                    <img class="w-full h-full object-cover" src="{{ Storage::url('imgstaff/' . $li->foto) }}" alt="">
                     <div class="text-center p-2 px-5">
                         <p class="text-xs lg:text-xl font-medium truncate">
-                            Drs. Dikezz Lawler banget
+                            {{ $nama->nama }}
                         </p>
                     </div>
                 </div>
-                <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                    <div class="text-center p-2 px-5">
-                        <p class="text-xs lg:text-xl font-medium truncate">
-                            Drs. Dikezz Lawler banget
-                        </p>
-                    </div>
-                </div>
-                <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                    <div class="text-center p-2 px-5">
-                        <p class="text-xs lg:text-xl font-medium truncate">
-                            Drs. Dikezz Lawler banget
-                        </p>
-                    </div>
-                </div>
-                <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full h-full object-cover" src="../../img/orangniaga.jpeg" alt="">
-                    <div class="text-center p-2 px-5">
-                        <p class="text-xs lg:text-xl font-medium truncate">
-                            Drs. Dikezz Lawler banget
-                        </p>
-                    </div>
-                </div>
+                @endif
+                @endforeach
                 <!-- Add more grid items as needed -->
             </div>
         </div>
