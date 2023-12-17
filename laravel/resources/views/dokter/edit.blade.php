@@ -26,8 +26,7 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">Spesialisasi</label>
-            <img src="{{ asset('imgdokter/' . $dokter->foto) }}" alt="Foto" style="width: 25rem; height: auto; display: block; margin-bottom: 10px;">
-            <input type="file" name="foto" placeholder="Foto" value="{{ $dokter->foto }}">
+            <input type="text" name="spesialisasi" placeholder="Spesialisasi" value="{{ $dokter->spesialisasi }}">
         </div>
     </div>
     <div class="row">

@@ -22,6 +22,7 @@ use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
 use App\Models\Prestasi;
 use App\Models\ProgramKegiatan;
+use App\Models\CheckMobileDevice;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,10 @@ Route::get('/daftaronline', function () {
     return view('daftaronline');
 });
 
+Route::get('/jadwaldokter', function () {
+    return view('jadwaldokter');
+});
+
 Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
 });
@@ -80,7 +85,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('logout', 'logout')->middleware('auth')->name('logout');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'check.mobile.device'])->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
