@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Dokter;
 use App\Models\Staff;
 
 class Home4Controller extends Controller
