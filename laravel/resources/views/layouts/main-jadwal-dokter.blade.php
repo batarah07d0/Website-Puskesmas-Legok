@@ -25,8 +25,9 @@
 </head>
 
 <body>
-    <div class="h-[20rem] lg:h-[32rem]">
-        <div class="container max-w-full h-full bg-cover" style="background-image: url('/img/Group_10.png')">
+    <div class="h-[10rem] md:h-[13rem] lg:h-[17rem] xl:h-[20vmax]">
+        <div class="container max-w-full h-[25vmax] xl:h-[45vh] bg-cover"
+            style="background-image: url('/img/Group_10.png')">
             {{-- Navbar --}}
             <nav class="bg-opacity-50">
                 <div
