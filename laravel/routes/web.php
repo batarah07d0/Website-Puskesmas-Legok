@@ -16,7 +16,7 @@ use App\Http\Controllers\Home2Controller;
 use App\Http\Controllers\Home3Controller;
 use App\Http\Controllers\Home4Controller;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\QuotaController;
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
@@ -47,10 +47,9 @@ Route::get('/detaildokter', function () {
     return view('detaildokter');
 });
 
+Route::post('/daftaronline', [QuotaController::class, 'getpoliquota']);
 
-Route::get('/daftaronline', function () {
-    return view('daftaronline');
-});
+Route::post('/buat-antrian', [PasienController::class, 'storeantrian']);
 
 Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
@@ -185,3 +184,6 @@ Route::middleware('auth')->group(function () {
 
 
 /* Akhir */
+
+
+// https://stackoverflow.com/questions/42787107/how-to-update-automatically-data-when-finished-day-0000-in-mysql

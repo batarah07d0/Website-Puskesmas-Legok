@@ -10,8 +10,7 @@
 
 <body x-data="{ showModal: false, isApproved: false }" x-init="showModal = !isApproved">
     <!-- Modal -->
-    <div x-show="showModal" id="popup-modal" tabindex="-1"
-        class="overflow-y-auto overflow-x-hidden flex fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div x-show="showModal" id="popup-modal" tabindex="-1" class="overflow-y-auto overflow-x-hidden flex fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-4xl max-h-full">
             <div class="relative bg-white rounded-lg shadow pb-2 dark:bg-gray-700">
                 <div class="mt-4 ml-7 pb-2 flex items-center justify-between mr-7">
@@ -140,13 +139,11 @@
                         formulir ini dan menandatangani tanpa paksaan dan dengan kesadaran penuh.
                     </h1>
                     <div class="flex justify-end gap-7 ml-7 mr-7 mt-10 mb-8">
-                        <button x-on:click="isApproved = true; showModal = false" type="button"
-                            class="bg-green-500 hover:bg-green-700 transition duration-300 text-white text-lg font-poppins w-48 border border-1 shadow-md drop-shadow-lg rounded-md font-bold p-4">
+                        <button x-on:click="isApproved = true; showModal = false" type="button" class="bg-green-500 hover:bg-green-700 transition duration-300 text-white text-lg font-poppins w-48 border border-1 shadow-md drop-shadow-lg rounded-md font-bold p-4">
                             SETUJU
                         </button>
                         <span>
-                            <button x-on:click="showModal = false; navigateTo('beranda')" type="button"
-                                class="ml-4 bg-rose-500 hover:bg-rose-700 transition duration-300 text-white text-lg font-poppins w-44 border border-1 shadow-md drop-shadow-lg rounded-md font-bold p-4">
+                            <button x-on:click="showModal = false; navigateTo('beranda')" type="button" class="ml-4 bg-rose-500 hover:bg-rose-700 transition duration-300 text-white text-lg font-poppins w-44 border border-1 shadow-md drop-shadow-lg rounded-md font-bold p-4">
                                 KEMBALI
                             </button>
                         </span>
@@ -157,6 +154,16 @@
     </div>
 
     <!-- Konten Utama -->
+    @if ($_POST['kategori'] == "Poli Gigi")
+    @if ($quota <= 0)
+    <div class="mx-auto p-4 w-full max-w-4xl max-h-full" x-show="isApproved">
+        <h1 class="font-poppins">
+            Maaf, quota untuk Poli Gigi sudah habis untuk esok hari.
+        </h1>
+        <br>
+        <a href="/" class="p-5 mt-10 font-poppins bg-green-500 drop-shadow-lg border rounded-lg text-white">Kembali ke home tab</a>
+    </div>
+    @else
     <div class="mx-auto p-4 w-full max-w-4xl max-h-full" x-show="isApproved">
         <div class="ml-7 mt-5">
             <h1 class="font-poppins text-4xl font-bold drop-shadow-lg">Daftar Online</h1>
@@ -166,29 +173,25 @@
                 Jam Pelayanan yang telah dipilih, toleransi keterlambatan selama 15 menit dari Jam Pelayanan yang telah
                 dipilih jika lewat dari waktu keterlambatan maka tiket akan hangus.</p>
         </div>
-        <div class="pb-4">
-            <form action="" class="ml-7 mt-8 mr-7">
+        <form action="/buat-antrian" method="POST" class="ml-7 mt-8 mr-7">
+            <div class="pb-4">
                 @csrf
+                <input type="hidden" name="jenis_layanan" value="{{$_POST['kategori']}}" autocomplete="off">
+                <input type="hidden" name="jam_layanan" value="{{$_POST['jam_layanan']}}" autocomplete="off">
                 <div class="grid gap-6 mb-6">
                     <div class="shadow-lg">
                         <label for="nama" class="block mb-2 font-poppins text-2xl font-medium">Nama</label>
-                        <input type="text" id="nama" name="nama_lengkap"
-                            class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3"
-                            placeholder="Masukkan Nama Lengkap Anda, Cth. : Aziz Akbar" required>
+                        <input type="text" id="nama" name="nama_lengkap" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Nama Lengkap Anda, Cth. : Aziz Akbar" required>
                     </div>
                     <div class="shadow-lg">
                         <label for="nik" class="block mb-2 font-poppins text-2xl font-medium">NIK</label>
-                        <input type="number" id="nik" name="nik"
-                            class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3"
-                            placeholder="Masukkan NIK Anda, Cth. : 12345678910" required>
+                        <input type="number" id="nik" name="nik" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan NIK Anda, Cth. : 12345678910" required>
                     </div>
                     <div class="shadow-lg">
                         <label for="nomorbpjs" class="block mb-2 font-poppins text-2xl font-medium">Nomor BPJS (Jika
                             Anda
                             BPJS)</label>
-                        <input type="number" id="nomorbpjs" name="no_bpjs"
-                            class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3"
-                            placeholder="Masukkan Nomor BPJS Anda, Cth. : 09876554321" required>
+                        <input type="number" id="nomorbpjs" name="no_bpjs" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Nomor BPJS Anda, Cth. : 09876554321" required>
                     </div>
                     <div>
                         <p class="-mt-5 ml-1 text-red-500 text-xs italic">Jika Anda bukan pengguna BPJS, maka akan ada
@@ -197,20 +200,16 @@
                     <div class="shadow-lg">
                         <label for="tempatlahir" class="block mb-2 font-poppins text-2xl font-medium">Tempat
                             Lahir</label>
-                        <input type="text" id="tempatlahir" name="tempat_lahir"
-                            class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3"
-                            placeholder="Masukkan Tempat Lahir Anda, Cth. : Jakarta Utara" required>
+                        <input type="text" id="tempatlahir" name="tempat_lahir" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Tempat Lahir Anda, Cth. : Jakarta Utara" required>
                     </div>
                     <div>
                         <label for="tanggallahir" class="block mb-2 font-poppins text-2xl font-medium">Tanggal
                             Lahir</label>
-                        <input type="date" id="tanggallahir" name="tanggal_lahir"
-                            class="w-48 font-poppins border border-gray-600 text-sm rounded-lg block p-3 shadow-lg">
+                        <input type="date" id="tanggallahir" name="tanggal_lahir" class="w-48 font-poppins border border-gray-600 text-sm rounded-lg block p-3 shadow-lg">
                     </div>
                     <div>
                         <label for="agama" class="block mb-2 font-poppins text-2xl font-medium">Agama</label>
-                        <select id="agama" name="agama"
-                            class="w-48 font-poppins border border-gray-600 text-sm rounded-lg p-3 shadow-lg">
+                        <select id="agama" name="agama" class="w-48 font-poppins border border-gray-600 text-sm rounded-lg p-3 shadow-lg">
                             <option value="" disabled selected hidden>Pilih Agama Anda</option>
                             <option value="islam">Islam</option>
                             <option value="kristenprotestan">Kristen Protestan</option>
@@ -223,40 +222,113 @@
                     <div class="shadow-lg">
                         <label for="kepalakeluarga" class="block mb-2 font-poppins text-2xl font-medium">Kepala
                             Keluarga</label>
-                        <input type="text" id="kepalakeluarga" name="kepala_keluarga"
-                            class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3"
-                            placeholder="Masukkan Nama Kepala Keluarga Anda, Cth. : Aji Rono" required>
+                        <input type="text" id="kepalakeluarga" name="kepala_keluarga" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Nama Kepala Keluarga Anda, Cth. : Aji Rono" required>
                     </div>
                     <div class="shadow-lg">
                         <label for="alamat" class="block mb-2 font-poppins text-2xl font-medium">Alamat (Beserta
                             RT/RW)</label>
-                        <input type="text" id="alamat" name="alamat"
-                            class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3"
-                            placeholder="Masukkan Alamat Anda, Cth. : Jalan Mawar Blok 3 No 5 RT 02/RW 12" required>
+                        <input type="text" id="alamat" name="alamat" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Alamat Anda, Cth. : Jalan Mawar Blok 3 No 5 RT 02/RW 12" required>
                     </div>
                     <div class="shadow-lg">
-                        <label for="desaataukelurahan"
-                            class="block mb-2 font-poppins text-2xl font-medium">Desa/Kelurahan</label>
-                        <input type="text" id="desaataukelurahan" name="desa"
-                            class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3"
-                            placeholder="Masukkan Desa/Kelurahan Anda, Cth. : Cirarab" required>
+                        <label for="desaataukelurahan" class="block mb-2 font-poppins text-2xl font-medium">Desa/Kelurahan</label>
+                        <input type="text" id="desaataukelurahan" name="desa" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Desa/Kelurahan Anda, Cth. : Cirarab" required>
                     </div>
                     <div class="shadow-lg">
                         <label for="kecamatan" class="block mb-2 font-poppins text-2xl font-medium">Kecamatan</label>
-                        <input type="text" id="kecamatan" name="kecamatan"
-                            class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3"
-                            placeholder="Masukkan Kecamatan Anda, Cth. : Legok" required>
+                        <input type="text" id="kecamatan" name="kecamatan" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Kecamatan Anda, Cth. : Legok" required>
                     </div>
                 </div>
-        </div>
-        <div class="grid justify-items-end ml-7 mt-9 mb-6 mr-7">
-            <button data-modal-target="default-modal" ata-modal-toggle="default-modal" type="submit"
-                class="bg-green-500 hover:bg-green-700 transition duration-300 text-white text-lg font-poppins w-48 border border-1 drop-shadow-lg rounded-md font-bold p-2">
-                AMBIL ANTRIAN
-            </button>
-        </div>
+            </div>
+            <div class="grid justify-items-end ml-7 mt-9 mb-6 mr-7">
+                <button data-modal-target="default-modal" ata-modal-toggle="default-modal" type="submit" class="bg-green-500 hover:bg-green-700 transition duration-300 text-white text-lg font-poppins w-48 border border-1 drop-shadow-lg rounded-md font-bold p-2">
+                    AMBIL ANTRIAN
+                </button>
+            </div>
         </form>
     </div>
+    @endif
+    @else
+    <div class="mx-auto p-4 w-full max-w-4xl max-h-full" x-show="isApproved">
+        <div class="ml-7 mt-5">
+            <h1 class="font-poppins text-4xl font-bold drop-shadow-lg">Daftar Online</h1>
+            <p class="text-justify pr-6">Antrian yang diambil melalui pendaftaran online ini hanya dapat digunakan pada
+                esok
+                hari sesuai dengan
+                Jam Pelayanan yang telah dipilih, toleransi keterlambatan selama 15 menit dari Jam Pelayanan yang telah
+                dipilih jika lewat dari waktu keterlambatan maka tiket akan hangus.</p>
+        </div>
+        <form action="" class="ml-7 mt-8 mr-7">
+            <div class="pb-4">
+                @csrf
+                <div class="grid gap-6 mb-6">
+                    <div class="shadow-lg">
+                        <label for="nama" class="block mb-2 font-poppins text-2xl font-medium">Nama</label>
+                        <input type="text" id="nama" name="nama_lengkap" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Nama Lengkap Anda, Cth. : Aziz Akbar" required>
+                    </div>
+                    <div class="shadow-lg">
+                        <label for="nik" class="block mb-2 font-poppins text-2xl font-medium">NIK</label>
+                        <input type="number" id="nik" name="nik" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan NIK Anda, Cth. : 12345678910" required>
+                    </div>
+                    <div class="shadow-lg">
+                        <label for="nomorbpjs" class="block mb-2 font-poppins text-2xl font-medium">Nomor BPJS (Jika
+                            Anda
+                            BPJS)</label>
+                        <input type="number" id="nomorbpjs" name="no_bpjs" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Nomor BPJS Anda, Cth. : 09876554321" required>
+                    </div>
+                    <div>
+                        <p class="-mt-5 ml-1 text-red-500 text-xs italic">Jika Anda bukan pengguna BPJS, maka akan ada
+                            biaya pendaftaran sebesar Rp. 3000</p>
+                    </div>
+                    <div class="shadow-lg">
+                        <label for="tempatlahir" class="block mb-2 font-poppins text-2xl font-medium">Tempat
+                            Lahir</label>
+                        <input type="text" id="tempatlahir" name="tempat_lahir" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Tempat Lahir Anda, Cth. : Jakarta Utara" required>
+                    </div>
+                    <div>
+                        <label for="tanggallahir" class="block mb-2 font-poppins text-2xl font-medium">Tanggal
+                            Lahir</label>
+                        <input type="date" id="tanggallahir" name="tanggal_lahir" class="w-48 font-poppins border border-gray-600 text-sm rounded-lg block p-3 shadow-lg">
+                    </div>
+                    <div>
+                        <label for="agama" class="block mb-2 font-poppins text-2xl font-medium">Agama</label>
+                        <select id="agama" name="agama" class="w-48 font-poppins border border-gray-600 text-sm rounded-lg p-3 shadow-lg">
+                            <option value="" disabled selected hidden>Pilih Agama Anda</option>
+                            <option value="islam">Islam</option>
+                            <option value="kristenprotestan">Kristen Protestan</option>
+                            <option value="katolik">Katolik</option>
+                            <option value="hindu">Hindu</option>
+                            <option value="buddha">Buddha</option>
+                            <option value="konghucu">Konghucu</option>
+                        </select>
+                    </div>
+                    <div class="shadow-lg">
+                        <label for="kepalakeluarga" class="block mb-2 font-poppins text-2xl font-medium">Kepala
+                            Keluarga</label>
+                        <input type="text" id="kepalakeluarga" name="kepala_keluarga" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Nama Kepala Keluarga Anda, Cth. : Aji Rono" required>
+                    </div>
+                    <div class="shadow-lg">
+                        <label for="alamat" class="block mb-2 font-poppins text-2xl font-medium">Alamat (Beserta
+                            RT/RW)</label>
+                        <input type="text" id="alamat" name="alamat" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Alamat Anda, Cth. : Jalan Mawar Blok 3 No 5 RT 02/RW 12" required>
+                    </div>
+                    <div class="shadow-lg">
+                        <label for="desaataukelurahan" class="block mb-2 font-poppins text-2xl font-medium">Desa/Kelurahan</label>
+                        <input type="text" id="desaataukelurahan" name="desa" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Desa/Kelurahan Anda, Cth. : Cirarab" required>
+                    </div>
+                    <div class="shadow-lg">
+                        <label for="kecamatan" class="block mb-2 font-poppins text-2xl font-medium">Kecamatan</label>
+                        <input type="text" id="kecamatan" name="kecamatan" class=" font-poppins border border-gray-600 text-sm rounded-lg block w-full p-3" placeholder="Masukkan Kecamatan Anda, Cth. : Legok" required>
+                    </div>
+                </div>
+            </div>
+            <div class="grid justify-items-end ml-7 mt-9 mb-6 mr-7">
+                <button data-modal-target="default-modal" ata-modal-toggle="default-modal" type="submit" class="bg-green-500 hover:bg-green-700 transition duration-300 text-white text-lg font-poppins w-48 border border-1 drop-shadow-lg rounded-md font-bold p-2">
+                    AMBIL ANTRIAN
+                </button>
+            </div>
+        </form>
+    </div>
+    @endif
 </body>
 
 <script>
