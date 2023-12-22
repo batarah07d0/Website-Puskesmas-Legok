@@ -293,11 +293,11 @@
                     telah
                     dipilih jika lewat dari waktu keterlambatan maka tiket akan hangus.</p>
             </div>
-            <form action="" class="ml-7 mt-8 mr-7">
+            <form action="/buat-antrian" method="POST" class="ml-7 mt-8 mr-7">
                 <div class="pb-4">
                     <?php echo csrf_field(); ?>
-                    <input type="hidden" name="jenis_layanan" value="<?php echo e($_POST['kategori']); ?>">
-                    <input type="hidden" name="jam_layanan" value="<?php echo e($_POST['jam_layanan']); ?>">
+                    <input type="hidden" name="jenis_layanan" value="<?php echo e($_POST['kategori']); ?>" autocomplete="off">
+                    <input type="hidden" name="jam_layanan" value="<?php echo e($_POST['jam_layanan']); ?>" autocomplete="off">
                     <div class="grid gap-6 mb-6">
                         <div class="shadow-lg">
                             <label for="nama" class="block mb-2 font-poppins text-2xl font-medium">Nama</label>
