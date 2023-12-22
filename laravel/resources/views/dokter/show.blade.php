@@ -35,6 +35,36 @@
         <label class="form-label">Jadwal Praktek</label>
         <input type="text" name="jadwal_praktek" placeholder="Contoh: Senin - Jumat, 11:00 - 13:00" value="{{ $dokter->jadwal_praktek}}" readonly>
     </div>
+    <div class="col">
+        <label class="form-label">Jam Senin</label>
+        <input type="text" name="jamsenin" placeholder="08:00 - 10:00" class="form-control" value="{{ $dokter->jamsenin }}" readonly>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+        <label class="form-label">Jam Selasa</label>
+        <input type="text" name="jamselasa" placeholder="08:00 - 10:00" class="form-control" value="{{ $dokter->jamselasa }}" readonly>
+    </div>
+    <div class="col">
+        <label class="form-label">Jam Rabu</label>
+        <input type="text" name="jamrabu" placeholder="08:00 - 10:00" class="form-control" value="{{ $dokter->jamrabu }}" readonly>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+        <label class="form-label">Jam Kamis</label>
+        <input type="text" name="jamkamis" placeholder="08:00 - 10:00" class="form-control" value="{{ $dokter->jamkamis }}" readonly>
+    </div>
+    <div class="col">
+        <label class="form-label">Jam Jumat</label>
+        <input type="text" name="jamjumat" placeholder="08:00 - 10:00" class="form-control" value="{{ $dokter->jamjumat }}" readonly>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+        <label class="form-label">Jam Sabtu</label>
+        <input type="text" name="jamsabtu" placeholder="08:00 - 10:00" class="form-control" value="{{ $dokter->jamsabtu }}" readonly>
+    </div>
 </div>
 
 <div class="row">

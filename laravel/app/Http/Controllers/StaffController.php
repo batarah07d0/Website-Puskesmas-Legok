@@ -69,12 +69,6 @@ class StaffController extends Controller
 
         $staff = Staff::find($id);
 
-        // Hapus gambar lama jika ada
-        if ($staff->foto) {
-            Storage::delete('public/imgstaff/' . $staff->foto);
-        }
-
-        $fileName = $staff->foto;
 
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
@@ -83,15 +77,24 @@ class StaffController extends Controller
 
             // Simpan di storage/app/public/imgstaff
             $file->storeAs('public/imgstaff', $fileName);
+            if ($staff->foto) {
+                Storage::delete('public/imgstaff/' . $staff->foto);
+            }
+            $staff->update([
+                'nama' => $request->nama,
+                'jabatan' => $request->jabatan,
+                'foto' => $fileName,
+            ]);
+        } else {
+            $staff->update([
+                'nama' => $request->nama,
+                'jabatan' => $request->jabatan,
+
+            ]);
         }
 
-        $staff->update([
-            'nama' => $request->nama,
-            'jabatan' => $request->jabatan,
-            'foto' => $fileName,
-        ]);
 
-        return redirect('/staff')->with('success', 'Data Staff berhasil diperbarui.');
+        return redirect()->route('staff')->with('success', 'Data Staff berhasil diperbarui.');
     }
     public function destroy($id)
     {

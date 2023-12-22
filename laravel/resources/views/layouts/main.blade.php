@@ -25,6 +25,10 @@
         ::-webkit-scrollbar-track {
             background-color: #f1f1f1;
         }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
     </style>
     <title>Puskesmas Legok | {{ $title ?? '' }}</title>
 </head>
@@ -34,8 +38,7 @@
         <div class="container max-w-full h-full bg-cover" style="background-image: url('/img/Group_10.png')">
             {{-- Navbar --}}
             <nav class="bg-opacity-50">
-                <div
-                    class="md:grid md:grid-cols-3 md:pl-10 lg:pl-11 xl:pl-32 md:gap-0 xl:place-content-between max-w-full md:max-w-full flex flex-wrap justify-between md:justify-around p-4">
+                <div class="md:grid md:grid-cols-3 md:pl-10 lg:pl-11 xl:pl-32 md:gap-0 xl:place-content-between max-w-full md:max-w-full flex flex-wrap justify-between md:justify-around p-4">
                     <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src="img/logo.png" class="ml-2 w-9 md:w-12" alt="Logo Puskesmas Legok" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -43,38 +46,28 @@
                         </span>
                     </a>
                     <div class="flex md:order-2">
-                        <button data-collapse-toggle="navbar-search" type="button"
-                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                            aria-controls="navbar-search" aria-expanded="false">
+                        <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
                             <span class="sr-only">Open main menu</span>
-                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 17 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
                             </svg>
                         </button>
                     </div>
-                    <div class="z-40 absolute md:col-span-2 inset-x-0 top-16 md:top-8 md:static bg-opacity-90 md:bg-opacity-0 bg-white items-center md:mr-8 lg:mr-10 xl:mr-[7.5rem] hidden mx-auto md:max-w-xl max-w-[26rem] lg:max-w-2xl md:flex rounded-md"
-                        id="navbar-search">
-                        <ul
-                            class="flex flex-col p-2 md:p-0 font-medium bg-color rounded-lg md:space-x-8 lg:max-w-2xl md:flex-row md:mt-0 md:border-0 md:bg-transparant dark:bg-transparant md:dark:bg-transparant dark:border-black">
+                    <div class="z-40 absolute md:col-span-2 inset-x-0 top-16 md:top-8 md:static bg-opacity-90 md:bg-opacity-0 bg-white items-center md:mr-8 lg:mr-10 xl:mr-[7.5rem] hidden mx-auto md:max-w-xl max-w-[26rem] lg:max-w-2xl md:flex rounded-md" id="navbar-search">
+                        <ul class="flex flex-col p-2 md:p-0 font-medium bg-color rounded-lg md:space-x-8 lg:max-w-2xl md:flex-row md:mt-0 md:border-0 md:bg-transparant dark:bg-transparant md:dark:bg-transparant dark:border-black">
                             <li>
-                                <a href="/"
-                                    class="font-poppins block py-2 px-3 {{ Request::is('/') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">Beranda</a>
+                                <a href="/" class="font-poppins block py-2 px-3 {{ Request::is('/') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">Beranda</a>
                             </li>
                             <li>
-                                <a href="/pelayanan"
-                                    class="font-poppins block py-2 px-3 {{ Request::is('pelayanan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
+                                <a href="/pelayanan" class="font-poppins block py-2 px-3 {{ Request::is('pelayanan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
                                     Pelayanan</a>
                             </li>
                             <li>
-                                <a href="/tentangkami"
-                                    class="font-poppins block py-2 px-3 {{ Request::is('tentangkami') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
+                                <a href="/tentangkami" class="font-poppins block py-2 px-3 {{ Request::is('tentangkami') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
                                     Tentang Kami</a>
                             </li>
                             <li>
-                                <a href="/program-kegiatan"
-                                    class="font-poppins block py-2 px-3 {{ Request::is('program-kegiatan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
+                                <a href="/program-kegiatan" class="font-poppins block py-2 px-3 {{ Request::is('program-kegiatan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
                                     Program & Kegiatan</a>
                             </li>
                         </ul>
@@ -95,8 +88,7 @@
 </body>
 {{-- Footer --}}
 <footer class="bg-white">
-    <div
-        class="grid gap-2 grid-cols-1 md:grid-cols-3 mt-8 lg:mt-10 mx-1 md:mx-2 lg:mx-20 divide-y md:divide-transparent lg:divide-transparent pb-1">
+    <div class="grid gap-2 grid-cols-1 md:grid-cols-3 mt-8 lg:mt-10 mx-1 md:mx-2 lg:mx-20 divide-y md:divide-transparent lg:divide-transparent pb-1">
         <!-- Puskesmas Legok Section -->
         <div class="mb-2 lg:mb-4">
             <div class="ml-6 flex items-center justify-start">
@@ -124,8 +116,7 @@
         <!-- Contact Us Section -->
         <div class="flex flex-col justify-start items-start mx-6 mb-2 lg:mb-4">
             <div class="mt-2">
-                <h2
-                    class="text-2xl sm:text-3xl md:text-lg font-montserrat font-semibold text-[#499757] text-center sm:text-left">
+                <h2 class="text-2xl sm:text-3xl md:text-lg font-montserrat font-semibold text-[#499757] text-center sm:text-left">
                     CONTACT US</h2>
             </div>
             <div class="w-full items-center lg:pt-5">
@@ -165,14 +156,9 @@
         </div>
         <!-- Map Section -->
         <div class="flex justify-center lg:justify-end pt-3 pb-2 lg:pt-0 lg:pr-6">
-            <div
-                class="mapouter relative w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px] bg-white">
-                <div
-                    class="gmap_canvas overflow-hidden w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px]">
-                    <iframe
-                        src="https://maps.google.com/maps?q=puskesmas%20legok&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-                        frameborder="0" scrolling="no"
-                        class="w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px]"></iframe>
+            <div class="mapouter relative w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px] bg-white">
+                <div class="gmap_canvas overflow-hidden w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px]">
+                    <iframe src="https://maps.google.com/maps?q=puskesmas%20legok&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" class="w-[260px] h-[150px] md:w-[28vw] md:mr-5 lg:mr-0 md:h-[24vh] lg:w-[250px] lg:h-[220px] xl:w-[380px] xl:h-[270px]"></iframe>
                     <style>
                         .maprouter a {
                             color: #fff !important;

@@ -15,6 +15,6 @@ class Dokter extends Model
 
 
     protected $fillable = [
-        'name', 'foto', 'pendidikan', 'spesialisasi', 'jadwal_praktek',
+        'name', 'foto', 'pendidikan', 'spesialisasi', 'jadwal_praktek', 'jamsenin', 'jamselasa', 'jamrabu', 'jamkamis', 'jamjumat', 'jamsabtu'
     ];
 }
