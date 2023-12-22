@@ -156,11 +156,35 @@
                 </div>
             </div>
         </div>
-        <div class="mx-[6vw] py-14 flex justify-start flex-col">
-            <h2 class="text-4xl pb-4 font-bold text-green-800">Cek Jadwal Dokter</h2>
-            <button type="button"
-                class="text-white w-max bg-green-700 hover:bg-green-800 font-bold tracking-wide rounded-lg text-base px-8 py-2 dark:bg-green-600 dark:hover:bg-green-700 ">
-                <a href="/detaildokter">See More</a></button>
+        <div class="mx-4 py-4 md:mx-48 md:py-14">
+            <div class="flex flex-col">
+                <h2 class="text-2xl md:text-4xl pb-2 md:pb-4 font-bold text-green-800">Cek Jadwal Dokter</h2>
+                <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 flex flex-col md:flex-row items-center">
+                    <img class="rounded-2xl w-1/2" src="{{ asset('../../img/orangniaga.jpeg') }}" alt="Doctor's Photo">
+                    <div class="flex flex-col md:justify-between">
+                        <div>
+                            <p class="text-lg md:text-xl font-semibold">dr. Abcdefg</p>
+                            <p class="text-gray-600 text-sm md:text-base">Spesialis Kandungan (kandungan anak)</p>
+                        </div>
+                        <div
+                            class="grid grid-cols-3 gap-5 md:grid-cols-7 divide-x divide-gray-300 text-center mt-2 md:mt-4">
+                            @php
+                                $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                                $schedule = ['10:00 - 13:00', '10:00 - 13:00', '10:00 - 13:00', '10:00 - 13:00', '08:00 - 12:00', '10:00 - 13:00'];
+                            @endphp
+                            @foreach ($days as $index => $day)
+                                <div class="px-1 md:px-2 py-1">
+                                    <div class="font-bold text-xs md:text-sm">{{ $day }}</div>
+                                    <div class="text-xxs md:text-xs">{{ $schedule[$index] }}</div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="/detaildokter"
+                class="text-white bg-green-700 hover:bg-green-800 font-bold rounded-lg text-base md:text-lg px-4 md:px-8 py-2 mt-2 md:mt-4 inline-block">
+                See More
+            </a>
         </div>
-    </div>
-@endsection
+    @endsection

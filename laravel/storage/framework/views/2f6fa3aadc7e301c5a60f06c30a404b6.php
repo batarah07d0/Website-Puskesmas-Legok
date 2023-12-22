@@ -10,93 +10,24 @@
     </div>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('container'); ?>
-    <div class="flex flex-row w-full h-96 relative bg-white rounded-3xl shadow">
-        <div class="basis-1/4 w-96 h-96 absolute"><img class="w-72 h-72 left-[50px] top-[50px] absolute rounded-full"
-                src="../../img/orangniaga.jpeg" />
-        </div>
-        <div class="basis-1/4 w-60 h-40 left-[389px] top-[101px] absolute">
-            <div class="left-0 top-0 absolute text-black text-4xl font-medium font-['Poppins']">dr. Abcdefg
+    <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 flex flex-col md:flex-row items-center">
+        <img class="rounded-2xl w-1/2" src="<?php echo e(asset('../../img/orangniaga.jpeg')); ?>" alt="Doctor's Photo">
+        <div class="flex flex-col md:justify-between">
+            <div>
+                <p class="text-lg md:text-xl font-semibold">dr. Abcdefg</p>
+                <p class="text-gray-600 text-sm md:text-base">Spesialis Kandungan (kandungan anak)</p>
             </div>
-            <div class="w-60 left-0 top-[84px] absolute text-zinc-600 text-2xl font-['Poppins']">
-                Spesialis Kandungan (Kandungan Anak)</div>
-        </div>
-        <div class="basis-1/5 w-96 h-60 relative bg-white shadow">
-            <div class="w-32 h-60 left-0 top-0 absolute">
-                <div class="w-32 h-20 left-0 top-0 absolute bg-green-600"></div>
-                <div class="w-32 h-20 left-0 top-[80px] absolute bg-white"></div>
-                <div class="w-32 h-20 left-0 top-[160px] absolute">
-                    <div class="w-32 h-20 left-0 top-0 absolute bg-green-300"></div>
-                    <div
-                        class="left-[21px] top-[28px] absolute text-center text-black text-base font-medium font-['Poppins']">
-                        11:00 - 13:00</div>
-                </div>
-                <div class="left-[20px] top-[14px] absolute text-white text-4xl font-medium font-['Poppins']">
-                    Senin
-                </div>
-                <div class="w-5 h-px left-[57px] top-[120px] absolute border-2 border-black"></div>
-            </div>
-            <div class="w-32 h-60 left-[135px] top-0 absolute">
-                <div class="w-32 h-20 left-0 top-[80px] absolute bg-white"></div>
-                <div class="w-5 h-px left-[57px] top-[120px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-[160px] absolute bg-white"></div>
-                <div class="w-5 h-px left-[57px] top-[200px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-0 absolute bg-green-600"></div>
-                <div
-                    class="Selasa left-[10px] top-[14px] absolute text-center text-white text-4xl font-medium font-['Poppins']">
-                    Selasa</div>
-            </div>
-            <div class="w-32 h-60 left-[270px] top-0 absolute">
-                <div class="w-32 h-20 left-0 top-[80px] absolute bg-zinc-300"></div>
-                <div class="w-5 h-px left-[57px] top-[120px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-[160px] absolute bg-white"></div>
-                <div class="w-5 h-px left-[57px] top-[200px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-0 absolute bg-green-600"></div>
-                <div class="left-[22px] top-[14px] absolute text-center text-white text-4xl font-medium font-['Poppins']">
-                    Rabu</div>
-                <div class="w-32 h-20 left-0 top-[80px] absolute">
-                    <div class="w-32 h-20 left-0 top-0 absolute bg-green-300"></div>
-                    <div class="left-[21px] top-[28px] absolute text-black text-base font-medium font-['Poppins']">
-                        11:00 - 13:00</div>
-                </div>
-            </div>
-            <div class="w-32 h-60 left-[405px] top-0 absolute">
-                <div class="w-32 h-20 left-0 top-[80px] absolute bg-white"></div>
-                <div class="w-5 h-px left-[57px] top-[120px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-[160px] absolute bg-zinc-300"></div>
-                <div class="w-5 h-px left-[57px] top-[200px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-0 absolute bg-green-600"></div>
-                <div class="left-[13px] top-[14px] absolute text-center text-white text-4xl font-medium font-['Poppins']">
-                    Kamis</div>
-                <div class="w-32 h-20 left-0 top-[160px] absolute">
-                    <div class="w-32 h-20 left-0 top-0 absolute bg-green-300"></div>
-                    <div
-                        class="left-[21px] top-[28px] absolute text-center text-black text-base font-medium font-['Poppins']">
-                        11:00 - 13:00</div>
-                </div>
-            </div>
-            <div class="w-32 h-60 left-[540px] top-0 absolute">
-                <div class="w-32 h-20 left-0 top-[80px] absolute bg-zinc-300"></div>
-                <div class="w-5 h-px left-[57px] top-[120px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-[160px] absolute bg-white"></div>
-                <div class="w-5 h-px left-[57px] top-[200px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-0 absolute bg-green-600"></div>
-                <div class="left-[11px] top-[14px] absolute text-center text-white text-4xl font-medium font-['Poppins']">
-                    Jumat</div>
-                <div class="w-32 h-20 left-0 top-[80px] absolute">
-                    <div class="w-32 h-20 left-0 top-0 absolute bg-green-300"></div>
-                    <div
-                        class="001200 left-[17px] top-[30px] absolute text-center text-black text-base font-medium font-['Poppins']">
-                        08:00 - 12:00</div>
-                </div>
-            </div>
-            <div class="w-32 h-60 left-[675px] top-0 absolute">
-                <div class="w-32 h-20 left-0 top-[80px] absolute bg-white"></div>
-                <div class="w-5 h-px left-[57px] top-[120px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-[160px] absolute bg-white"></div>
-                <div class="w-5 h-px left-[57px] top-[200px] absolute border-2 border-black"></div>
-                <div class="w-32 h-20 left-0 top-0 absolute bg-green-600"></div>
-                <div class="left-[16px] top-[14px] absolute text-center text-white text-4xl font-medium font-['Poppins']">
-                    Sabtu</div>
+            <div class="grid grid-cols-3 gap-5 md:grid-cols-7 divide-x divide-gray-300 text-center mt-2 md:mt-4">
+                <?php
+                    $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                    $schedule = ['10:00 - 13:00', '10:00 - 13:00', '10:00 - 13:00', '10:00 - 13:00', '08:00 - 12:00', '10:00 - 13:00'];
+                ?>
+                <?php $__currentLoopData = $days; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $day): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="px-1 md:px-2 py-1">
+                        <div class="font-bold text-xs md:text-sm"><?php echo e($day); ?></div>
+                        <div class="text-xxs md:text-xs"><?php echo e($schedule[$index]); ?></div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
     </div>
