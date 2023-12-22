@@ -77,7 +77,7 @@ class PasienController extends Controller
             return view('antriansukses', [
                 'nomor_antrian' => $nomor_antrian,
                 'no_bpjs' => $request->no_bpjs,
-                'nama_lengkap' => $request->nama_pasien,
+                'nama_lengkap' => $request->nama_lengkap,
                 'jenis_layanan' => $request->jenis_layanan,
                 'jam_layanan' => $request->jam_layanan
 
