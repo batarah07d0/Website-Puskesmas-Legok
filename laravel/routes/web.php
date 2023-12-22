@@ -18,6 +18,7 @@ use App\Http\Controllers\Home3Controller;
 use App\Http\Controllers\Home4Controller;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\QuotaController;
+use App\Models\Antrian;
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
@@ -53,7 +54,7 @@ Route::post('/daftaronline', [QuotaController::class, 'getpoliquota']);
 
 Route::post('/buat-antrian', [PasienController::class, 'storeantrian']);
 
-Route::get('/nomorantrian/pdf', [NomorAntrianController::class, 'createPDF']);
+Route::get('/nomor-antrian/pdf', [PasienController::class, 'createPDF']);
 
 Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');

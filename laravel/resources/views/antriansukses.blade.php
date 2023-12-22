@@ -15,11 +15,13 @@
             echo 'Maaf, anda sudah mengambil antrian untuk esok hari. <br>';
             echo 'Nomor antrian anda : ' . $nomor_antrian;
         } else {
-            echo 'Anda telah mengambil nomor antrian. <br>';
-            echo 'Nomor antrian anda : ' . $nomor_antrian;
+            echo 'Anda telah mengambil nomor antrian! <br>';
+            echo 'Nomor Antrian : ' . $nomor_antrian;
+            echo 'Nama Pasien : ' . $nama_pasien;
         }
     @endphp
-    <a class="btn btn-primary" href="{{ URL::to('nomorantrian/pdf') }}">Export to PDF</a>
+    <a class="btn btn-primary" href="{{ URL::to('nomorantrian/pdf') }}">
+        <button class="btn btn-success">Cetak Nomor Antrian</button></a>
 </body>
 
 </html>

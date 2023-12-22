@@ -82,6 +82,14 @@ class PasienController extends Controller
             return view('antriansukses', ['exist' => "true", 'nomor_antrian' => $nomor_antrian]);
         }
     }
+
+    public function createPDF(Request $request)
+    {
+        $mpdf = new \Mpdf\Mpdf();
+        $mpdf->WriteHTML(view('antriansukses', ['nomor_antrian' => $nomor_antrian]));
+        $mpdf->Output();
+    }
+
     public function store(Request $request)
     {
         $request->validate(
