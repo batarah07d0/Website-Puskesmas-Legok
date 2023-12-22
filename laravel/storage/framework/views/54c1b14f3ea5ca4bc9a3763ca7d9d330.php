@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Website for Puskesmas Legok">
+    <meta name="keywords" content="Puskesmas Legok">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<?php echo e(asset('favicon_io/favicon.ico')); ?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?php echo e(asset('favicon_io/favicon.ico')); ?>" type="image/x-icon">
-    <link rel="manifest" href="/site.webmanifest">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
     <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
-    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     <style>
         /* Custom scrollbar styles */
         ::-webkit-scrollbar {
@@ -29,7 +30,7 @@
 
 <body>
     <div class="h-[10rem] md:h-[13rem] lg:h-[17rem] xl:h-[20vmax]">
-        <div class="container max-w-full h-[25vmax] xl:h-[45vh] bg-cover"
+        <div class="container max-w-full h-[32vmax] xl:h-[45vh] bg-cover"
             style="background-image: url('/img/Group_10.png')">
             
             <nav class="bg-opacity-50">
@@ -63,7 +64,7 @@
                             </li>
                             <li>
                                 <a href="/pelayanan"
-                                    class="font-poppins block py-2 px-3 <?php echo e(Request::is('pelayanan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900'); ?> rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
+                                    class="font-poppins block py-2 px-3 'text-white md:text-black lg:text-black bg-green-700 font-bold rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
                                     Pelayanan</a>
                             </li>
                             <li>

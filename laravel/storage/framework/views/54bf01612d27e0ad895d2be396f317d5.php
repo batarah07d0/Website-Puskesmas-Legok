@@ -42,10 +42,8 @@
                                 class="w-full text-sm md:text-lg" id="submitBtn" disabled>Ambil Antrian</button>
                         </div>
                     </form>
-                    <p id="notification" class="text-xs md:text-sm text-red-700 hidden">Isi Jenis Layanan dan Jam
-                        Pelayanan
-                        terlebih
-                        dahulu dan pilih Jam Pelayanan sesuai dengan Jadwal Pelayanan Puskesmas.
+                    <p id="notification" class="text-xs md:text-sm text-red-700 hidden">Pendaftaran Online Hanya Berlaku H+1
+                        Setelah Melakukan Pendaftaran Secara Online!
                     </p>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-import 'alpinejs';
 <!doctype html>
 <html>
 
@@ -31,7 +30,7 @@ import 'alpinejs';
 
 <body>
     <div class="h-[10rem] md:h-[13rem] lg:h-[17rem] xl:h-[20vmax]">
-        <div class="container max-w-full h-[25vmax] xl:h-[45vh] bg-cover"
+        <div class="container max-w-full h-[32vmax] xl:h-[45vh] bg-cover"
             style="background-image: url('/img/Group_10.png')">
             {{-- Navbar --}}
             <nav class="bg-opacity-50">
@@ -65,7 +64,7 @@ import 'alpinejs';
                             </li>
                             <li>
                                 <a href="/pelayanan"
-                                    class="font-poppins block py-2 px-3 {{ Request::is('pelayanan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
+                                    class="font-poppins block py-2 px-3 'text-white md:text-black lg:text-black bg-green-700 font-bold rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
                                     Pelayanan</a>
                             </li>
                             <li>
