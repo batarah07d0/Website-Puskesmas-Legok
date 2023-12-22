@@ -48,6 +48,7 @@
                     </p>
                 </div>
             </div>
+
         </div>
         <div class="container max-w-full h-full lg:bg-custom-color3 md:relative bg-custom-color3">
             <div class="flex flex-col md:flex-row md:justify-center items-center lg:pt-52 md:gap-14 lg:gap-64 pt-0">
