@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Antrian;
 use App\Models\Pasien;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\App;
 
 date_default_timezone_set('Asia/Jakarta');
 
@@ -72,22 +74,57 @@ class PasienController extends Controller
                 $nomor_antrian = $a->nomorantrian;
             }
             // return $nomor_antrian;
-            return view('antriansukses', ['nomor_antrian' => $nomor_antrian]);
+            return view('antriansukses', [
+                'nomor_antrian' => $nomor_antrian,
+                'no_bpjs' => $request->no_bpjs,
+                'nama_lengkap' => $request->nama_pasien,
+                'jenis_layanan' => $request->jenis_layanan,
+                'jam_layanan' => $request->jam_layanan
+
+            ]);
         } else {
             $antrian = Antrian::where('id_pasien', $id)->get();
             foreach ($antrian as $a) {
+                $nama_pasien = $a->nama_pasien;
+                $jenis_layanan = $a->jenis_layanan;
+                $jam_layanan = $a->jam_layanan;
                 $nomor_antrian = $a->nomorantrian;
             }
+            $pasien = Pasien::where('id', $id)->get();
+            foreach ($pasien as $p) {
+                $no_bpjs = $p->no_bpjs;
+            }
             // return $nomor_antrian;
-            return view('antriansukses', ['exist' => "true", 'nomor_antrian' => $nomor_antrian]);
+            return view('antriansukses', [
+                'exist' => "true",
+                'nomor_antrian' => $nomor_antrian,
+                'no_bpjs' => $no_bpjs,
+                'nama_lengkap' => $nama_pasien,
+                'jenis_layanan' => $jenis_layanan,
+                'jam_layanan' => $jam_layanan
+            ]);
         }
     }
 
     public function createPDF(Request $request)
     {
-        $mpdf = new \Mpdf\Mpdf();
-        $mpdf->WriteHTML(view('antriansukses', ['nomor_antrian' => $nomor_antrian]));
-        $mpdf->Output();
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadHTML('
+        <div style="display:flex;">
+            <br>
+            <h1 style="justify-content: center; text-align:center; width:100%">
+                Pendaftaran Online
+            </h1>
+            <h3>Nomor Antrian : ' . $request->nomor_antrian . '</h3>
+            <p>Nomor BPJS : ' . $request->no_bpjs . '</p>
+            <p>Nama : ' . $request->nama_lengkap . '</p>
+            <p>Jenis Layanan : ' . $request->jenis_layanan . ' </p>
+            <p>Jadwal Layanan : ' . $request->jam_layanan . '</p>
+        </div>
+        ');
+        return $pdf->download($request->nama_lengkap . "_" . $request->nomor_antrian . ".pdf");
+        // return $pdf->stream();
+        // return view("antriansukses-pdf");
     }
 
     public function store(Request $request)

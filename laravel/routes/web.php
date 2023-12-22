@@ -54,7 +54,7 @@ Route::post('/daftaronline', [QuotaController::class, 'getpoliquota']);
 
 Route::post('/buat-antrian', [PasienController::class, 'storeantrian']);
 
-Route::get('/nomor-antrian/pdf', [PasienController::class, 'createPDF']);
+Route::post('/buat-antrian/pdf', [PasienController::class, 'createPDF']);
 
 Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
