@@ -236,6 +236,9 @@
                     label.style.opacity = '1';
                 }
             }
+
+            document.getElementById('form14').addEventListener('input', toggleLabelVisibility);
+
             document.getElementById('form14').addEventListener('blur', function() {
                 var input = this;
                 var label = document.getElementById('labelJamPelayanan');
