@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ asset('favicon_io/favicon.ico') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('favicon_io/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="<?php echo e(asset('favicon_io/favicon.ico')); ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo e(asset('favicon_io/favicon.ico')); ?>" type="image/x-icon">
     <link rel="manifest" href="/site.webmanifest">
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     <style>
         /* Custom scrollbar styles */
@@ -24,13 +24,13 @@
             background-color: #f1f1f1;
         }
     </style>
-    <title>Puskesmas Legok | {{ $title ?? '' }}</title>
+    <title>Puskesmas Legok | <?php echo e($title ?? ''); ?></title>
 </head>
 
 <body>
     <div class="h-[20rem] lg:h-[32rem]">
         <div class="container max-w-full h-full bg-cover" style="background-image: url('/img/Group_10.png')">
-            {{-- Navbar --}}
+            
             <nav class="bg-opacity-50">
                 <div class="md:grid md:grid-cols-3 md:pl-10 lg:pl-11 xl:pl-32 md:gap-0 xl:place-content-between max-w-full md:max-w-full flex flex-wrap justify-between md:justify-around p-4">
                     <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -50,37 +50,37 @@
                     <div class="z-40 absolute md:col-span-2 inset-x-0 top-16 md:top-8 md:static bg-opacity-90 md:bg-opacity-0 bg-white items-center md:mr-8 lg:mr-10 xl:mr-[7.5rem] hidden mx-auto md:max-w-xl max-w-[26rem] lg:max-w-2xl md:flex rounded-md" id="navbar-search">
                         <ul class="flex flex-col p-2 md:p-0 font-medium bg-color rounded-lg md:space-x-8 lg:max-w-2xl md:flex-row md:mt-0 md:border-0 md:bg-transparant dark:bg-transparant md:dark:bg-transparant dark:border-black">
                             <li>
-                                <a href="/" class="font-poppins block py-2 px-3 {{ Request::is('/') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">Beranda</a>
+                                <a href="/" class="font-poppins block py-2 px-3 <?php echo e(Request::is('/') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900'); ?> rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">Beranda</a>
                             </li>
                             <li>
-                                <a href="/pelayanan" class="font-poppins block py-2 px-3 {{ Request::is('pelayanan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
+                                <a href="/pelayanan" class="font-poppins block py-2 px-3 <?php echo e(Request::is('pelayanan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900'); ?> rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
                                     Pelayanan</a>
                             </li>
                             <li>
-                                <a href="/tentangkami" class="font-poppins block py-2 px-3 {{ Request::is('tentangkami') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
+                                <a href="/tentangkami" class="font-poppins block py-2 px-3 <?php echo e(Request::is('tentangkami') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900'); ?> rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
                                     Tentang Kami</a>
                             </li>
                             <li>
-                                <a href="/program-kegiatan" class="font-poppins block py-2 px-3 {{ Request::is('program-kegiatan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900' }} rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
+                                <a href="/program-kegiatan" class="font-poppins block py-2 px-3 <?php echo e(Request::is('program-kegiatan') ? 'text-white md:text-black lg:text-black bg-green-700 font-bold' : 'text-gray-900'); ?> rounded md:bg-transparent lg:text-lg md:p-0 md:dark:text-black">
                                     Program & Kegiatan</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            {{-- End Navbar --}}
-            {{-- Hero --}}
+            
+            
             <div class="container pt-3 px-8 md:pt-6 lg:pt-14 max-w-full overflow-hidden">
-                @yield('heroSection')
+                <?php echo $__env->yieldContent('heroSection'); ?>
             </div>
-            {{-- End Hero --}}
+            
         </div>
     </div>
-    {{-- Container --}}
-    @yield('container')
-    {{-- End Container --}}
+    
+    <?php echo $__env->yieldContent('container'); ?>
+    
 </body>
-{{-- Footer --}}
+
 <footer class="bg-white">
     <div class="grid gap-2 grid-cols-1 md:grid-cols-3 mt-8 lg:mt-10 mx-1 md:mx-2 lg:mx-20 divide-y md:divide-transparent lg:divide-transparent pb-1">
         <!-- Puskesmas Legok Section -->
@@ -178,6 +178,6 @@
             Rights Reserved</h3>
     </div>
 </footer>
-{{-- End Footer --}}
 
-</html>
+
+</html><?php /**PATH C:\Users\Lenovo\OneDrive\Documents\Project\Website-Puskesmas-Legok\laravel\resources\views/layouts/main.blade.php ENDPATH**/ ?>

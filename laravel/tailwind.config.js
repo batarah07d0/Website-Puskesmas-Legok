@@ -5,7 +5,6 @@ module.exports = {
         "./resources/**/*.js",
         "./resources/**/*.vue",
         "./node_modules/flowbite/**/*.js",
-        "./src/**/*.{html,js}",
         "./node_modules/tw-elements/dist/js/**/*.js",
     ],
     theme: {
@@ -13,7 +12,7 @@ module.exports = {
             backgroundColor: {
                 "custom-color": "#5D9F68",
                 "custom-color2": "#5D9F68",
-                "custom-color3": "#ebfeea",
+                "custom-color3": "#F5FFF4",
                 "background-green": "#EBFEEA",
             },
             height: {
