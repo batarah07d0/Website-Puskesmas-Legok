@@ -160,7 +160,7 @@
                 <h2 class="text-2xl md:text-4xl pb-2 md:pb-4 font-bold text-green-800">Cek Jadwal Dokter</h2>
                 <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 flex flex-col md:flex-row items-center">
                     <img class="rounded-2xl w-1/2" src="<?php echo e(asset('../../img/orangniaga.jpeg')); ?>" alt="Doctor's Photo">
-                    <div class="pl-0.5 flex flex-col md:justify-between">
+                    <div class="flex flex-col md:justify-between">
                         <div>
                             <p class="text-lg md:text-xl font-semibold">dr. Abcdefg</p>
                             <p class="text-gray-600 text-sm md:text-base">Spesialis Kandungan (kandungan anak)</p>
