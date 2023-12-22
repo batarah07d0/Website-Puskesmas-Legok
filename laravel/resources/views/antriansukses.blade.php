@@ -11,13 +11,13 @@
 
 <body>
     @php
-        if (isset($exist)) {
-            echo 'Maaf, anda sudah mengambil antrian untuk esok hari. <br>';
-            echo 'Nomor antrian anda : ' . $nomor_antrian;
-        } else {
-            echo 'Anda telah mengambil nomor antrian. <br>';
-            echo 'Nomor antrian anda : ' . $nomor_antrian;
-        }
+    if (isset($exist)) {
+    echo 'Maaf, anda sudah mengambil antrian untuk esok hari. <br>';
+    echo 'Nomor antrian anda : ' . $nomor_antrian;
+    } else {
+    echo 'Anda telah mengambil nomor antrian. <br>';
+    echo 'Nomor antrian anda : ' . $nomor_antrian;
+    }
     @endphp
     <a class="btn btn-primary" href="{{ URL::to('nomorantrian/pdf') }}">Export to PDF</a>
 </body>

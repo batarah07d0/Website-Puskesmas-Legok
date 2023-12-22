@@ -25,6 +25,13 @@ class DokterController extends Controller
             'pendidikan' => 'required',
             'spesialisasi' => 'required',
             'jadwal_praktek' => 'required',
+            'jamsenin' => 'required',
+            'jamselasa' => 'required',
+            'jamrabu' => 'required',
+            'jamkamis' => 'required',
+            'jamjumat' => 'required',
+            'jamsabtu' => 'required',
+
         ]);
 
         // Proses foto
@@ -41,6 +48,12 @@ class DokterController extends Controller
             'pendidikan' => $request->pendidikan,
             'spesialisasi' => $request->spesialisasi,
             'jadwal_praktek' => $request->jadwal_praktek,
+            'jamsenin' => $request->jamsenin,
+            'jamselasa' => $request->jamselasa,
+            'jamrabu' => $request->jamrabu,
+            'jamkamis' => $request->jamkamis,
+            'jamjumat' => $request->jamjumat,
+            'jamsabtu' => $request->jamsabtu,
         ]);
 
         return redirect('/dokter')->with('success', 'Dokter berhasil ditambahkan.');
@@ -65,6 +78,12 @@ class DokterController extends Controller
             'pendidikan' => 'required',
             'spesialisasi' => 'required',
             'jadwal_praktek' => 'required',
+            'jamsenin' => 'required',
+            'jamselasa' => 'required',
+            'jamrabu' => 'required',
+            'jamkamis' => 'required',
+            'jamjumat' => 'required',
+            'jamsabtu' => 'required',
         ]);
 
         $dokter = Dokter::find($id);
@@ -89,6 +108,12 @@ class DokterController extends Controller
                 'pendidikan' => $request->pendidikan,
                 'spesialisasi' => $request->spesialisasi,
                 'jadwal_praktek' => $request->jadwal_praktek,
+                'jamsenin' => $request->jamsenin,
+                'jamselasa' => $request->jamselasa,
+                'jamrabu' => $request->jamrabu,
+                'jamkamis' => $request->jamkamis,
+                'jamjumat' => $request->jamjumat,
+                'jamsabtu' => $request->jamsabtu,
             ]);
         } else {
             // Jika tidak ada file foto baru
@@ -97,9 +122,15 @@ class DokterController extends Controller
                 'pendidikan' => $request->pendidikan,
                 'spesialisasi' => $request->spesialisasi,
                 'jadwal_praktek' => $request->jadwal_praktek,
+                'jamsenin' => $request->jamsenin,
+                'jamselasa' => $request->jamselasa,
+                'jamrabu' => $request->jamrabu,
+                'jamkamis' => $request->jamkamis,
+                'jamjumat' => $request->jamjumat,
+                'jamsabtu' => $request->jamsabtu,
             ]);
         }
-
+        //return $request->spesialisasi;
         return redirect()->route('dokter')->with('success', 'Data dokter berhasil diperbarui.');
     }
 

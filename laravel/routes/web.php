@@ -16,6 +16,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Home2Controller;
 use App\Http\Controllers\Home3Controller;
 use App\Http\Controllers\Home4Controller;
+use App\Http\Controllers\Home5Controller;
+use App\Http\Controllers\Home6Controller;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\QuotaController;
 use App\Models\Dokter;
@@ -42,12 +44,11 @@ Route::get('/', function () {
 
 Route::get('/program-kegiatan', [HomeController::class, 'index']);
 Route::get('/', [Home2Controller::class, 'index']);
-Route::get('/pelayanan', [Home3Controller::class, 'index']);
+Route::get('/pelayanan', [Home5Controller::class, 'index']);
 Route::get('/tentangkami', [Home4Controller::class, 'index']);
+Route::get('/detaildokter', [Home6Controller::class, 'index']);
 
-Route::get('/detaildokter', function () {
-    return view('detaildokter');
-});
+
 
 Route::post('/daftaronline', [QuotaController::class, 'getpoliquota']);
 

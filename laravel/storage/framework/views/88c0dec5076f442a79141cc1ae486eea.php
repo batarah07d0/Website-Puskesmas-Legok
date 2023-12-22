@@ -24,13 +24,43 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">Spesialisasi</label>
-            <input type="text" name="spesialisasi" placeholder="Spesialisasi" value="<?php echo e($dokter->spesialisasi); ?>">
+            <input type="text" name="spesialisasi" class="form-control" placeholder="Spesialisasi" value="<?php echo e($dokter->spesialisasi); ?>">
         </div>
     </div>
     <div class="row">
         <div class="col mb-3">
             <label class="form-label">Jadwal Praktek</label>
             <input type="text" name="jadwal_praktek" placeholder="Contoh: Senin - Jumat, 11:00 - 13:00" value="<?php echo e($dokter->jadwal_praktek); ?>">
+        </div>
+        <div class="col">
+            <label class="form-label">Jam Senin</label>
+            <input type="text" name="jamsenin" placeholder="08:00 - 10:00" class="form-control" value="<?php echo e($dokter->jamsenin); ?>">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Jam Selasa</label>
+            <input type="text" name="jamselasa" placeholder="08:00 - 10:00" class="form-control" value="<?php echo e($dokter->jamselasa); ?>">
+        </div>
+        <div class="col">
+            <label class="form-label">Jam Rabu</label>
+            <input type="text" name="jamrabu" placeholder="08:00 - 10:00" class="form-control" value="<?php echo e($dokter->jamrabu); ?>">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Jam Kamis</label>
+            <input type="text" name="jamkamis" placeholder="08:00 - 10:00" class="form-control" value="<?php echo e($dokter->jamkamis); ?>">
+        </div>
+        <div class="col">
+            <label class="form-label">Jam Jumat</label>
+            <input type="text" name="jamjumat" placeholder="08:00 - 10:00" class="form-control" value="<?php echo e($dokter->jamjumat); ?>">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Jam Sabtu</label>
+            <input type="text" name="jamsabtu" placeholder="08:00 - 10:00" class="form-control" value="<?php echo e($dokter->jamsabtu); ?>">
         </div>
     </div>
     <div class=" row">

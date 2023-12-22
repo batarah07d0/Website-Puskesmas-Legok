@@ -20,56 +20,69 @@
             <div class="flex justify-center text-lg ">
                 Jam Operasional
             </div>
-            <div>
-                07:30 - 13:00
+            <div class="flex flex-row gap-10 justify-between pt-2">
+                <div class="">
+                    Senin
+                </div>
+                <div>
+                    07:30 - 13:00
+                </div>
+            </div>
+            <div class="flex flex-row gap-10 justify-between">
+                <div>
+                    Selasa
+                </div>
+                <div>
+                    07:30 - 01:00
+                </div>
+            </div>
+            <div class="flex flex-row gap-10 justify-between">
+                <div>
+                    Rabu
+                </div>
+                <div>
+                    07:30 - 01:00
+                </div>
+            </div>
+            <div class="flex flex-row gap-10 justify-between">
+                <div>
+                    Kamis
+                </div>
+                <div>
+                    07:30 - 01:00
+                </div>
+            </div>
+            <div class="flex flex-row gap-10 justify-between">
+                <div>
+                    Jumat
+                </div>
+                <div>
+                    07:30 - 23:00
+                </div>
+            </div>
+            <div class="flex flex-row gap-10 justify-between">
+                <div>
+                    Sabtu
+                </div>
+                <div>
+                    07:30 - 23:00
+                </div>
+            </div>
+            <div class="flex flex-row gap-9 justify-start">
+                <div>
+                    Minggu
+                </div>
+                <div>
+                    Libur
+                </div>
             </div>
         </div>
         <div class="lg:flex md:flex flex-row justify-center items-center invisible hidden md:visible">
             <div class="">
                 <img src="../../img/logoPuskesmasLegok.png" class="w-0 md:w-48 lg:w-64" alt="Puskesmas Legok">
             </div>
-            <div>
-                07:30 - 01:00
-            </div>
-        </div>
-        <div class="flex flex-row gap-10 justify-between">
-            <div>
-                Rabu
-            </div>
-            <div>
-                07:30 - 01:00
-            </div>
-        </div>
-        <div class="flex flex-row gap-10 justify-between">
-            <div>
-                Kamis
-            </div>
-            <div>
-                07:30 - 01:00
-            </div>
-        </div>
-        <div class="flex flex-row gap-10 justify-between">
-            <div>
-                Jumat
-            </div>
-            <div>
-                07:30 - 23:00
-            </div>
-        </div>
-        <div class="flex flex-row gap-10 justify-between">
-            <div>
-                Sabtu
-            </div>
-            <div>
-                07:30 - 23:00
-            </div>
-        </div>
-        <div class="flex flex-row gap-9 justify-start">
-            <div>
-                Minggu
-            </div>
-            <div>
-                Libur
+            <div class="">
+                <img src="../../img/logoBanten.png" class="w-0 md:w-28 lg:w-48" alt="Logo Satya">
             </div>
         </div>
     </div>
@@ -131,18 +144,60 @@
         </div>
         <!-- Scrollable Image Section -->
         <div class="mt-8">
-            <div class="flex space-x-4 overflow-x-auto">
-                @foreach ($photos as $p)
-                <img class="flex-none w-120 h-60 object-cover rounded-lg shadow-lg" src="{{ Storage::url('imgfasilitas/' . $p->foto) }} alt=" Image description">
+            <div class="flex gap-8  overflow-hidden overflow-x-auto no-scrollbar">
+                @foreach($fotof as $item)
+                <img class="object-cover w-96 h-48" src="{{ Storage::url('imgfasilitas/' . $item->foto) }}" alt="Image">
                 @endforeach
+
             </div>
         </div>
     </div>
-    <div class="mx-[6vw] py-14 flex justify-start flex-col">
-        <h2 class="text-4xl pb-4 font-bold text-green-800">Cek Jadwal Dokter</h2>
-        <button type="button" class="text-white w-max bg-green-700 hover:bg-green-800 font-bold tracking-wide rounded-lg text-base px-8 py-2 dark:bg-green-600 dark:hover:bg-green-700 ">
-            <a href="/detaildokter">See More</a></button>
+    <div class="mx-4 py-4 md:mx-48 md:py-14">
+        <div class="flex flex-col">
+            <h2 class="text-2xl md:text-4xl pb-2 md:pb-4 font-bold text-green-800">Cek Jadwal Dokter</h2>
+            @foreach($fotod->take(1) as $index => $fd)
+            @php
+            $nam = $namad[$index] ?? null;
+            $spesi = $spesid[$index] ?? null;
+            $jadwal = $jadwald[$index] ?? null;
+            $jsenins = $jsenin[$index] ?? null;
+            $jselasas = $jselasa[$index] ?? null;
+            $jrabus = $jrabu[$index] ?? null;
+            $jkamiss = $jkamis[$index] ?? null;
+            $jjumats = $jjumat[$index] ?? null;
+            $jsabtus = $jsabtu[$index] ?? null;
+            @endphp
+            @if ($nam)
+            @if($spesi)
+            @if($jadwal)
+            <div class="bg-white shadow-lg rounded-lg p-4 md:p-6 flex flex-col md:flex-row items-center">
+                <img class="w-40 h-40 rounded-full object-cover mr-5" src="{{ Storage::url('imgdokter/' . $fd->foto) }}" alt="Doctor's Photo">
+                <div class="flex flex-col md:justify-between">
+                    <div>
+                        <p class="text-lg md:text-xl font-semibold">{{ $nam->name }}</p>
+                        <p class="text-gray-600 text-sm md:text-base">{{ $spesi->spesialisasi }}</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-5 md:grid-cols-7 divide-x divide-gray-300 text-center mr-5 mt-2 md:mt-4">
+                        @php
+                        $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                        $schedule = [$jsenins->jamsenin, $jselasas->jamselasa,$jrabus->jamrabu ,$jkamiss->jamkamis ,$jjumats->jamjumat ,$jsabtus->jamsabtu ];
+                        @endphp
+                        @foreach ($days as $index => $day)
+                        <div class="px-1 md:px-2 py-1">
+                            <div class="font-bold text-xs md:text-sm">{{ $day }}</div>
+                            <div class="text-xxs md:text-xs">{{ $schedule[$index] }}</div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            @endif
+            @endif
+            @endif
+            @endforeach
+        </div>
+        <a href="/detaildokter" class="text-white bg-green-700 hover:bg-green-800 font-bold rounded-lg text-base md:text-lg px-4 md:px-8 py-2 mt-2 md:mt-4 inline-block">
+            See More
+        </a>
     </div>
-</div>
-</div>
-@endsection
+    @endsection

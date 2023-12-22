@@ -30,9 +30,9 @@
             <td class="align-middle">{{ $rs->foto }}</td>
             <td class="align-middle">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="{{ route('post.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                    <a href="{{ route('post.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                    <form action="{{ route('post.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Apakah yakin ingin dihapus?')">
+                    <a href="{{ route('foto.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                    <a href="{{ route('foto.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+                    <form action="{{ route('foto.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Apakah yakin ingin dihapus?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger m-0">Delete</button>
@@ -43,7 +43,7 @@
         @endforeach
         @else
         <tr>
-            <td class="text-center" colspan="3">Post belum diisi</td>
+            <td class="text-center" colspan="3">Foto belum diisi</td>
         </tr>
         @endif
     </tbody>

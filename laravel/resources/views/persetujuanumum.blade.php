@@ -108,13 +108,11 @@
             formulir ini dan menandatangani tanpa paksaan dan dengan kesadaran penuh.
         </h1>
         <div class="flex justify-center ml-7 mr-7 mt-6 mb-8">
-            <button
-                class="bg-green-500 hover:bg-green-700 transition duration-300 text-white text-lg font-poppins w-48 border border-1 shadow-2xl rounded-md font-bold p-4">
+            <button class="bg-green-500 hover:bg-green-700 transition duration-300 text-white text-lg font-poppins w-48 border border-1 shadow-2xl rounded-md font-bold p-4">
                 SETUJU
             </button>
             <span>
-                <button
-                    class=" ml-4 bg-rose-500 hover:bg-rose-700 transition duration-300 text-white text-lg font-poppins w-44 border border-1 shadow-2xl rounded-md font-bold p-4">
+                <button class=" ml-4 bg-rose-500 hover:bg-rose-700 transition duration-300 text-white text-lg font-poppins w-44 border border-1 shadow-2xl rounded-md font-bold p-4">
                     KEMBALI
                 </button>
             </span>

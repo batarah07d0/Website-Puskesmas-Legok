@@ -20,6 +20,10 @@
         ::-webkit-scrollbar-track {
             background-color: #f1f1f1;
         }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
     </style>
     <title>Puskesmas Legok | <?php echo e($title ?? ''); ?></title>
 </head>

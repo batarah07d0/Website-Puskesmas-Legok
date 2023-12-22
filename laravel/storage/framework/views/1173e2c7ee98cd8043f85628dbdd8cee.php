@@ -201,7 +201,7 @@
             <div class="grid grid-cols-4 px-5 pt-5 lg:pt-5 gap-4" id="strukturOrganisasi">
                 <?php $__currentLoopData = $lists->take(4); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $li): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <?php
-                $nama = $nama[$index] ?? null;
+                $nama = $namast[$index] ?? null;
                 ?>
                 <?php if($nama): ?>
                 <div class="max-w-[270px] max-h-[405px] pb-12 bg-custom-color3 rounded-lg overflow-hidden shadow-lg">
@@ -242,7 +242,7 @@
                         <div class="<?php echo e($index === 0 ? 'duration-200 ease-linear' : ' hidden duration-200 ease-linear'); ?>" data-carousel-item="<?php echo e($index === 0 ? 'active' : ''); ?>">
                             <div class="flex">
                                 <div class="flex flex-col  absolute h-full bg-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-lg overflow-hidden shadow-lg" style="background-color:#C4F2BD">
-                                    <img class="w-[347.26px] h-[384.17px]" src="<?php echo e(Storage::url('imgprestasi/' . $fp->foto)); ?>" alt="">
+                                    <img class="w-[347.26px] h-[384.17px] object-cover" src="<?php echo e(Storage::url('imgprestasi/' . $fp->foto)); ?>" alt="">
                                     <div>
                                         <p class="text-center text-2xl py-6">
                                             <?php echo e($namapp->deskripsi); ?>
@@ -283,7 +283,6 @@
         </div>
     </div>
 </div>
-
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.main', ['title' => 'Tentang Kami'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp\htdocs\UAS AKhir\Website-Puskesmas-Legok\laravel\resources\views/tentangkami.blade.php ENDPATH**/ ?>
