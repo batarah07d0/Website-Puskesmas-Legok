@@ -430,7 +430,7 @@
         <div id="strukturOrganisasi" class="flex flex-col w-full items-center h-full pb-5 bg-custom-color3">
             <div class="border bg-white drop-shadow-lg lg:drop-shadow-2xl rounded-[22px] py-2 px-10 sm:px-20 xl:px-40 mt-5">
                 <div class="text-green-700 font-bold text-center text-xl md:text-3xl xl:text-4xl">
-                    STAFF PUSKESMAS
+                    Prestasi
                 </div>
             </div>
             <!-- Carousel wrapper -->

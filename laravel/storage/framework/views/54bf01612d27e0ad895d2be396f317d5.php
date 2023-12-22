@@ -19,8 +19,9 @@
                 <div
                     class="relative w-5/6 lg:w-3/4 mx-auto mt-16 md:m-0 flex flex-col justify-center border shadow-lg bg-white rounded-2xl py-2 px-4 font-bold leading-relaxed tracking-light text-green-700 font-montserrat">
                     <h2 class="text-sm md:text-xl lg:text-2xl text-left mb-1 md:mb-2">Ambil Nomor Antrian Online</h2>
-                    <form action="/daftaronline"
+                    <form action="/daftaronline" method="POST"
                         class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-1 md:gap-3 lg:gap-10 mb-1">
+                        <?php echo csrf_field(); ?>
                         <select name="kategori" id="kategori"
                             class="w-full md:w-max lg:w-full h-auto rounded-lg bg-green-700 bg-opacity-20 px-2 py-1 md:py-2 text-xs md:text-base">
                             <option value="" disabled selected>Jenis Layanan Kesehatan</option>
@@ -30,7 +31,7 @@
                         </select>
                         <div class="relative w-full border-opacity-0" data-te-format24="true" id="timepicker-format"
                             data-te-input-wrapper-init data-te-timepicker-init>
-                            <input type="text"
+                            <input type="text" name="jam_layanan"
                                 class="placeholder-green-700 text-xs md:text-base peer block min-h-[auto] w-full rounded-lg border-2 border-opacity-100 bg-green-700 bg-opacity-20 px-2 py-1 md:py-[6.5px] transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                 data-te-toggle="timepicker" placeholder="Jam Pelayanan" id="form14"
                                 oninput="toggleLabelVisibility()" />
@@ -48,7 +49,6 @@
                     </p>
                 </div>
             </div>
-
         </div>
         <div class="container max-w-full h-full lg:bg-custom-color3 md:relative bg-custom-color3">
             <div class="flex flex-col md:flex-row md:justify-center items-center lg:pt-52 md:gap-14 lg:gap-64 pt-0">

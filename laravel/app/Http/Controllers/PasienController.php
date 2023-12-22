@@ -64,6 +64,7 @@ class PasienController extends Controller
             Antrian::create([
                 'id_pasien' => $id,
                 'jenis_layanan' => $request->jenis_layanan,
+                'nama_pasien' => $request->nama_lengkap,
                 'jam_layanan' => $jamlayanan
             ]);
             $antrian = Antrian::where('id_pasien', $id)->get();

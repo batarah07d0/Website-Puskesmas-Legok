@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
 </head>
 
@@ -157,8 +157,8 @@
     </div>
 
     <!-- Konten Utama -->
-    <?php if($_POST['kategori'] == 'Poli Gigi'): ?>
-        <?php if($quota <= 0): ?>
+    @if ($_POST['kategori'] == 'Poli Gigi')
+        @if ($quota <= 0)
             <div class="mx-auto p-4 w-full max-w-4xl max-h-full" x-show="isApproved">
                 <h1 class="font-poppins">
                     Maaf, quota untuk Poli Gigi sudah habis untuk esok hari.
@@ -168,7 +168,7 @@
                     class="p-5 mt-10 font-poppins bg-green-500 drop-shadow-lg border rounded-lg text-white">Kembali ke
                     home tab</a>
             </div>
-        <?php else: ?>
+        @else
             <div class="mx-auto p-4 w-full max-w-4xl max-h-full" x-show="isApproved">
                 <div class="ml-7 mt-5">
                     <h1 class="font-poppins text-4xl font-bold drop-shadow-lg">Daftar Online</h1>
@@ -182,9 +182,9 @@
                 </div>
                 <form action="/buat-antrian" method="POST" class="ml-7 mt-8 mr-7">
                     <div class="pb-4">
-                        <?php echo csrf_field(); ?>
-                        <input type="hidden" name="jenis_layanan" value="<?php echo e($_POST['kategori']); ?>" autocomplete="off">
-                        <input type="hidden" name="jam_layanan" value="<?php echo e($_POST['jam_layanan']); ?>" autocomplete="off">
+                        @csrf
+                        <input type="hidden" name="jenis_layanan" value="{{ $_POST['kategori'] }}" autocomplete="off">
+                        <input type="hidden" name="jam_layanan" value="{{ $_POST['jam_layanan'] }}" autocomplete="off">
                         <div class="grid gap-6 mb-6">
                             <div class="shadow-lg">
                                 <label for="nama" class="block mb-2 font-poppins text-2xl font-medium">Nama</label>
@@ -280,8 +280,8 @@
                     </div>
                 </form>
             </div>
-        <?php endif; ?>
-    <?php else: ?>
+        @endif
+    @else
         <div class="mx-auto p-4 w-full max-w-4xl max-h-full" x-show="isApproved">
             <div class="ml-7 mt-5">
                 <h1 class="font-poppins text-4xl font-bold drop-shadow-lg">Daftar Online</h1>
@@ -295,9 +295,9 @@
             </div>
             <form action="" class="ml-7 mt-8 mr-7">
                 <div class="pb-4">
-                    <?php echo csrf_field(); ?>
-                    <input type="hidden" name="jenis_layanan" value="<?php echo e($_POST['kategori']); ?>">
-                    <input type="hidden" name="jam_layanan" value="<?php echo e($_POST['jam_layanan']); ?>">
+                    @csrf
+                    <input type="hidden" name="jenis_layanan" value="{{ $_POST['kategori'] }}">
+                    <input type="hidden" name="jam_layanan" value="{{ $_POST['jam_layanan'] }}">
                     <div class="grid gap-6 mb-6">
                         <div class="shadow-lg">
                             <label for="nama" class="block mb-2 font-poppins text-2xl font-medium">Nama</label>
@@ -390,7 +390,7 @@
                 </div>
             </form>
         </div>
-    <?php endif; ?>
+    @endif
 </body>
 
 <script>
@@ -401,4 +401,3 @@
 </script>
 
 </html>
-<?php /**PATH C:\Users\Lenovo\OneDrive\Documents\Project\Website-Puskesmas-Legok\laravel\resources\views/daftaronline.blade.php ENDPATH**/ ?>

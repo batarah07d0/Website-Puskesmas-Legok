@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('antrian', function (Blueprint $table) {
             $table->integer('nomorantrian', autoIncrement: true, unsigned: true)->length(3);
             $table->foreignId('id_pasien')->constrained(table: 'pasien', indexName: 'id')->cascadeOnDelete();
+            $table->string('nama_pasien');
             $table->string('jenis_layanan');
             $table->dateTime('jam_layanan');
         });

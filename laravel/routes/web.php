@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NomorAntrianController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\FasilitasController;
@@ -16,13 +17,13 @@ use App\Http\Controllers\Home2Controller;
 use App\Http\Controllers\Home3Controller;
 use App\Http\Controllers\Home4Controller;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\QuotaController;
 use App\Models\Dokter;
 use App\Models\Fasilitas;
 use App\Models\JenisLayanan;
+use App\Models\NomorAntrian;
 use App\Models\Prestasi;
 use App\Models\ProgramKegiatan;
-use App\Models\CheckMobileDevice;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,14 +49,11 @@ Route::get('/detaildokter', function () {
     return view('detaildokter');
 });
 
+Route::post('/daftaronline', [QuotaController::class, 'getpoliquota']);
 
-Route::get('/daftaronline', function () {
-    return view('daftaronline');
-});
+Route::post('/buat-antrian', [PasienController::class, 'storeantrian']);
 
-Route::get('/jadwaldokter', function () {
-    return view('jadwaldokter');
-});
+Route::get('/nomorantrian/pdf', [NomorAntrianController::class, 'createPDF']);
 
 Route::get('/persetujuanumum', function () {
     return view('persetujuanumum');
@@ -85,7 +83,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('logout', 'logout')->middleware('auth')->name('logout');
 });
 
-Route::middleware(['auth', 'check.mobile.device'])->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
