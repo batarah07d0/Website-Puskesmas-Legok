@@ -162,11 +162,6 @@
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center gap-5 lg:gap-6">
-                <div class="flex flex-row w-[200px] justify-around items-center">
-                    <div
-                        class="w-[26.90px] h-[5.31px] lg:w-[27.90px] lg:h-[6.31px] rotate-[-130deg] bg-gradient-to-bl from-white to-green-700 rounded-[10px]">
-                    </div>
-                </div>
                 <div class="flex flex-col justify-center items-center gap-5 lg:gap-6">
                     <div class="flex flex-row w-[200px] justify-around items-center">
                         <div
