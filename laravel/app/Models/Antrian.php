@@ -9,6 +9,6 @@ class Antrian extends Model
 {
     use HasFactory;
     protected $table = "antrian";
-    protected $fillable = ['nomorantrian', 'id_pasien', 'jenis_layanan', 'jam_layanan'];
+    protected $fillable = ['nomorantrian', 'id_pasien', 'nama_pasien', 'jenis_layanan', 'jam_layanan'];
     public $timestamps = false;
 }
