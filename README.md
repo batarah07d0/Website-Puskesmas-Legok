@@ -1,5 +1,7 @@
 # Website Sistem Informasi - Puskesmas Legok
-![Tampilan Website Puskesmas Legok di Berbagai Perangkat](images/tampilan-website.png)
+<p align="center">
+  <img src="Mockup%20Website.png" alt="Tampilan Website Puskesmas Legok" width="500"/>
+</p>
 
 ## Latar Belakang Proyek
 Proyek ini merupakan bagian dari Program Kemitraan Masyarakat (PKM) **Universitas Multimedia Nusantara** yang bertujuan untuk menyediakan platform digital modern bagi **Puskesmas Legok, Kabupaten Tangerang**. Tujuannya adalah untuk memperluas jangkauan informasi dan meningkatkan aksesibilitas layanan kesehatan kepada masyarakat melalui sebuah website profil yang informatif dan profesional.
